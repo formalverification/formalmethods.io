@@ -1,4 +1,4 @@
-# Welcome to Formal Verification
+# Welcome to Formal Methods
 
 <!-- [IOHK.io](https://iohk.io/) :rocket:
  -->

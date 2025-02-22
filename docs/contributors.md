@@ -5,7 +5,6 @@ Manuel Chakravarty,
 James Chapman,
 Nicholas Clarke,
 Jared Corduan,
-Carlos Tom&eacute; Corti&ntilde;as,
 Duncan Coutts,
 William DeMeo,
 Marko Dimjašević,
@@ -33,7 +32,8 @@ Ulf Norell,
 Michal Peyton Jones,
 Ashish Prajapati,
 Tim Sheard,
+Carlos Tom&eacute; Corti&ntilde;as,
 Polina Vinogradova,
 Andrew Westberg.
 
-If you've contributed to the ledger but we've failed to list you here, please send us a message or post an issue
+If you've contributed to the ledger but we've failed to list you here, please send us a message or [post an issue](https://github.com/formalverification/formalmethods.io/issues/new).
