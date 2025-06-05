@@ -323,7 +323,8 @@ example {n : Nat} (m : Plaintext n) (k₁ k₂ : Key n)
 - **Perfect secrecy** is elegantly expressible and provable
 
 ### Resources
-- Code available at: [formalmethods.io](https://formalmethods.io/fm-crypto)
+- Slides available at: [formalmethods.io/crypto](https://formalmethods.io/crypto)
+- Code available at: [github.com/formalverification/lean4crypto/](https://github.com/formalverification/lean4crypto/)
 - Mathlib docs: https://leanprover-community.github.io/mathlib4_docs/
 - Learn more: https://leanprover.github.io/
 
