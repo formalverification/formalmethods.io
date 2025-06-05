@@ -505,6 +505,50 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interleaved_demo_presentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview/Demo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slides/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Older presentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -596,28 +640,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../slides/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Overview/Demo
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1217,9 +1239,11 @@
 </ul>
 <hr />
 <h2 id="decryption">Decryption<a class="headerlink" href="#decryption" title="Permanent link">#</a></h2>
-<p>uses the same key and the reverse operation
-* <code>Plaintext = Ciphertext XOR Key</code> (because <code>(P XOR K) XOR K = P</code>)
-* <code>Plaintext = (Ciphertext - Key) mod N</code></p>
+<p>uses the same key and the reverse operation</p>
+<ul>
+<li><code>Plaintext = Ciphertext XOR Key</code> (because <code>(P XOR K) XOR K = P</code>)</li>
+<li><code>Plaintext = (Ciphertext - Key) mod N</code></li>
+</ul>
 <hr />
 <h2 id="perfect-secrecy">Perfect Secrecy<a class="headerlink" href="#perfect-secrecy" title="Permanent link">#</a></h2>
 <p>The core theoretical property of OTP is </p>
@@ -1242,15 +1266,15 @@ about the plaintext content.</p>
 <h2 id="why-otp-is-interesting-to-cryptographers">Why OTP is interesting to cryptographers<a class="headerlink" href="#why-otp-is-interesting-to-cryptographers" title="Permanent link">#</a></h2>
 <ul>
 <li>
-<p>It's the theoretical "gold standard" of secrecy.</p>
+<p>Highlights critical importance of key management (randomness, length,
+   single-use, secrecy).</p>
 </li>
 <li>
-<p>It highlights the critical importance of key management (randomness, length,
-   single-use, secrecy).  Most practical ciphers try to achieve similar security with
-   shorter, reusable keys, which is much harder.</p>
+<p>Most practical ciphers try to achieve similar security with
+   shorter, reusable keys. (much harder)</p>
 </li>
 <li>
-<p>Understanding its limitations motivates study of other cryptographic systems.</p>
+<p>Understanding limitations of OTP motivates study of other cryptographic systems.</p>
 </li>
 </ul>
 <hr />

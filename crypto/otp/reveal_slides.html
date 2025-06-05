@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/white.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+    <style>
+        .reveal pre code { max-height: 500px; }
+        .reveal h1, .reveal h2 { color: #2c3e50; }
+        .reveal code { color: #e74c3c; }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-markdown data-separator="^---$" data-separator-vertical="^--$">
+                <textarea data-template>
+# Formalizing Discrete Probability in Lean 4: The One-Time Pad
+
+## FM Crypto Meeting
+
+---
+
+## Overview
+
+- **Goal**: Formalize basic discrete probability in Lean 4
+- **Case Study**: One-Time Pad (OTP) and Perfect Secrecy
+- **Key Concepts**:
+  - Probability Mass Functions (PMFs)
+  - Independence and joint distributions
+  - Conditional probability
+  - Bijections preserving uniform distributions
+
+---
+
+## The One-Time Pad
+
+### Informal Definition
+
+- **Message space**: $M = \\{0,1\\}^n$
+- **Key space**: $K = \\{0,1\\}^n$  
+- **Ciphertext space**: $C = \\{0,1\\}^n$
+- **Encryption**: $\\text{Enc}(m, k) = m \\oplus k$
+- **Decryption**: $\\text{Dec}(c, k) = c \\oplus k$
+
+### Key Property
+$$\\text{Dec}(\\text{Enc}(m, k), k) = (m \\oplus k) \\oplus k = m$$
+
+---
+
+## Lean 4 Formalization: Types
+
+```lean
+import Mathlib.Data.Vector.Basic
+
+def Plaintext  (n : Nat) := List.Vector Bool n
+def Key        (n : Nat) := List.Vector Bool n  
+def Ciphertext (n : Nat) := List.Vector Bool n
+
+-- Element-wise XOR
+def vec_xor {n : Nat} (v₁ v₂ : List.Vector Bool n) := 
+  map₂ xor v₁ v₂
+
+def encrypt {n : Nat} (m : Plaintext n) (k : Key n) : Ciphertext n :=
+  vec_xor m k
+```
+
+---
+
+## Correctness of Encryption/Decryption
+
+```lean
+lemma encrypt_decrypt {n : Nat} (m : Plaintext n) (k : Key n) :
+  decrypt (encrypt m k) k = m := by
+  unfold encrypt decrypt vec_xor
+  apply ext  -- vector extensionality
+  intro i    -- prove element-wise
+  simp only [get_map₂]
+  -- Goal: xor (xor (get m i) (get k i)) (get k i) = get m i
+  simp  -- Uses xor properties automatically
+```
+
+Key insight: Reduce vector equality to element-wise boolean equality
+
+---
+
+## Key Lemma 1: XOR is a Bijection
+
+```lean
+def xorEquiv {n : ℕ} (m : Plaintext n) : Key n ≃ Ciphertext n where
+  toFun   := encrypt m     -- k ↦ m ⊕ k
+  invFun  := vec_xor m     -- c ↦ m ⊕ c  
+  left_inv := by           -- m ⊕ (m ⊕ k) = k
+    intro k
+    apply ext
+    simp [encrypt, vec_xor, get_map₂, xor_aab_eq_b]
+  right_inv := by          -- (m ⊕ c) ⊕ m = c
+    intro c
+    apply ext
+    simp [encrypt, vec_xor, get_map₂, xor_aab_eq_b]
+```
+
+For fixed $m$, the map $k \\mapsto m \\oplus k$ is a bijection!
+
+---
+
+## Key Lemma 2: Bijections Preserve Uniform Distributions
+
+```lean
+lemma map_uniformOfFintype_equiv
+    {α β : Type*} [Fintype α] [Fintype β] [DecidableEq β] 
+    [Nonempty α] [Nonempty β] (e : α ≃ β) :
+    PMF.map e (uniformOfFintype α) = uniformOfFintype β
+```
+
+### Intuition
+- If we have a uniform distribution on $\\alpha$
+- And apply a bijection $e : \\alpha \\to \\beta$  
+- We get a uniform distribution on $\\beta$
+- Crucial: bijections preserve cardinality!
+
+---
+
+## Perfect Secrecy: Formal Statement
+
+### Theorem
+```lean
+theorem perfect_secrecy {n : Nat} (μM : PMF (Plaintext n)) 
+  (m₀ : Plaintext n) (c₀ : Ciphertext n) :
+  (μC_M m₀) c₀ * μM m₀ / (μC μM) c₀ = μM m₀
+```
+
+This says: $P(M = m | C = c) = P(M = m)$
+
+The ciphertext reveals nothing about the plaintext!
+
+---
+
+## Lessons Learned
+
+### 1. **Type Classes Matter**
+- `Fintype` for finite types
+- `Nonempty` to avoid division by zero
+- `DecidableEq` for computability
+
+### 2. **Bijections are Powerful**
+- XOR with fixed value is a bijection
+- Bijections preserve uniform distributions
+- Can transform complex sums using bijections
+
+### 3. **PMF Library is Well-Designed**
+- `bind` for dependent distributions  
+- `map` for transforming distributions
+- Uniform distributions built-in
+
+---
+
+## Demo Time!
+
+Let's see Lean 4 in action with:
+1. Basic OTP operations
+2. XOR properties 
+3. Bijection properties
+4. Probability calculations
+5. Perfect secrecy visualization
+6. Why key reuse breaks security
+
+---
+
+## Questions?
+
+### Quick Reference
+- `PMF α` - Probability mass function over type `α`
+- `uniformOfFintype` - Uniform distribution
+- `List.Vector` - Fixed-length vectors
+- `ENNReal` - Extended non-negative reals
+- `≃` - Type equivalence (bijection)
+
+Code available at: [your repository]
+
+Thank you!
+                </textarea>
+            </section>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/math/math.min.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX ]
+        });
+    </script>
+</body>
+</html>
