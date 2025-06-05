@@ -76,10 +76,12 @@ nav:
       - Construction: crypto/otp/construction.md
       - Perfect Secrecy: crypto/otp/perfect-secrecy.md
       - OTP in Lean: crypto/otp/otp-lean.md
+      - Overview/Demo: crypto/otp/interleaved_demo_presentation.md
+      - Older presentation: crypto/otp/slides.md
+        # reveal_slides.html
     - Mathlib:
       - Vector and List: crypto/Mathlib/vector-and-list.md
       - Probability: crypto/Mathlib/prob.md
-    - Overview/Demo: crypto/otp/slides.md
 
   - Formal Ledger Spec:
     - Introduction: cardano-ledger/intro.md

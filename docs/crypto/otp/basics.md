@@ -27,6 +27,7 @@ If using numbers (e.g., letters A=0, B=1, ... Z=25), modular addition is used.
 ## Decryption
 
 uses the same key and the reverse operation
+
 * `Plaintext = Ciphertext XOR Key` (because `(P XOR K) XOR K = P`)
 * `Plaintext = (Ciphertext - Key) mod N`
 
@@ -51,13 +52,13 @@ The core theoretical property of OTP is
 
 ## Why OTP is interesting to cryptographers
 
-+  It's the theoretical "gold standard" of secrecy.
++  Highlights critical importance of key management (randomness, length,
+   single-use, secrecy).
+   
++  Most practical ciphers try to achieve similar security with
+   shorter, reusable keys. (much harder)
 
-+  It highlights the critical importance of key management (randomness, length,
-   single-use, secrecy).  Most practical ciphers try to achieve similar security with
-   shorter, reusable keys, which is much harder.
-
-+  Understanding its limitations motivates study of other cryptographic systems.
++  Understanding limitations of OTP motivates study of other cryptographic systems.
 
 --- 
 

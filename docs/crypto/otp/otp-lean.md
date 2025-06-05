@@ -48,14 +48,6 @@ This can be defined using `Vector.map₂ Bool.xor v₁ v₂`.
 
 * **Ciphertext Distribution:** derived from message and key distributions using `PMF.bind` or `PMF.map` to represent the encryption process.
 
-* **Independence:** we'll likely need to state the independence of key and message PMFs as a hypothesis. 
-
-      Can be expressed by saying the joint distribution is the product of the marginals.
-
-      e.g., `joint_pmf m k = (μ_M m) * (μ_K k)`
-
-      Mathlib's `PMF.indepFun` might be relevant here.
-
 * **Conditional Probability:** `PMF.cond` will be key to defining $ℙ(M=m \;| \;C=c)$.
 
 ---
