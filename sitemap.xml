@@ -2,46 +2,78 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://formalmethods.io/</loc>
-         <lastmod>2025-02-22</lastmod>
+         <lastmod>2025-06-05</lastmod>
     </url>
     <url>
          <loc>https://formalmethods.io/contributors/</loc>
-         <lastmod>2025-02-22</lastmod>
+         <lastmod>2025-06-05</lastmod>
     </url>
     <url>
          <loc>https://formalmethods.io/license/</loc>
-         <lastmod>2025-02-22</lastmod>
+         <lastmod>2025-06-05</lastmod>
     </url>
     <url>
          <loc>https://formalmethods.io/mkdocs/</loc>
-         <lastmod>2025-02-22</lastmod>
+         <lastmod>2025-06-05</lastmod>
     </url>
     <url>
          <loc>https://formalmethods.io/cardano-ledger/intro/</loc>
-         <lastmod>2025-02-22</lastmod>
+         <lastmod>2025-06-05</lastmod>
     </url>
     <url>
          <loc>https://formalmethods.io/cardano-ledger/shelley/intro/</loc>
-         <lastmod>2025-02-22</lastmod>
+         <lastmod>2025-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://formalmethods.io/crypto/Mathlib/list-and-vector/</loc>
+         <lastmod>2025-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://formalmethods.io/crypto/Mathlib/prob/</loc>
+         <lastmod>2025-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://formalmethods.io/crypto/Mathlib/vector-and-list/</loc>
+         <lastmod>2025-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://formalmethods.io/crypto/otp/basics/</loc>
+         <lastmod>2025-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://formalmethods.io/crypto/otp/construction/</loc>
+         <lastmod>2025-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://formalmethods.io/crypto/otp/otp-lean/</loc>
+         <lastmod>2025-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://formalmethods.io/crypto/otp/perfect-secrecy/</loc>
+         <lastmod>2025-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://formalmethods.io/crypto/otp/slides/</loc>
+         <lastmod>2025-06-05</lastmod>
     </url>
     <url>
          <loc>https://formalmethods.io/mkdocs/admonitions/</loc>
-         <lastmod>2025-02-22</lastmod>
+         <lastmod>2025-06-05</lastmod>
     </url>
     <url>
          <loc>https://formalmethods.io/mkdocs/code-blocks/</loc>
-         <lastmod>2025-02-22</lastmod>
+         <lastmod>2025-06-05</lastmod>
     </url>
     <url>
          <loc>https://formalmethods.io/mkdocs/content-tabs/</loc>
-         <lastmod>2025-02-22</lastmod>
+         <lastmod>2025-06-05</lastmod>
     </url>
     <url>
          <loc>https://formalmethods.io/mkdocs/diagrams/</loc>
-         <lastmod>2025-02-22</lastmod>
+         <lastmod>2025-06-05</lastmod>
     </url>
     <url>
          <loc>https://formalmethods.io/mkdocs/footers/</loc>
-         <lastmod>2025-02-22</lastmod>
+         <lastmod>2025-06-05</lastmod>
     </url>
 </urlset>
