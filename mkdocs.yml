@@ -30,6 +30,7 @@ theme:
   logo: img/cardano_we_logos/PNG/Cardano-RGB_Logo-Full-White.png
 
 markdown_extensions:
+  - admonition
   - abbr
   - attr_list
   - pymdownx.emoji:
@@ -60,10 +61,25 @@ markdown_extensions:
       permalink: "#"
 
 
+  - pymdownx.arithmatex:
+      generic: true
+
+
 watch:
   - includes
 nav:
   - Home: index.md
+
+  - FM Crypto:
+    - OTP:
+      - Basics: crypto/otp/basics.md
+      - Construction: crypto/otp/construction.md
+      - Perfect Secrecy: crypto/otp/perfect-secrecy.md
+      - OTP in Lean: crypto/otp/otp-lean.md
+    - Mathlib:
+      - Vector and List: crypto/Mathlib/vector-and-list.md
+      - Probability: crypto/Mathlib/prob.md
+    - Overview/Demo: crypto/otp/slides.md
 
   - Formal Ledger Spec:
     - Introduction: cardano-ledger/intro.md
@@ -94,3 +110,10 @@ extra:
     - icon: simple/github
       link: https://github.com/IntersectMBO/formal-ledger-specifications
 
+extra_javascript:
+  # - javascripts/katex.js
+  # - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+# extra_css:
+#   - https://unpkg.com/katex@0/dist/katex.min.cssextra_javascript:
+#   - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
