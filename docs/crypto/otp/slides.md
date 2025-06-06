@@ -299,19 +299,22 @@ example {n : Nat} (m : Plaintext n) (k₁ k₂ : Key n)
 ### Extensions
 
 1.  **Other Cryptographic Constructions**
+
     + Stream ciphers
     + Block ciphers (with appropriate modes)
     + Public key encryption
 
 2.  **Advanced Probability**
-    - Computational indistinguishability
-    - Negligible functions
-    - Probabilistic polynomial time
+
+    + Computational indistinguishability
+    + Negligible functions
+    + Probabilistic polynomial time
 
 3.  **Security Proofs**
-    - Semantic security
-    - CPA/CCA security
-    - Reduction proofs
+
+    + Semantic security
+    + CPA/CCA security
+    + Reduction proofs
 
 ---
 
@@ -323,10 +326,17 @@ example {n : Nat} (m : Plaintext n) (k₁ k₂ : Key n)
 - **Perfect secrecy** is elegantly expressible and provable
 
 ### Resources
-- Slides available at: [formalmethods.io/crypto](https://formalmethods.io/crypto)
-- Code available at: [github.com/formalverification/lean4crypto/](https://github.com/formalverification/lean4crypto/)
-- Mathlib docs: https://leanprover-community.github.io/mathlib4_docs/
-- Learn more: https://leanprover.github.io/
+
++  **General**
+   +  Lean site: <https://lean-lang.org/>
+   +  Lean docs: https://lean-lang.org/documentation/ 
+   +  Mathlib docs: <https://leanprover-community.github.io/mathlib4_docs/>
+
++  **For this demo**
+
+   +  Slides: <https://formalmethods.io/crypto>
+   +  Code: <https://github.com/formalverification/lean4crypto/>
+
 
 ---
 
