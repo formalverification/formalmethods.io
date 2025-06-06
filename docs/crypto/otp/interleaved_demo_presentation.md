@@ -423,17 +423,15 @@ end KeyReuse
 - **Bijections** are a key tool in cryptographic proofs
 - **Perfect secrecy** is elegantly expressible and provable
 
+
 ### Resources
 
-+  **General**
-   +  Lean site: <https://lean-lang.org/>
-   +  Lean docs: https://lean-lang.org/documentation/ 
-   +  Mathlib docs: <https://leanprover-community.github.io/mathlib4_docs/>
++  Slides: <https://formalmethods.io/crypto>
++  Code: <https://github.com/formalverification/lean4crypto/>
 
-+  **For this demo**
-
-   +  Slides: <https://formalmethods.io/crypto>
-   +  Lean code: <https://github.com/formalverification/lean4crypto/>
++  Lean site: <https://lean-lang.org/>
++  Lean docs: https://lean-lang.org/documentation/ 
++  Mathlib docs: <https://leanprover-community.github.io/mathlib4_docs/>
 
 
 ## Questions?
