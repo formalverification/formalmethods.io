@@ -27,7 +27,7 @@ theme:
     text: Merriweather Sans
     code: Source Code Pro
 
-  logo: img/cardano_we_logos/PNG/Cardano-RGB_Logo-Full-White.png
+  logo: img/cardano_we_logos/PNG/Cardano-RGB_Logo-Icon-White.png
 
 markdown_extensions:
   - admonition
