@@ -83,14 +83,14 @@ nav:
       - Vector and List: crypto/Mathlib/vector-and-list.md
       - Probability: crypto/Mathlib/prob.md
 
-  - Formal Ledger Spec:
-    - Introduction: cardano-ledger/intro.md
-    - Byron: cardano-ledger/byron.md
-    - Shelley:
-        - Introduction: cardano-ledger/shelley/intro.md
-    - Mary: cardano-ledger/mary.md
-    - Alonzo: cardano-ledger/alonzo.md
-    - Conway: cardano-ledger/conway.md
+  # - Formal Ledger Spec:
+  #   - Introduction: cardano-ledger/intro.md
+  #   - Byron: cardano-ledger/byron.md
+  #   - Shelley:
+  #       - Introduction: cardano-ledger/shelley/intro.md
+  #   - Mary: cardano-ledger/mary.md
+  #   - Alonzo: cardano-ledger/alonzo.md
+  #   - Conway: cardano-ledger/conway.md
 
   - MkDocs doc:
     - MkDocs: mkdocs.md
