@@ -1,0 +1,29 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Sophisticated gradient inspired by the example -->
+    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7dd3fc"/>
+      <stop offset="30%" style="stop-color:#0ea5e9"/>
+      <stop offset="70%" style="stop-color:#0284c7"/>
+      <stop offset="100%" style="stop-color:#0c4a6e"/>
+    </linearGradient>
+    
+    <!-- Shadow/depth gradient -->
+    <linearGradient id="shadowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b"/>
+      <stop offset="100%" style="stop-color:#0f172a"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Lambda as integrated triangular element -->
+  <path d="M50 12 L38 35 L30 50 L22 70 L32 70 L37 55 L45 38 L50 25 L55 38 L63 55 L68 70 L78 70 L70 50 L62 35 Z" 
+        fill="url(#mainGradient)"/>
+  
+  <!-- F - bold, flowing with the lambda -->
+  <path d="M15 45 L15 88 L25 88 L25 70 L40 70 L40 62 L25 62 L25 53 L42 53 L42 45 Z" 
+        fill="url(#shadowGrad)"/>
+  
+  <!-- M - substantial, integrated design -->
+  <path d="M58 45 L58 88 L68 88 L68 58 L72 70 L76 58 L76 88 L86 88 L86 45 L76 45 L72 62 L68 45 Z" 
+        fill="url(#shadowGrad)"/>
+</svg>

@@ -3,6 +3,7 @@ site_url: https://formalmethods.io
 
 theme: 
   name: material
+  favicon: img/formal_methods_favicon.svg
   features:
     - content.tooltips
     - navigation.footer
@@ -27,7 +28,7 @@ theme:
     text: Merriweather Sans
     code: Source Code Pro
 
-  logo: img/cardano_we_logos/PNG/Cardano-RGB_Logo-Icon-White.png
+  logo: img/formal_methods_icon.svg
 
 markdown_extensions:
   - admonition
@@ -110,7 +111,7 @@ plugins:
 extra:
   social:
     - icon: simple/github
-      link: https://github.com/IntersectMBO/formal-ledger-specifications
+      link: https://github.com/formalverification/formalmethods.io
 
 extra_javascript:
   # - javascripts/katex.js
