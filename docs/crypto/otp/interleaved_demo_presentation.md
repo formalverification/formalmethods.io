@@ -426,13 +426,12 @@ end KeyReuse
 
 ### Resources
 
-+  Slides: <https://formalmethods.io/crypto>
-+  Code: <https://github.com/formalverification/lean4crypto/>
++  **Slides** <https://formalmethods.io/crypto>
++  **Code** <https://github.com/formalverification/lean4crypto/>
 
-+  Lean site: <https://lean-lang.org/>
-+  Lean docs: https://lean-lang.org/documentation/ 
-+  Mathlib docs: <https://leanprover-community.github.io/mathlib4_docs/>
-
++  **Lean** <https://lean-lang.org/>
++  **Mathlib docs** <https://leanprover-community.github.io/mathlib4_docs/>
++  **Mathlib source** <https://github.com/leanprover-community/mathlib4>
 
 ## Questions?
 
