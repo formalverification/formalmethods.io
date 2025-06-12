@@ -5,8 +5,9 @@
 In Lean/Mathlib, a `PMF α` (Probability Mass Function) is fundamentally:
 
 ```lean
-/-- A probability mass function, or discrete probability measures is a function `α → ℝ≥0∞` such
-  that the values have (infinite) sum `1`. -/
+/-- A probability mass function, or discrete probability measures is 
+  a function `α → ℝ≥0∞` such that the values have (infinite) sum `1`. -/
+
 def PMF.{u} (α : Type u) : Type u :=
   { f : α → ℝ≥0∞ // HasSum f 1 }
 ```

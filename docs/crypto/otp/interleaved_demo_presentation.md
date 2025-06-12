@@ -412,23 +412,23 @@ We will prove the third assertion.
 
 1. **What μC represents**
 
-   The distribution of ciphertexts when we:
+     The distribution of ciphertexts when we:
 
-   - sample a message `m` from `μM`
-   - sample a key `k` uniformly from all `2ⁿ` keys
-   - output `encrypt m k`
+     - sample a message `m` from `μM`
+     - sample a key `k` uniformly from all `2ⁿ` keys
+     - output `encrypt m k`
 
 2. **Why it's uniform** 
 
-   - for each `m`, the map `k ↦ m ⊕ k` is a bijection
-   - so each ciphertext `c` appears exactly once for each `m`
-   - since keys are uniform, each `c` has probability `1/2ⁿ`
+     - for each `m`, the map `k ↦ m ⊕ k` is a bijection
+     - so each ciphertext `c` appears exactly once for each `m`
+     - since keys are uniform, each `c` has probability `1/2ⁿ`
 
 3. **Perfect secrecy**: P(C = c | M = m) = 1/2ⁿ = P(C = c) 
 
-   - OTP achieves perfect secrecy because xor is a bijection 
-   - so both conditional and marginal distributions of ciphertexts are uniform
-   - this is precisely independence between message and ciphertext.
+     - OTP achieves perfect secrecy because xor is a bijection 
+     - so both conditional and marginal distributions of ciphertexts are uniform
+     - this is precisely independence between message and ciphertext.
 
 ---
 
