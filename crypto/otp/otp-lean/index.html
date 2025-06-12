@@ -346,28 +346,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../construction/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Construction
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../perfect-secrecy/" class="md-nav__link">
         
   
@@ -440,16 +418,16 @@
         <li class="md-nav__item">
   <a href="#initial-considerations" class="md-nav__link">
     <span class="md-ellipsis">
-      Initial Considerations
+      Initial Considerations 🤔
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#types" class="md-nav__link">
+  <a href="#types-aliases" class="md-nav__link">
     <span class="md-ellipsis">
-      Types
+      Types Aliases 🕵️
     </span>
   </a>
   
@@ -458,42 +436,36 @@
         <li class="md-nav__item">
   <a href="#xor-operation" class="md-nav__link">
     <span class="md-ellipsis">
-      XOR Operation
+      XOR Operation ⊕
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mathlib-probability-definitions" class="md-nav__link">
+  <a href="#mathlib-definitions" class="md-nav__link">
     <span class="md-ellipsis">
-      Mathlib Probability Definitions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Mathlib Probability Definitions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#lean-4-project-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lean 4 Project Setup 셋업
+      Mathlib Definitions 📑
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
+  <a href="#lean-project-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lean Project Setup 🏗️️
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#initial-definitions" class="md-nav__link">
     <span class="md-ellipsis">
       Initial Definitions ✍️
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -628,6 +600,50 @@
   
   <span class="md-ellipsis">
     Probability
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Mathlib/DistributionsInLean/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Distributions in Lean
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Mathlib/bind_and_pure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    bind and pure for distributions
     
   </span>
   
@@ -966,16 +982,16 @@
         <li class="md-nav__item">
   <a href="#initial-considerations" class="md-nav__link">
     <span class="md-ellipsis">
-      Initial Considerations
+      Initial Considerations 🤔
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#types" class="md-nav__link">
+  <a href="#types-aliases" class="md-nav__link">
     <span class="md-ellipsis">
-      Types
+      Types Aliases 🕵️
     </span>
   </a>
   
@@ -984,42 +1000,36 @@
         <li class="md-nav__item">
   <a href="#xor-operation" class="md-nav__link">
     <span class="md-ellipsis">
-      XOR Operation
+      XOR Operation ⊕
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mathlib-probability-definitions" class="md-nav__link">
+  <a href="#mathlib-definitions" class="md-nav__link">
     <span class="md-ellipsis">
-      Mathlib Probability Definitions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Mathlib Probability Definitions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#lean-4-project-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lean 4 Project Setup 셋업
+      Mathlib Definitions 📑
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
+  <a href="#lean-project-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lean Project Setup 🏗️️
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#initial-definitions" class="md-nav__link">
     <span class="md-ellipsis">
       Initial Definitions ✍️
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1040,47 +1050,59 @@
 
 
 <h1 id="otp-in-ln">OTP in L∃∀N<a class="headerlink" href="#otp-in-ln" title="Permanent link">#</a></h1>
-<h2 id="initial-considerations">Initial Considerations<a class="headerlink" href="#initial-considerations" title="Permanent link">#</a></h2>
+<h2 id="initial-considerations">Initial Considerations 🤔<a class="headerlink" href="#initial-considerations" title="Permanent link">#</a></h2>
 <ul>
-<li>What types for messages, keys, ciphertexts? (<code>Vector Bool n</code> is a good candidate, or <code>Fin n → Bool</code>).</li>
-<li>How to represent the XOR operation on these types?</li>
-<li>Which Mathlib probability definitions will you need? (e.g., <code>PMF</code>, <code>Pure</code>, <code>Bind</code> for random variables, <code>cond</code> for conditional probability).</li>
+<li>
+<p>What types for messages, keys, ciphertexts? </p>
+<p><code>Vector Bool n</code> is a good candidate (or <code>Fin n → Bool</code>).</p>
+</li>
+<li>
+<p>How to represent the XOR operation on these types?</p>
+</li>
+<li>
+<p>Which Mathlib probability definitions will you need? (e.g., <code>PMF</code>, <code>Pure</code>, <code>Bind</code> for random variables, <code>cond</code> for conditional probability).</p>
+</li>
 </ul>
 <hr />
-<h2 id="types">Types<a class="headerlink" href="#types" title="Permanent link">#</a></h2>
+<h2 id="types-aliases">Types Aliases  🕵️<a class="headerlink" href="#types-aliases" title="Permanent link">#</a></h2>
 <div class="language-lean highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">def</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="o">(</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Nat</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="n">Bool</span><span class="w"> </span><span class="n">n</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">def</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="o">(</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Nat</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="n">Bool</span><span class="w"> </span><span class="n">n</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kd">def</span><span class="w"> </span><span class="n">Ciphertext</span><span class="w"> </span><span class="o">(</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Nat</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="n">Bool</span><span class="w"> </span><span class="n">n</span>
 </span></code></pre></div>
 <p>Using <code>n : Nat</code> so definitions are generic for any length.</p>
 <hr />
-<h2 id="xor-operation">XOR Operation<a class="headerlink" href="#xor-operation" title="Permanent link">#</a></h2>
+<h2 id="xor-operation">XOR Operation ⊕<a class="headerlink" href="#xor-operation" title="Permanent link">#</a></h2>
 <p>We need a function like</p>
 <div class="language-lean highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">xor_vector</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Nat</span><span class="o">}</span><span class="w"> </span><span class="o">(</span><span class="n">v₁</span><span class="w"> </span><span class="n">v₂</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="n">Bool</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="n">Bool</span><span class="w"> </span><span class="n">n</span>
 </span></code></pre></div>
 <p>This can be defined using <code>Vector.map₂ Bool.xor v₁ v₂</code>.</p>
 <hr />
-<h2 id="mathlib-probability-definitions">Mathlib Probability Definitions<a class="headerlink" href="#mathlib-probability-definitions" title="Permanent link">#</a></h2>
-<ul>
-<li>
-<p><em>Message Distribution (<code>PMF (Plaintext n)</code>):</em> The perfect secrecy definition usually assumes <em>some</em> distribution for messages. </p>
-<p>We might leave this as arbitrary <code>(μ_M : PMF (Plaintext n))</code> in our theorem statement.</p>
-</li>
-<li>
-<p><strong>Key Distribution (<code>PMF (Key n)</code>):</strong> must be uniform, so we need to define what
-<code>is_uniform (μ_K : PMF (Key n))</code> means.</p>
-<p>Typically, for a finite type <code>α</code>, a <code>PMF p</code> is uniform if <code>p a = 1 / Fintype.card α</code> for all <code>a</code>.</p>
-<p>Mathlib should have utilities for this (e.g., <code>PMF.uniformOfFintype</code>).</p>
-</li>
-<li>
-<p><strong>Ciphertext Distribution:</strong> derived from message and key distributions using <code>PMF.bind</code> or <code>PMF.map</code> to represent the encryption process.</p>
-</li>
-<li>
-<p><strong>Conditional Probability:</strong> <code>PMF.cond</code> will be key to defining <span class="arithmatex">\(ℙ(M=m \;| \;C=c)\)</span>.</p>
-</li>
-</ul>
+<h2 id="mathlib-definitions">Mathlib Definitions 📑<a class="headerlink" href="#mathlib-definitions" title="Permanent link">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title"><em>Message Distribution</em> <code>PMF (Plaintext n)</code></p>
+<p>Perfect secrecy definition assumes messages come from <em>some</em> probability distribution.</p>
+<p>In our theorem statement, we leave this arbitrary: <code>μ_M : PMF (Plaintext n)</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><em>Key Distribution</em> <code>PMF (Key n)</code></p>
+<p>This is uniform on the key space (a finite set of size 2ⁿ).</p>
+<p>We need to define what <code>is_uniform (μ_K : PMF (Key n))</code> means.</p>
+<p>For a finite type <code>α</code>, probability mass function <code>p</code> is uniform if <code>p a = 1 / card α</code> for all <code>a : α</code>.</p>
+<p>Mathlib has utilities for this, e.g. <code>PMF.uniformOfFintype</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><em>Ciphertext Distribution</em> <code>PMF (Ciphertext n)</code></p>
+<p>This is derived from message and key distributions using <code>PMF.bind</code> to represent the encryption process.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><em>Conditional Probability</em> <span class="arithmatex">\(ℙ(M=m \;| \;C=c)\)</span></p>
+<p>defined using <code>PMF.cond</code></p>
+</div>
 <hr />
-<h3 id="lean-4-project-setup"><strong>Lean 4 Project Setup</strong> 셋업<a class="headerlink" href="#lean-4-project-setup" title="Permanent link">#</a></h3>
+<h2 id="lean-project-setup"><strong>Lean Project Setup</strong> 🏗️️<a class="headerlink" href="#lean-project-setup" title="Permanent link">#</a></h2>
+<p>This section describes the steps we took to set up our Lean project.  The resulting
+source code is maintained in our lean4crypto respository at </p>
+<p><a href="https://github.com/formalverification/lean4crypto">https://github.com/formalverification/lean4crypto</a></p>
 <ol>
 <li>
 <p><strong>Create the Project</strong>.</p>
@@ -1127,7 +1149,7 @@
 </li>
 </ol>
 <hr />
-<h3 id="initial-definitions"><strong>Initial Definitions</strong> ✍️<a class="headerlink" href="#initial-definitions" title="Permanent link">#</a></h3>
+<h2 id="initial-definitions"><strong>Initial Definitions</strong> ✍️<a class="headerlink" href="#initial-definitions" title="Permanent link">#</a></h2>
 <p>In <code>OTP/Basic.lean</code>,</p>
 <div class="language-lean highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">import</span><span class="w"> </span><span class="n">Mathlib.Data.Vector.Basic</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>

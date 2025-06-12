@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://formalmethods.io/crypto/otp/perfect-secrecy/">
       
       
-        <link rel="prev" href="../construction/">
+        <link rel="prev" href="../basics/">
       
       
         <link rel="next" href="../otp-lean/">
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#otp-perfect-secrecy" class="md-skip">
+        <a href="#perfect-secrecy-of-the-one-time-pad" class="md-skip">
           Skip to content
         </a>
       
@@ -343,28 +343,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../construction/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Construction
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -377,6 +355,18 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Perfect Secrecy
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -387,6 +377,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#construction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Construction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perfect-secrecy-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perfect Secrecy Theorem
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -537,6 +564,50 @@
   
   <span class="md-ellipsis">
     Probability
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Mathlib/DistributionsInLean/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Distributions in Lean
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Mathlib/bind_and_pure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    bind and pure for distributions
     
   </span>
   
@@ -866,6 +937,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#construction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Construction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perfect-secrecy-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perfect Secrecy Theorem
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -880,7 +977,56 @@
 
 
 
-<h1 id="otp-perfect-secrecy">OTP: Perfect Secrecy<a class="headerlink" href="#otp-perfect-secrecy" title="Permanent link">#</a></h1>
+<h1 id="perfect-secrecy-of-the-one-time-pad">Perfect Secrecy of the One-time Pad<a class="headerlink" href="#perfect-secrecy-of-the-one-time-pad" title="Permanent link">#</a></h1>
+<h2 id="construction">Construction<a class="headerlink" href="#construction" title="Permanent link">#</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Definition of _⊕_</p>
+<p>_⊕_ is bitwise XOR: <span class="arithmatex">\(\quad 0 ⊕ 0 = 0, \quad 0 ⊕ 1 = 1, \quad 1 ⊕ 0 = 1, \quad 1 ⊕ 1 = 0\)</span>.</p>
+<p>For n-bit strings <span class="arithmatex">\(\; a = a₁ ⋯ a_n\)</span>, <span class="arithmatex">\(\; b = b₁ ⋯ b_n\)</span> , let <span class="arithmatex">\(\; a ⊕ b = a₁ ⊕ b₁ ⋯ a_n ⊕ b_n\)</span>.</p>
+</div>
+<details class="info">
+<summary>Cayley table of _⊕_</summary>
+<table>
+<thead>
+<tr>
+<th>⊕</th>
+<th>0</th>
+<th>1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</details>
+<div class="admonition note">
+<p class="admonition-title">An important property of _⊕_</p>
+<p><span class="arithmatex">\(a ⊕ b = c ⇔ a = b ⊕ c\)</span>, for all <span class="arithmatex">\(a\)</span>, <span class="arithmatex">\(b\)</span>, <span class="arithmatex">\(c\)</span>. </p>
+</div>
+<p>Fix an integer <span class="arithmatex">\(n &gt; 0\)</span>. </p>
+<p>Let <span class="arithmatex">\(ℳ\)</span> be the <em>message space</em> , <span class="arithmatex">\(𝒦\)</span> the <em>key space</em>, and <span class="arithmatex">\(𝒞\)</span> the <em>ciphertext space</em>.</p>
+<p>Assume <span class="arithmatex">\(ℳ\)</span>, <span class="arithmatex">\(𝒦\)</span>, <span class="arithmatex">\(𝒞\)</span> all equal <span class="arithmatex">\(\{0, 1\}^n\)</span>.</p>
+<ul>
+<li>
+<p><strong>Gen</strong> (key-generation algorithm) choose key from <em>uniform distribution</em> over <span class="arithmatex">\(𝒦\)</span>.</p>
+</li>
+<li>
+<p><strong>Enc</strong> (encryption algorithm) given <span class="arithmatex">\(k ∈ 𝒦\)</span>, <span class="arithmatex">\(m ∈ ℳ\)</span>,  output ciphertext <span class="arithmatex">\(c = k ⊕ m\)</span>.</p>
+</li>
+<li>
+<p><strong>Dec</strong> (decryption algorithm) given <span class="arithmatex">\(k ∈ 𝒦\)</span>, <span class="arithmatex">\(c ∈ 𝒞\)</span>, output message <span class="arithmatex">\(m = k ⊕ c\)</span>.</p>
+</li>
+</ul>
+<h2 id="perfect-secrecy-theorem">Perfect Secrecy Theorem<a class="headerlink" href="#perfect-secrecy-theorem" title="Permanent link">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Theorem 2.9 (Katz &amp; Lindell, 2ed)</p>
 <p>The one-time pad encryption scheme is perfectly secret.</p>
@@ -939,7 +1085,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../construction/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Construction">
+          <a href="../basics/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Basics">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -949,7 +1095,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Construction
+                Basics
               </div>
             </div>
           </a>

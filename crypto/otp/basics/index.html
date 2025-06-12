@@ -14,7 +14,7 @@
         <link rel="prev" href="../../..">
       
       
-        <link rel="next" href="../construction/">
+        <link rel="next" href="../perfect-secrecy/">
       
       
       <link rel="icon" href="../../../img/formal_methods_favicon.svg">
@@ -446,28 +446,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../construction/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Construction
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../perfect-secrecy/" class="md-nav__link">
         
   
@@ -627,6 +605,50 @@
   
   <span class="md-ellipsis">
     Probability
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Mathlib/DistributionsInLean/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Distributions in Lean
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Mathlib/bind_and_pure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    bind and pure for distributions
     
   </span>
   
@@ -1043,7 +1065,7 @@
 
 <h2 id="what-is-the-one-time-pad-otp">What is the One-Time Pad (OTP)?<a class="headerlink" href="#what-is-the-one-time-pad-otp" title="Permanent link">#</a></h2>
 <p>A theoretically unbreakable ("perfect secrecy") encryption technique with very specific requirements.</p>
-<p><strong>The Key</strong> must be</p>
+<p><strong>The Key</strong> 🗝️ must be</p>
 <ul>
 <li>truly random</li>
 <li>at least as long as the plaintext message</li>
@@ -1052,16 +1074,20 @@
 </ul>
 <hr />
 <h2 id="encryption">Encryption<a class="headerlink" href="#encryption" title="Permanent link">#</a></h2>
+<p>✍️ <font color="slate">Plaintext message</font>: typically converted into a sequence of bits (or numbers)</p>
+<p>🗝️ <font color="slate">Key</font>: also a sequence of bits (or numbers) of the same length</p>
+<p>㊙️ <font color="slate">Encryption</font>: performed by combining plaintext with key using a simple operation, commonly <strong>bitwise XOR</strong>.</p>
 <ul>
-<li><strong>plaintext message</strong>. typically converted into a sequence of bits (or numbers)</li>
-<li><strong>key</strong>. also a sequence of bits (or numbers) of the same length</li>
-<li><strong>encryption</strong>. performed by combining plaintext with key using a simple operation, most commonly <strong>bitwise XOR</strong>.</li>
+<li>
+<p><code>Ciphertext = Plaintext xor Key</code> (for bits)</p>
+<p>㊙️ = ✍️ ⊕ 🗝️</p>
+</li>
 </ul>
-<p>If using numbers (e.g., letters A=0, B=1, ... Z=25), modular addition is used.</p>
-<ul>
-<li><code>Ciphertext = Plaintext XOR Key</code> (for bits)</li>
-<li><code>Ciphertext = (Plaintext + Key) mod N</code> (for numbers modulo N)</li>
-</ul>
+<details class="info">
+<summary>using numbers instead of bits</summary>
+<p>If using numbers, e.g., letters A=0, B=1, ... Z=25, then modular addition is used instead:</p>
+<p><code>Ciphertext = (Plaintext + Key) mod N</code></p>
+</details>
 <hr />
 <h2 id="decryption">Decryption<a class="headerlink" href="#decryption" title="Permanent link">#</a></h2>
 <p>uses the same key and the reverse operation</p>
@@ -1204,13 +1230,13 @@ providing a concrete example of verifying a security property.</p>
         
         
           
-          <a href="../construction/" class="md-footer__link md-footer__link--next" aria-label="Next: Construction">
+          <a href="../perfect-secrecy/" class="md-footer__link md-footer__link--next" aria-label="Next: Perfect Secrecy">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Construction
+                Perfect Secrecy
               </div>
             </div>
             <div class="md-footer__button md-icon">

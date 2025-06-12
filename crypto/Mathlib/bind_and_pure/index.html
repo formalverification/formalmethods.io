@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://formalmethods.io/crypto/Mathlib/vector-and-list/">
+        <link rel="canonical" href="https://formalmethods.io/crypto/Mathlib/bind_and_pure/">
       
       
-        <link rel="prev" href="../../otp/slides/">
+        <link rel="prev" href="../DistributionsInLean/">
       
       
-        <link rel="next" href="../prob/">
+        <link rel="next" href="../../../mkdocs/">
       
       
       <link rel="icon" href="../../../img/formal_methods_favicon.svg">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Vector and List - Formal Methods</title>
+        <title>bind and pure for distributions - Formal Methods</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vector-and-list-in-mathlib" class="md-skip">
+        <a href="#bind-and-pure-for-probability-distributions" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Vector and List
+              bind and pure for distributions
             
           </span>
         </div>
@@ -475,31 +475,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Vector and List
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../vector-and-list/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -509,44 +488,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#datavector" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data/Vector/
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#datalist" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data/List/
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -600,10 +541,31 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../bind_and_pure/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    bind and pure for distributions
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -613,6 +575,137 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pure-creating-a-deterministic-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      pure: Creating a Deterministic Distribution
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="pure: Creating a Deterministic Distribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-our-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      In our code
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bind-chaining-random-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      bind: Chaining Random Processes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="bind: Chaining Random Processes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuitive-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intuitive Explanation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#breaking-down-our-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Breaking Down Our Expression
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-use-bind-and-pure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Use bind and pure?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-general-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      The General Pattern
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-probability-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      In Probability Terms
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -944,18 +1037,111 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#datavector" class="md-nav__link">
+  <a href="#pure-creating-a-deterministic-distribution" class="md-nav__link">
     <span class="md-ellipsis">
-      Data/Vector/
+      pure: Creating a Deterministic Distribution
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="pure: Creating a Deterministic Distribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-our-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      In our code
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bind-chaining-random-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      bind: Chaining Random Processes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="bind: Chaining Random Processes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuitive-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intuitive Explanation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#breaking-down-our-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Breaking Down Our Expression
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#datalist" class="md-nav__link">
+  <a href="#why-use-bind-and-pure" class="md-nav__link">
     <span class="md-ellipsis">
-      Data/List/
+      Why Use bind and pure?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-general-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      The General Pattern
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-probability-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      In Probability Terms
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
     </span>
   </a>
   
@@ -977,44 +1163,85 @@
 
 
 
-<h1 id="vector-and-list-in-mathlib">Vector and List in Mathlib<a class="headerlink" href="#vector-and-list-in-mathlib" title="Permanent link">#</a></h1>
-<div class="admonition note">
-<p class="admonition-title"><strong>Tip</strong></p>
-<p>Use the <a href="https://leanprover-community.github.io/mathlib4_docs/index.html">Mathlib documentation website</a> for easy browsing of module contents and definitions.</p>
-<p><center><a href="https://leanprover-community.github.io/mathlib4_docs/index.html">https://leanprover-community.github.io/mathlib4_docs/index.html</a></center></p>
-</div>
-<h2 id="datavector"><a href="https://github.com/leanprover-community/mathlib4/tree/master/Mathlib/Data/Vector"><code>Data/Vector/</code></a><a class="headerlink" href="#datavector" title="Permanent link">#</a></h2>
-<p>📁 <a href="https://github.com/leanprover-community/mathlib4/blob/master/Mathlib/Data/Vector/Basic.lean"><code>Mathlib/Data/Vector/Basic.lean</code></a>.</p>
-<ul>
-<li><strong><code>Vector α n</code></strong> represents a list of elements of type <code>α</code> that is known to have
-length <code>n</code>. <br />
-   Well suited to plaintexts, keys, and ciphertexts where length is fixed and equal.</li>
-</ul>
-<p>🧰 <strong>Useful functions</strong></p>
-<ul>
-<li><code>Vector.map (f : α → β) : Vector α n → Vector β n</code></li>
-<li><code>Vector.map₂ (f : α → β → γ) : Vector α n → Vector β n → Vector γ n</code>,
-   perfect for XORing two vectors. </li>
-<li><code>Vector.get : Vector α n → Fin n → α</code> to get an element at an index.</li>
-<li><code>Vector.ofFn : ((i : Fin n) → α) → Vector α n</code> to construct a vector from a function.</li>
-<li>Literals like <code>![a, b, c]</code> can often be coerced to <code>Vector α 3</code> if the type is known.</li>
-</ul>
+<h1 id="bind-and-pure-for-probability-distributions"><code>bind</code> and <code>pure</code> for Probability Distributions<a class="headerlink" href="#bind-and-pure-for-probability-distributions" title="Permanent link">#</a></h1>
+<h2 id="pure-creating-a-deterministic-distribution"><code>pure</code>: Creating a Deterministic Distribution<a class="headerlink" href="#pure-creating-a-deterministic-distribution" title="Permanent link">#</a></h2>
+<p><code>pure a</code> creates a probability distribution that always returns <code>a</code> with probability 1.</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">pure</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">α</span><span class="w"> </span><span class="bp">→</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="n">α</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">pure</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">distribution</span><span class="w"> </span><span class="n">where</span><span class="w"> </span><span class="n">P</span><span class="o">(</span><span class="n">X</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">a</span><span class="o">)</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">P</span><span class="o">(</span><span class="n">X</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">b</span><span class="o">)</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="bp">≠</span><span class="w"> </span><span class="n">a</span>
+</span></code></pre></div>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">#</a></h3>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">def</span><span class="w"> </span><span class="n">always_true</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="n">Bool</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">pure</span><span class="w"> </span><span class="n">true</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">-- This distribution gives: P(true) = 1, P(false) = 0</span>
+</span></code></pre></div>
+<h3 id="in-our-code">In our code<a class="headerlink" href="#in-our-code" title="Permanent link">#</a></h3>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">pure</span><span class="w"> </span><span class="o">(</span><span class="n">encrypt</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="n">k</span><span class="o">)</span>
+</span></code></pre></div>
+<p>would creates a distribution that always returns the specific ciphertext <code>encrypt m k</code> with probability 1.</p>
 <hr />
-<h2 id="datalist"><a href="https://github.com/leanprover-community/mathlib4/tree/master/Mathlib/Data/List"><code>Data/List/</code></a><a class="headerlink" href="#datalist" title="Permanent link">#</a></h2>
-<ul>
-<li>
-<p>In <a href="https://github.com/leanprover-community/mathlib4/blob/master/Mathlib/Data/List/Basic.lean"><code>Mathlib/Data/List/Basic.lean</code></a> and other files in <a href="https://github.com/leanprover-community/mathlib4/tree/master/Mathlib/Data/List"><code>Mathlib/Data/List/</code></a>.</p>
-</li>
-<li>
-<p>While <code>Vector</code> is likely better for fixed-length crypto primitives, <code>List α</code> is
-   the standard list type. </p>
-</li>
-<li>
-<p>Good to know its API (e.g., <code>map</code>, <code>zipWith</code>, <code>length</code>) as <code>Vector</code> often mirrors
-   or builds upon <code>List</code> concepts.</p>
-</li>
-</ul>
+<h2 id="bind-chaining-random-processes"><code>bind</code>: Chaining Random Processes<a class="headerlink" href="#bind-chaining-random-processes" title="Permanent link">#</a></h2>
+<p><code>bind</code> chains two random processes together:</p>
+<ol>
+<li>First, sample from one distribution.</li>
+<li>Based on that result, sample from another distribution.</li>
+</ol>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">bind</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="n">α</span><span class="w"> </span><span class="bp">→</span><span class="w"> </span><span class="o">(</span><span class="n">α</span><span class="w"> </span><span class="bp">→</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="n">β</span><span class="o">)</span><span class="w"> </span><span class="bp">→</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="n">β</span>
+</span></code></pre></div>
+<h3 id="intuitive-explanation">Intuitive Explanation<a class="headerlink" href="#intuitive-explanation" title="Permanent link">#</a></h3>
+<p>Think of <code>bind p f</code> as a two-step random process:</p>
+<ol>
+<li>Sample <code>x</code> from distribution <code>p</code>.</li>
+<li>Use <code>x</code> to choose a new distribution <code>f x</code>.</li>
+<li>Sample from <code>f x</code> to get the final result.</li>
+</ol>
+<h3 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">#</a></h3>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">-- Roll a die, then flip that many coins and count heads</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kd">def</span><span class="w"> </span><span class="n">roll_then_flip</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="n">Nat</span><span class="w"> </span><span class="o">:=</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="n">bind</span><span class="w"> </span><span class="n">die_roll</span><span class="w"> </span><span class="o">(</span><span class="k">fun</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="bp">=&gt;</span><span class="w"> </span><span class="n">flip_n_coins</span><span class="w"> </span><span class="n">n</span><span class="o">)</span>
+</span></code></pre></div>
 <hr />
+<h2 id="breaking-down-our-expression">Breaking Down Our Expression<a class="headerlink" href="#breaking-down-our-expression" title="Permanent link">#</a></h2>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">μC</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">bind</span><span class="w"> </span><span class="n">μMK</span><span class="w"> </span><span class="o">(</span><span class="k">fun</span><span class="w"> </span><span class="n">mk</span><span class="w"> </span><span class="bp">=&gt;</span><span class="w"> </span><span class="n">pure</span><span class="w"> </span><span class="o">(</span><span class="n">encrypt</span><span class="w"> </span><span class="n">mk</span><span class="bp">.</span><span class="mi">1</span><span class="w"> </span><span class="n">mk</span><span class="bp">.</span><span class="mi">2</span><span class="o">))</span>
+</span></code></pre></div>
+<p>This means:</p>
+<ol>
+<li><strong>First step</strong>: sample a pair <code>(m, k)</code> from the joint distribution <code>μMK</code></li>
+<li><strong>Second step</strong>: Return <code>encrypt m k</code> with probability 1</li>
+</ol>
+<p>Since the second step is deterministic (<code>pure</code>), this simplifies to:</p>
+<p>Sample <code>(m, k)</code> from <code>μMK</code> and output <code>encrypt m k</code>.</p>
+<hr />
+<h2 id="why-use-bind-and-pure">Why Use <code>bind</code> and <code>pure</code>?<a class="headerlink" href="#why-use-bind-and-pure" title="Permanent link">#</a></h2>
+<p>To build complex probability distributions from simple ones:</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">-- Without bind/pure (conceptually):</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">μC</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="bp">Σ</span><span class="w"> </span><span class="o">{</span><span class="n">P</span><span class="o">(</span><span class="n">M</span><span class="bp">=</span><span class="n">m</span><span class="o">,</span><span class="w"> </span><span class="n">K</span><span class="bp">=</span><span class="n">k</span><span class="o">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="o">(</span><span class="n">m</span><span class="o">,</span><span class="w"> </span><span class="n">k</span><span class="o">)</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">such</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="o">(</span><span class="n">encrypt</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">c</span><span class="o">)}</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1">-- With bind/pure:</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">μC</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">bind</span><span class="w"> </span><span class="n">μMK</span><span class="w"> </span><span class="o">(</span><span class="k">fun</span><span class="w"> </span><span class="n">mk</span><span class="w"> </span><span class="bp">=&gt;</span><span class="w"> </span><span class="n">pure</span><span class="w"> </span><span class="o">(</span><span class="n">encrypt</span><span class="w"> </span><span class="n">mk</span><span class="bp">.</span><span class="mi">1</span><span class="w"> </span><span class="n">mk</span><span class="bp">.</span><span class="mi">2</span><span class="o">))</span>
+</span></code></pre></div>
+<p>The <code>bind</code>/<code>pure</code> formulation is cleaner and more compositional.</p>
+<h2 id="the-general-pattern">The General Pattern<a class="headerlink" href="#the-general-pattern" title="Permanent link">#</a></h2>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">bind</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">(</span><span class="k">fun</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="bp">=&gt;</span><span class="w"> </span><span class="n">pure</span><span class="w"> </span><span class="o">(</span><span class="n">f</span><span class="w"> </span><span class="n">x</span><span class="o">))</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">map</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="n">p</span>
+</span></code></pre></div>
+<p>When the second step is deterministic (using <code>pure</code>), <code>bind</code> reduces to <code>map</code>.</p>
+<p>So we could also write:
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">μC</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">map</span><span class="w"> </span><span class="o">(</span><span class="k">fun</span><span class="w"> </span><span class="n">mk</span><span class="w"> </span><span class="bp">=&gt;</span><span class="w"> </span><span class="n">encrypt</span><span class="w"> </span><span class="n">mk</span><span class="bp">.</span><span class="mi">1</span><span class="w"> </span><span class="n">mk</span><span class="bp">.</span><span class="mi">2</span><span class="o">)</span><span class="w"> </span><span class="n">μMK</span>
+</span></code></pre></div></p>
+<h2 id="in-probability-terms">In Probability Terms<a class="headerlink" href="#in-probability-terms" title="Permanent link">#</a></h2>
+<ul>
+<li><code>pure a</code> is the Dirac delta distribution δ_a</li>
+<li><code>bind</code> is the law of total probability:
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>P(Y = y) = Σ_x P(X = x) · P(Y = y | X = x)
+</span></code></pre></div>
+  where <code>bind p f</code> represents the distribution of Y when:</li>
+<li>X has distribution p</li>
+<li>Y | X=x has distribution f(x)</li>
+</ul>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
+<p>In <code>μC = bind μMK (fun mk =&gt; pure (encrypt mk.1 mk.2))</code>:
+- <code>μMK</code> is the joint distribution of (message, key) pairs
+- <code>bind</code> says "sample from this distribution"
+- <code>fun mk =&gt; pure (encrypt mk.1 mk.2)</code> says "then apply encryption deterministically"
+- Result: <code>μC</code> is the distribution of ciphertexts</p>
 <!-- internal links -->
 <!-- external links -->
 
@@ -1046,7 +1273,7 @@ length <code>n</code>. <br />
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../otp/slides/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Older presentation">
+          <a href="../DistributionsInLean/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Distributions in Lean">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1056,20 +1283,20 @@ length <code>n</code>. <br />
                 Previous
               </span>
               <div class="md-ellipsis">
-                Older presentation
+                Distributions in Lean
               </div>
             </div>
           </a>
         
         
           
-          <a href="../prob/" class="md-footer__link md-footer__link--next" aria-label="Next: Probability">
+          <a href="../../../mkdocs/" class="md-footer__link md-footer__link--next" aria-label="Next: MkDocs">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Probability
+                MkDocs
               </div>
             </div>
             <div class="md-footer__button md-icon">

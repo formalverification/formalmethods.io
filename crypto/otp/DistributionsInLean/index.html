@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://formalmethods.io/crypto/otp/construction/">
+        <link rel="canonical" href="https://formalmethods.io/crypto/otp/DistributionsInLean/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Construction - Formal Methods</title>
+        <title>Deep Dive: How Lean Represents Probability Distributions - Formal Methods</title>
       
     
     
@@ -69,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#deep-dive-how-lean-represents-probability-distributions" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -100,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Construction
+              Deep Dive: How Lean Represents Probability Distributions
             
           </span>
         </div>
@@ -862,6 +867,193 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-pmf-really" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a PMF Really?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#our-distributions-as-mathematical-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Our Distributions as Mathematical Objects
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Our Distributions as Mathematical Objects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#m-pmf-plaintext-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      μM : PMF (Plaintext n)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-pmf-key-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      μK : PMF (Key n)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mk-pmf-plaintext-n-key-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      μMK : PMF (Plaintext n × Key n)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-pmf-ciphertext-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      μC : PMF (Ciphertext n)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c_m-plaintext-n-pmf-ciphertext-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      μC_M : Plaintext n → PMF (Ciphertext n)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-noncomputable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why noncomputable?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why noncomputable?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-real-number-arithmetic" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Real Number Arithmetic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-infinite-summations" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Infinite Summations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-classical-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Classical Logic
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-can-we-still-prove-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Can We Still Prove = 1/8?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why Can We Still Prove = 1/8?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proofs-vs-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proofs vs Computation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whats-happening" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Happening?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-philosophical-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Philosophical Point
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Philosophical Point">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-practical-analogy" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Practical Analogy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -877,9 +1069,129 @@
 
 
 
-  <h1>Construction</h1>
-
-
+<h1 id="deep-dive-how-lean-represents-probability-distributions">Deep Dive: How Lean Represents Probability Distributions<a class="headerlink" href="#deep-dive-how-lean-represents-probability-distributions" title="Permanent link">#</a></h1>
+<h2 id="what-is-a-pmf-really">What is a PMF Really?<a class="headerlink" href="#what-is-a-pmf-really" title="Permanent link">#</a></h2>
+<p>In Lean/Mathlib, a <code>PMF α</code> (Probability Mass Function) is fundamentally:</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">structure</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="o">(</span><span class="n">α</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">Type</span><span class="bp">*</span><span class="o">)</span><span class="w"> </span><span class="n">where</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="n">val</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">α</span><span class="w"> </span><span class="bp">→</span><span class="w"> </span><span class="n">ℝ</span><span class="bp">≥</span><span class="mi">0</span><span class="bp">∞</span><span class="w">                 </span><span class="c1">-- Function from α to extended non-negative reals</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="n">has_sum_one</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="bp">∑&#39;</span><span class="w"> </span><span class="n">a</span><span class="o">,</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="c1">-- Proof that probabilities sum to 1</span>
+</span></code></pre></div>
+<p>So a PMF is a <strong>pair</strong></p>
+<ol>
+<li>
+<p>A function assigning probabilities to outcomes</p>
+</li>
+<li>
+<p>A proof that these probabilities form a valid distribution</p>
+</li>
+</ol>
+<hr />
+<h2 id="our-distributions-as-mathematical-objects">Our Distributions as Mathematical Objects<a class="headerlink" href="#our-distributions-as-mathematical-objects" title="Permanent link">#</a></h2>
+<h3 id="m-pmf-plaintext-n">μM : PMF (Plaintext n)<a class="headerlink" href="#m-pmf-plaintext-n" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Type</strong>: A function <code>Plaintext n → ℝ≥0∞</code> (plus a proof)</li>
+<li><strong>Meaning</strong>: For any n-bit message m, <code>μM m</code> is the probability that message m is sent</li>
+<li><strong>Example</strong>: If all messages equally likely, <code>μM m = 1/2^n</code> for all m</li>
+</ul>
+<h3 id="k-pmf-key-n">μK : PMF (Key n)<a class="headerlink" href="#k-pmf-key-n" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Type</strong>: A function <code>Key n → ℝ≥0∞</code></li>
+<li><strong>Meaning</strong>: For any n-bit key k, <code>μK k</code> is its probability</li>
+<li><strong>Definition</strong>: <code>uniformOfFintype</code> makes <code>μK k = 1/2^n</code> for all k</li>
+</ul>
+<h3 id="mk-pmf-plaintext-n-key-n">μMK : PMF (Plaintext n × Key n)<a class="headerlink" href="#mk-pmf-plaintext-n-key-n" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Type</strong>: A function <code>(Plaintext n × Key n) → ℝ≥0∞</code></li>
+<li><strong>Meaning</strong>: Joint probability P(M = m ∧ K = k)</li>
+<li><strong>Value</strong>: <code>μMK (m,k) = μM m * μK k</code> (independence!)</li>
+</ul>
+<h3 id="c-pmf-ciphertext-n">μC : PMF (Ciphertext n)<a class="headerlink" href="#c-pmf-ciphertext-n" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Type</strong>: A function <code>Ciphertext n → ℝ≥0∞</code>  </li>
+<li><strong>Meaning</strong>: For any n-bit ciphertext c, <code>μC c</code> is probability of observing c</li>
+<li><strong>Computed</strong>: By summing over all (m,k) pairs that produce c</li>
+</ul>
+<h3 id="c_m-plaintext-n-pmf-ciphertext-n">μC_M : Plaintext n → PMF (Ciphertext n)<a class="headerlink" href="#c_m-plaintext-n-pmf-ciphertext-n" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Type</strong>: A function that takes a message and returns a distribution</li>
+<li><strong>Meaning</strong>: For fixed m, <code>μC_M m</code> is the conditional distribution P(C | M = m)</li>
+<li><strong>Value</strong>: <code>(μC_M m) c = if ∃k. encrypt m k = c then 1/2^n else 0</code></li>
+</ul>
+<hr />
+<h2 id="why-noncomputable">Why <code>noncomputable</code>?<a class="headerlink" href="#why-noncomputable" title="Permanent link">#</a></h2>
+<p>This is subtle! Even though we're dealing with finite types, these definitions are <code>noncomputable</code> because:</p>
+<h3 id="1-real-number-arithmetic">1. Real Number Arithmetic<a class="headerlink" href="#1-real-number-arithmetic" title="Permanent link">#</a></h3>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">noncomputable</span><span class="w"> </span><span class="kd">def</span><span class="w"> </span><span class="n">μK</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="o">(</span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="o">)</span>
+</span></code></pre></div>
+<p>The probability values are in <code>ℝ≥0∞</code> (extended non-negative reals), not rationals:</p>
+<ul>
+<li><code>1/2ⁿ</code> is computed as real division, not rational division</li>
+<li>Real arithmetic is inherently noncomputable in constructive mathematics</li>
+<li>Even though we "know" the answer is rational, the type system uses reals</li>
+</ul>
+<h3 id="2-infinite-summations">2. Infinite Summations<a class="headerlink" href="#2-infinite-summations" title="Permanent link">#</a></h3>
+<p>Even for finite types, PMF uses infinite summation machinery:</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="bp">∑&#39;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">α</span><span class="o">,</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="n">a</span><span class="w">  </span><span class="c1">-- This is an infinite sum operator</span>
+</span></code></pre></div>
+<ul>
+<li>The <code>∑'</code> notation works for both finite and infinite types.</li>
+<li>It's defined using limits and topology.</li>
+<li>Even when <code>α</code> is finite, we use the general machinery.</li>
+</ul>
+<h3 id="3-classical-logic">3. Classical Logic<a class="headerlink" href="#3-classical-logic" title="Permanent link">#</a></h3>
+<p>PMF operations often use classical logic (excluded middle):</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">open</span><span class="w"> </span><span class="n">Classical</span><span class="w">  </span><span class="c1">-- Needed for many probability operations</span>
+</span></code></pre></div>
+<p>This makes things noncomputable in Lean's constructive logic.</p>
+<hr />
+<h2 id="why-can-we-still-prove-18">Why Can We Still Prove <code>= 1/8</code>?<a class="headerlink" href="#why-can-we-still-prove-18" title="Permanent link">#</a></h2>
+<p>Here's the beautiful part: <strong>noncomputable doesn't mean we can't reason about values</strong>!</p>
+<h3 id="proofs-vs-computation">Proofs vs Computation<a class="headerlink" href="#proofs-vs-computation" title="Permanent link">#</a></h3>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">-- We can&#39;t compute this:</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">#eval</span><span class="w"> </span><span class="n">μK</span><span class="w"> </span><span class="o">⟨[</span><span class="n">true</span><span class="o">,</span><span class="w"> </span><span class="n">false</span><span class="o">,</span><span class="w"> </span><span class="n">true</span><span class="o">],</span><span class="w"> </span><span class="kd">by</span><span class="w"> </span><span class="n">decide</span><span class="o">⟩</span><span class="w">  </span><span class="c1">-- Error: noncomputable</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1">-- But we CAN prove this:</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="kd">example</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">μK</span><span class="w"> </span><span class="o">⟨[</span><span class="n">true</span><span class="o">,</span><span class="w"> </span><span class="n">false</span><span class="o">,</span><span class="w"> </span><span class="n">true</span><span class="o">],</span><span class="w"> </span><span class="kd">by</span><span class="w"> </span><span class="n">decide</span><span class="o">⟩</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="mi">1</span><span class="bp">/</span><span class="mi">8</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">by</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="n">simp</span><span class="w"> </span><span class="o">[</span><span class="n">μK</span><span class="o">,</span><span class="w"> </span><span class="n">uniformOfFintype_apply</span><span class="o">]</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="c1">-- Proves that (card (Key 3))⁻¹ = 8⁻¹ = 1/8</span>
+</span></code></pre></div>
+<h3 id="whats-happening">What's Happening?<a class="headerlink" href="#whats-happening" title="Permanent link">#</a></h3>
+<ol>
+<li>
+<p><strong>Definitional unfolding</strong>: Even though <code>μK</code> is noncomputable, we can unfold its definition in proofs.</p>
+</li>
+<li>
+<p><strong>Symbolic reasoning</strong>: We prove <code>1/card(Key 3) = 1/8</code> symbolically, not by computation.</p>
+</li>
+<li>
+<p><strong>Type class inference</strong>: Lean knows <code>Fintype (Key 3)</code> and can reason about cardinalities.</p>
+</li>
+<li>
+<p><strong>Real number lemmas</strong>: Mathlib has lemmas about real arithmetic that we use in proofs.</p>
+</li>
+</ol>
+<hr />
+<h2 id="the-philosophical-point">The Philosophical Point<a class="headerlink" href="#the-philosophical-point" title="Permanent link">#</a></h2>
+<p>This separation between computation and reasoning is fundamental:</p>
+<ul>
+<li><strong>Computation</strong>: Running an algorithm to get a concrete answer.</li>
+<li><strong>Reasoning</strong>: Proving properties about mathematical objects.</li>
+</ul>
+<p>In formal mathematics, we often work with noncomputable objects (like real numbers, infinite sets, choice functions) but can still prove precise theorems about them.</p>
+<h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h3>
+<p>In Lean, probability distributions are functions from outcomes to probabilities,
+bundled with a proof that probabilities sum to 1.</p>
+<p>Even though we work with finite spaces, these are marked <code>noncomputable</code> because they use real number arithmetic and infinite summation machinery. </p>
+<p>This doesn't limit our reasoning---we can still prove exact results like "each key has probability 1/8."</p>
+<p>The distinction between computation and proof is fundamental: we reason symbolically about these mathematical objects without needing to compute their values."</p>
+<h3 id="a-practical-analogy">A Practical Analogy<a class="headerlink" href="#a-practical-analogy" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Computable</strong>: a calculator gives you 0.125 when you type 1 ÷ 8.</li>
+<li><strong>Noncomputable with proofs</strong>: we can show algebraically that 1/8 = 0.125 without calculating</li>
+</ul>
+<p>PMFs in Lean are the second kind---we work with them symbolically and prove properties, rather than computing decimal expansions.</p>
+<!-- internal links -->
+<!-- external links -->
 
 
 
