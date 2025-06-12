@@ -1,14 +1,18 @@
 # OTP in L∃∀N
 
-## Initial Considerations
+## Initial Considerations 🤔
 
-+ What types for messages, keys, ciphertexts? (`Vector Bool n` is a good candidate, or `Fin n → Bool`).
++ What types for messages, keys, ciphertexts? 
+
+    `Vector Bool n` is a good candidate (or `Fin n → Bool`).
+
 + How to represent the XOR operation on these types?
+
 + Which Mathlib probability definitions will you need? (e.g., `PMF`, `Pure`, `Bind` for random variables, `cond` for conditional probability).
 
 ---
 
-## Types
+## Types Aliases  🕵️
 
 ```lean
 def Plaintext (n : Nat) := Vector Bool n
@@ -20,7 +24,7 @@ Using `n : Nat` so definitions are generic for any length.
 
 ---
 
-## XOR Operation
+## XOR Operation ⊕ 
 
 We need a function like
 
@@ -33,26 +37,40 @@ This can be defined using `Vector.map₂ Bool.xor v₁ v₂`.
 ---
 
 
-## Mathlib Probability Definitions
+## Mathlib Definitions 📑
 
-* *Message Distribution (`PMF (Plaintext n)`):* The perfect secrecy definition usually assumes *some* distribution for messages. 
+!!! note "*Message Distribution* `PMF (Plaintext n)`" 
 
-      We might leave this as arbitrary `(μ_M : PMF (Plaintext n))` in our theorem statement.
+    Perfect secrecy definition assumes messages come from *some* probability distribution.
 
-* **Key Distribution (`PMF (Key n)`):** must be uniform, so we need to define what
-`is_uniform (μ_K : PMF (Key n))` means.
+    In our theorem statement, we leave this arbitrary: `μ_M : PMF (Plaintext n)`.
 
-      Typically, for a finite type `α`, a `PMF p` is uniform if `p a = 1 / Fintype.card α` for all `a`.
+!!! note "*Key Distribution* `PMF (Key n)`" 
 
-      Mathlib should have utilities for this (e.g., `PMF.uniformOfFintype`).
+    This is uniform on the key space (a finite set of size 2ⁿ).
+    
+    We need to define what `is_uniform (μ_K : PMF (Key n))` means.
 
-* **Ciphertext Distribution:** derived from message and key distributions using `PMF.bind` or `PMF.map` to represent the encryption process.
+    For a finite type `α`, probability mass function `p` is uniform if `p a = 1 / card α` for all `a : α`.
 
-* **Conditional Probability:** `PMF.cond` will be key to defining $ℙ(M=m \;| \;C=c)$.
+    Mathlib has utilities for this, e.g. `PMF.uniformOfFintype`.
+
+!!! note "*Ciphertext Distribution* `PMF (Ciphertext n)`"
+
+    This is derived from message and key distributions using `PMF.bind` to represent the encryption process.
+
+!!! note "*Conditional Probability* $ℙ(M=m \;| \;C=c)$"
+
+    defined using `PMF.cond`
 
 ---
 
-### **Lean 4 Project Setup** 셋업
+## **Lean Project Setup** 🏗️️
+
+This section describes the steps we took to set up our Lean project.  The resulting
+source code is maintained in our lean4crypto respository at 
+
+<https://github.com/formalverification/lean4crypto>
 
 1.  **Create the Project**.
 
@@ -103,7 +121,7 @@ This can be defined using `Vector.map₂ Bool.xor v₁ v₂`.
 ---
 
 
-### **Initial Definitions** ✍️
+## **Initial Definitions** ✍️
 
 In `OTP/Basic.lean`,
 

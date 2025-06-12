@@ -2,7 +2,7 @@
 
 A theoretically unbreakable ("perfect secrecy") encryption technique with very specific requirements.
 
-**The Key** must be
+**The Key** 🗝️ must be
 
 * truly random
 * at least as long as the plaintext message
@@ -13,14 +13,22 @@ A theoretically unbreakable ("perfect secrecy") encryption technique with very s
 
 ## Encryption
 
-* **plaintext message**. typically converted into a sequence of bits (or numbers)
-* **key**. also a sequence of bits (or numbers) of the same length
-* **encryption**. performed by combining plaintext with key using a simple operation, most commonly **bitwise XOR**.
+✍️ <font color="slate">Plaintext message</font>: typically converted into a sequence of bits (or numbers)
 
-If using numbers (e.g., letters A=0, B=1, ... Z=25), modular addition is used.
+🗝️ <font color="slate">Key</font>: also a sequence of bits (or numbers) of the same length
 
-* `Ciphertext = Plaintext XOR Key` (for bits)
-* `Ciphertext = (Plaintext + Key) mod N` (for numbers modulo N)
+㊙️ <font color="slate">Encryption</font>: performed by combining plaintext with key using a simple operation, commonly **bitwise XOR**.
+
+* `Ciphertext = Plaintext xor Key` (for bits)
+
+    ㊙️ = ✍️ ⊕ 🗝️
+
+
+??? info "using numbers instead of bits"
+
+    If using numbers, e.g., letters A=0, B=1, ... Z=25, then modular addition is used instead:
+
+    `Ciphertext = (Plaintext + Key) mod N`
 
 ---
 
