@@ -5,16 +5,17 @@
 In Lean/Mathlib, a `PMF α` (Probability Mass Function) is fundamentally:
 
 ```lean
-structure PMF (α : Type*) where
-  val : α → ℝ≥0∞                 -- Function from α to extended non-negative reals
-  has_sum_one : ∑' a, val a = 1  -- Proof that probabilities sum to 1
+/-- A probability mass function, or discrete probability measures is a function `α → ℝ≥0∞` such
+  that the values have (infinite) sum `1`. -/
+def PMF.{u} (α : Type u) : Type u :=
+  { f : α → ℝ≥0∞ // HasSum f 1 }
 ```
 
 So a PMF is a **pair**
 
-1. A function assigning probabilities to outcomes
+1. A function assigning probabilities to outcomes.
 
-2. A proof that these probabilities form a valid distribution
+2. A proof that these probabilities form a valid distribution.
 
 ---
 
@@ -22,9 +23,9 @@ So a PMF is a **pair**
 
 ### μM : PMF (Plaintext n)
 
-- **Type**: A function `Plaintext n → ℝ≥0∞` (plus a proof)
-- **Meaning**: For any n-bit message m, `μM m` is the probability that message m is sent
-- **Example**: If all messages equally likely, `μM m = 1/2^n` for all m
+- **Type**: A function `Plaintext n → ℝ≥0∞` (plus a proof).
+- **Meaning**: For any n-bit message m, `μM m` is the probability that message m is sent.
+- **Example**: If all messages equally likely, `μM m = 1/2^n` for all m.
 
 ### μK : PMF (Key n)  
 
@@ -133,19 +134,20 @@ In formal mathematics, we often work with noncomputable objects (like real numbe
 
 ### Summary
 
-In Lean, probability distributions are functions from outcomes to probabilities,
-bundled with a proof that probabilities sum to 1.
++ In Lean, probability distributions are functions from outcomes to probabilities, bundled with a proof that probabilities sum to 1.
 
-Even though we work with finite spaces, these are marked `noncomputable` because they use real number arithmetic and infinite summation machinery. 
++ Even though we work with finite spaces, these are marked `noncomputable` because they use real number arithmetic and infinite summation machinery. 
 
-This doesn't limit our reasoning---we can still prove exact results like "each key has probability 1/8."
++ This doesn't limit our reasoning---we can still prove exact results like "each key has probability 1/8."
 
-The distinction between computation and proof is fundamental: we reason symbolically about these mathematical objects without needing to compute their values."
++ The distinction between computation and proof is fundamental: we reason symbolically about these mathematical objects without needing to compute their values."
 
-### A Practical Analogy
++ Practical Analogy
 
-- **Computable**: a calculator gives you 0.125 when you type 1 ÷ 8.
-- **Noncomputable with proofs**: we can show algebraically that 1/8 = 0.125 without calculating
+     - **Computable**: a calculator gives you 0.125 when you type 1 ÷ 8.
+     - **Noncomputable with proofs**: we can show algebraically that 1/8 = 0.125 without calculating
 
-PMFs in Lean are the second kind---we work with them symbolically and prove properties, rather than computing decimal expansions.
+     PMFs in Lean are the second kind---we work with them symbolically and prove properties, rather than computing decimal expansions.
+
+---
 

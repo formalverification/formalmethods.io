@@ -82,8 +82,10 @@ nav:
     - Mathlib:
       - Vector and List: crypto/Mathlib/vector-and-list.md
       - Probability: crypto/Mathlib/prob.md
-      - Distributions in Lean: crypto/Mathlib/DistributionsInLean.md
-      - bind and pure for distributions: crypto/Mathlib/bind_and_pure.md
+      - Deep Dive:
+          - Distributions in Lean: crypto/Mathlib/DistributionsInLean.md
+          - Why [0, ∞] for Distributions?: crypto/Mathlib/WhyExtendedNNReals.md
+          - Joint Distributions with bind: crypto/Mathlib/bind_and_pure.md
 
   # - Formal Ledger Spec:
   #   - Introduction: cardano-ledger/intro.md
