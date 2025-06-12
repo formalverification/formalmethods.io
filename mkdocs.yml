@@ -74,7 +74,6 @@ nav:
   - FM Crypto:
     - OTP:
       - Basics: crypto/otp/basics.md
-      - Construction: crypto/otp/construction.md
       - Perfect Secrecy: crypto/otp/perfect-secrecy.md
       - OTP in Lean: crypto/otp/otp-lean.md
       - Overview/Demo: crypto/otp/interleaved_demo_presentation.md
