@@ -2069,34 +2069,32 @@ we get a uniform distribution on <span class="arithmatex">\(β\)</span>. <strong
 <hr />
 <h2 id="summary-and-lessons-learned_1">Summary and Lessons Learned<a class="headerlink" href="#summary-and-lessons-learned_1" title="Permanent link">#</a></h2>
 <ol>
-<li><strong>What μC represents</strong></li>
-</ol>
+<li>
+<p><strong>What μC represents</strong></p>
 <p>The distribution of ciphertexts when we:</p>
 <ul>
 <li>sample a message <code>m</code> from <code>μM</code></li>
 <li>sample a key <code>k</code> uniformly from all <code>2ⁿ</code> keys</li>
-<li>
-<p>output <code>encrypt m k</code></p>
+<li>output <code>encrypt m k</code></li>
+</ul>
 </li>
 <li>
 <p><strong>Why it's uniform</strong> </p>
-</li>
-<li>
-<p>for each <code>m</code>, the map <code>k ↦ m ⊕ k</code> is a bijection</p>
-</li>
+<ul>
+<li>for each <code>m</code>, the map <code>k ↦ m ⊕ k</code> is a bijection</li>
 <li>so each ciphertext <code>c</code> appears exactly once for each <code>m</code></li>
-<li>
-<p>since keys are uniform, each <code>c</code> has probability <code>1/2ⁿ</code></p>
+<li>since keys are uniform, each <code>c</code> has probability <code>1/2ⁿ</code></li>
+</ul>
 </li>
 <li>
 <p><strong>Perfect secrecy</strong>: P(C = c | M = m) = 1/2ⁿ = P(C = c) </p>
-</li>
-<li>
-<p>OTP achieves perfect secrecy because xor is a bijection </p>
-</li>
+<ul>
+<li>OTP achieves perfect secrecy because xor is a bijection </li>
 <li>so both conditional and marginal distributions of ciphertexts are uniform</li>
 <li>this is precisely independence between message and ciphertext.</li>
 </ul>
+</li>
+</ol>
 <hr />
 <h2 id="challenges-in-formalization">Challenges in Formalization<a class="headerlink" href="#challenges-in-formalization" title="Permanent link">#</a></h2>
 <h3 id="1-vector-equality">1. <strong>Vector Equality</strong><a class="headerlink" href="#1-vector-equality" title="Permanent link">#</a></h3>
