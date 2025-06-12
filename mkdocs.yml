@@ -93,12 +93,13 @@ nav:
   #   - Alonzo: cardano-ledger/alonzo.md
   #   - Conway: cardano-ledger/conway.md
 
-  - MkDocs doc:
-    - MkDocs: mkdocs.md
-    - Admonitions: mkdocs/admonitions.md
-    - Diagrams: mkdocs/diagrams.md
-    - Code blocks: mkdocs/code-blocks.md
-    - Content tabs: mkdocs/content-tabs.md
+  - Miscellany:
+    - MkDocs doc:
+      - MkDocs: mkdocs.md
+      - Admonitions: mkdocs/admonitions.md
+      - Diagrams: mkdocs/diagrams.md
+      - Code blocks: mkdocs/code-blocks.md
+      - Content tabs: mkdocs/content-tabs.md
     
   - About:
     - Contributors: contributors.md  

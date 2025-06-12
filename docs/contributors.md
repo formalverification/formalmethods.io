@@ -1,39 +1,12 @@
-Nicol&aacute;s Arqueros,
-Alex Byaly,
-Dan Bornside,
-Manuel Chakravarty,
-James Chapman,
-Nicholas Clarke,
-Jared Corduan,
-Duncan Coutts,
-William DeMeo,
-Marko Dimjašević,
-Nicolas Di Prima,
-Ruslan Dudin,
-Matthias G&uuml;demann,
-Sebastien Guillemot,
-Kevin Hammond,
-Vincent Hanquez,
-Alasdair Hill,
-Ru Horlick,
-Michael Hueschen,
-Joosep Jääger,
-Philipp Kant,
-Andre Knispel,
-Ryan Lemmer,
-Christian Lindgren,
-Yun Lu,
-Orestis Melkonian,
-Jordan Millar,
-Jean-Christophe Mincke,
-Jann Mueller,
-Damian Nadales,
-Ulf Norell,
-Michal Peyton Jones,
-Ashish Prajapati,
-Tim Sheard,
-Carlos Tom&eacute; Corti&ntilde;as,
-Polina Vinogradova,
-Andrew Westberg.
+William DeMeo
 
-If you've contributed to the ledger but we've failed to list you here, please send us a message or [post an issue](https://github.com/formalverification/formalmethods.io/issues/new).
+---
+
+If you have contributed to the contents of this site and you're not mention
+here, please contact [williamdemeo at gmail][] or create a [new issue][] 
+in the [formalmethods.io GitHub repository][].
+
+
+[new issue]: https://github.com/formalverification/formalmethods.io/issues/new
+[formalmethods.io GitHub repository]: https://github.com/formalverification/formalmethods.io
+[williamdemeo at gmail]: mailto:williamdemeo@gmail.com
