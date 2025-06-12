@@ -14,7 +14,7 @@
         <link rel="prev" href="../prob/">
       
       
-        <link rel="next" href="../bind_and_pure/">
+        <link rel="next" href="../WhyExtendedNNReals/">
       
       
       <link rel="icon" href="../../../img/formal_methods_favicon.svg">
@@ -523,6 +523,44 @@
   
   
   
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Deep Dive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Deep Dive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
@@ -732,15 +770,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#a-practical-analogy" class="md-nav__link">
-    <span class="md-ellipsis">
-      A Practical Analogy
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -762,16 +791,46 @@
   
   
     <li class="md-nav__item">
-      <a href="../bind_and_pure/" class="md-nav__link">
+      <a href="../WhyExtendedNNReals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    bind and pure for distributions
+    Why [0, ∞] for Distributions?
     
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bind_and_pure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Joint Distributions with bind
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1265,15 +1324,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#a-practical-analogy" class="md-nav__link">
-    <span class="md-ellipsis">
-      A Practical Analogy
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1298,26 +1348,27 @@
 <h1 id="deep-dive-how-lean-represents-probability-distributions">Deep Dive: How Lean Represents Probability Distributions<a class="headerlink" href="#deep-dive-how-lean-represents-probability-distributions" title="Permanent link">#</a></h1>
 <h2 id="what-is-a-pmf-really">What is a PMF Really?<a class="headerlink" href="#what-is-a-pmf-really" title="Permanent link">#</a></h2>
 <p>In Lean/Mathlib, a <code>PMF α</code> (Probability Mass Function) is fundamentally:</p>
-<div class="language-lean highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">structure</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="o">(</span><span class="n">α</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">Type</span><span class="bp">*</span><span class="o">)</span><span class="w"> </span><span class="n">where</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="n">val</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">α</span><span class="w"> </span><span class="bp">→</span><span class="w"> </span><span class="n">ℝ</span><span class="bp">≥</span><span class="mi">0</span><span class="bp">∞</span><span class="w">                 </span><span class="c1">-- Function from α to extended non-negative reals</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="n">has_sum_one</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="bp">∑&#39;</span><span class="w"> </span><span class="n">a</span><span class="o">,</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="c1">-- Proof that probabilities sum to 1</span>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="sd">/-- A probability mass function, or discrete probability measures is a function `α → ℝ≥0∞` such</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="sd">  that the values have (infinite) sum `1`. -/</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kd">def</span><span class="w"> </span><span class="n">PMF</span><span class="bp">.</span><span class="o">{</span><span class="n">u</span><span class="o">}</span><span class="w"> </span><span class="o">(</span><span class="n">α</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">Type</span><span class="w"> </span><span class="n">u</span><span class="o">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">Type</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">:=</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="o">{</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">α</span><span class="w"> </span><span class="bp">→</span><span class="w"> </span><span class="n">ℝ</span><span class="bp">≥</span><span class="mi">0</span><span class="bp">∞</span><span class="w"> </span><span class="bp">//</span><span class="w"> </span><span class="n">HasSum</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">}</span>
 </span></code></pre></div>
 <p>So a PMF is a <strong>pair</strong></p>
 <ol>
 <li>
-<p>A function assigning probabilities to outcomes</p>
+<p>A function assigning probabilities to outcomes.</p>
 </li>
 <li>
-<p>A proof that these probabilities form a valid distribution</p>
+<p>A proof that these probabilities form a valid distribution.</p>
 </li>
 </ol>
 <hr />
 <h2 id="our-distributions-as-mathematical-objects">Our Distributions as Mathematical Objects<a class="headerlink" href="#our-distributions-as-mathematical-objects" title="Permanent link">#</a></h2>
 <h3 id="m-pmf-plaintext-n">μM : PMF (Plaintext n)<a class="headerlink" href="#m-pmf-plaintext-n" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>Type</strong>: A function <code>Plaintext n → ℝ≥0∞</code> (plus a proof)</li>
-<li><strong>Meaning</strong>: For any n-bit message m, <code>μM m</code> is the probability that message m is sent</li>
-<li><strong>Example</strong>: If all messages equally likely, <code>μM m = 1/2^n</code> for all m</li>
+<li><strong>Type</strong>: A function <code>Plaintext n → ℝ≥0∞</code> (plus a proof).</li>
+<li><strong>Meaning</strong>: For any n-bit message m, <code>μM m</code> is the probability that message m is sent.</li>
+<li><strong>Example</strong>: If all messages equally likely, <code>μM m = 1/2^n</code> for all m.</li>
 </ul>
 <h3 id="k-pmf-key-n">μK : PMF (Key n)<a class="headerlink" href="#k-pmf-key-n" title="Permanent link">#</a></h3>
 <ul>
@@ -1405,17 +1456,29 @@
 </ul>
 <p>In formal mathematics, we often work with noncomputable objects (like real numbers, infinite sets, choice functions) but can still prove precise theorems about them.</p>
 <h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h3>
-<p>In Lean, probability distributions are functions from outcomes to probabilities,
-bundled with a proof that probabilities sum to 1.</p>
+<ul>
+<li>
+<p>In Lean, probability distributions are functions from outcomes to probabilities, bundled with a proof that probabilities sum to 1.</p>
+</li>
+<li>
 <p>Even though we work with finite spaces, these are marked <code>noncomputable</code> because they use real number arithmetic and infinite summation machinery. </p>
+</li>
+<li>
 <p>This doesn't limit our reasoning---we can still prove exact results like "each key has probability 1/8."</p>
+</li>
+<li>
 <p>The distinction between computation and proof is fundamental: we reason symbolically about these mathematical objects without needing to compute their values."</p>
-<h3 id="a-practical-analogy">A Practical Analogy<a class="headerlink" href="#a-practical-analogy" title="Permanent link">#</a></h3>
+</li>
+<li>
+<p>Practical Analogy</p>
 <ul>
 <li><strong>Computable</strong>: a calculator gives you 0.125 when you type 1 ÷ 8.</li>
 <li><strong>Noncomputable with proofs</strong>: we can show algebraically that 1/8 = 0.125 without calculating</li>
 </ul>
 <p>PMFs in Lean are the second kind---we work with them symbolically and prove properties, rather than computing decimal expansions.</p>
+</li>
+</ul>
+<hr />
 <!-- internal links -->
 <!-- external links -->
 
@@ -1464,13 +1527,13 @@ bundled with a proof that probabilities sum to 1.</p>
         
         
           
-          <a href="../bind_and_pure/" class="md-footer__link md-footer__link--next" aria-label="Next: bind and pure for distributions">
+          <a href="../WhyExtendedNNReals/" class="md-footer__link md-footer__link--next" aria-label="Next: Why [0, ∞] for Distributions?">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                bind and pure for distributions
+                Why [0, ∞] for Distributions?
               </div>
             </div>
             <div class="md-footer__button md-icon">
