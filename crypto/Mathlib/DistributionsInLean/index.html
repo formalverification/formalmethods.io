@@ -1348,7 +1348,7 @@
 <h1 id="deep-dive-how-lean-represents-probability-distributions">Deep Dive: How Lean Represents Probability Distributions<a class="headerlink" href="#deep-dive-how-lean-represents-probability-distributions" title="Permanent link">#</a></h1>
 <h2 id="what-is-a-pmf-really">What is a PMF Really?<a class="headerlink" href="#what-is-a-pmf-really" title="Permanent link">#</a></h2>
 <p>In Lean/Mathlib, a <code>PMF α</code> (Probability Mass Function) is fundamentally:</p>
-<div class="language-lean highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="sd">/-- A probability mass function, or discrete probability measures is </span>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="sd">/-- A probability mass function, or discrete probability measures is</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="sd">  a function `α → ℝ≥0∞` such that the values have (infinite) sum `1`. -/</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kd">def</span><span class="w"> </span><span class="n">PMF</span><span class="bp">.</span><span class="o">{</span><span class="n">u</span><span class="o">}</span><span class="w"> </span><span class="o">(</span><span class="n">α</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">Type</span><span class="w"> </span><span class="n">u</span><span class="o">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">Type</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">:=</span>
@@ -1385,7 +1385,7 @@
 </ul>
 <h3 id="c-pmf-ciphertext-n">μC : PMF (Ciphertext n)<a class="headerlink" href="#c-pmf-ciphertext-n" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>Type</strong>: A function <code>Ciphertext n → ℝ≥0∞</code>  </li>
+<li><strong>Type</strong>: A function <code>Ciphertext n → ℝ≥0∞</code></li>
 <li><strong>Meaning</strong>: For any n-bit ciphertext c, <code>μC c</code> is probability of observing c</li>
 <li><strong>Computed</strong>: By summing over all (m,k) pairs that produce c</li>
 </ul>
@@ -1462,7 +1462,7 @@
 <p>In Lean, probability distributions are functions from outcomes to probabilities, bundled with a proof that probabilities sum to 1.</p>
 </li>
 <li>
-<p>Even though we work with finite spaces, these are marked <code>noncomputable</code> because they use real number arithmetic and infinite summation machinery. </p>
+<p>Even though we work with finite spaces, these are marked <code>noncomputable</code> because they use real number arithmetic and infinite summation machinery.</p>
 </li>
 <li>
 <p>This doesn't limit our reasoning---we can still prove exact results like "each key has probability 1/8."</p>

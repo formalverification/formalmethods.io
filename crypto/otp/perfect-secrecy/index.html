@@ -1076,9 +1076,9 @@
 </details>
 <div class="admonition note">
 <p class="admonition-title">An important property of _⊕_</p>
-<p><span class="arithmatex">\(a ⊕ b = c ⇔ a = b ⊕ c\)</span>, for all <span class="arithmatex">\(a\)</span>, <span class="arithmatex">\(b\)</span>, <span class="arithmatex">\(c\)</span>. </p>
+<p><span class="arithmatex">\(a ⊕ b = c ⇔ a = b ⊕ c\)</span>, for all <span class="arithmatex">\(a\)</span>, <span class="arithmatex">\(b\)</span>, <span class="arithmatex">\(c\)</span>.</p>
 </div>
-<p>Fix an integer <span class="arithmatex">\(n &gt; 0\)</span>. </p>
+<p>Fix an integer <span class="arithmatex">\(n &gt; 0\)</span>.</p>
 <p>Let <span class="arithmatex">\(ℳ\)</span> be the <em>message space</em> , <span class="arithmatex">\(𝒦\)</span> the <em>key space</em>, and <span class="arithmatex">\(𝒞\)</span> the <em>ciphertext space</em>.</p>
 <p>Assume <span class="arithmatex">\(ℳ\)</span>, <span class="arithmatex">\(𝒦\)</span>, <span class="arithmatex">\(𝒞\)</span> all equal <span class="arithmatex">\(\{0, 1\}^n\)</span>.</p>
 <ul>
@@ -1112,7 +1112,7 @@
 \[ℙ (C = c \; | \; M = m) = ℙ (\mathrm{Enc}_k (m) = c) = ℙ(k ⊕ m = c)= ℙ(k = m ⊕ c)= 2^{-n},\]</p>
 <p>since <span class="arithmatex">\(k\)</span> is chosen from a uniform distribution over the set <span class="arithmatex">\(𝒦\)</span> of <span class="arithmatex">\(n\)</span>-bit strings.</p>
 <p>For <span class="arithmatex">\(c ∈ 𝒞\)</span>,</p>
-<p>\[ℙ (C = c) = ∑_{m ∈ ℳ} ℙ (C = c \; | \; M = m) · ℙ(M = m) = 2^{-n} ∑_{m ∈ ℳ} ℙ(M = m) = 2^{-n}.\] </p>
+<p>\[ℙ (C = c) = ∑_{m ∈ ℳ} ℙ (C = c \; | \; M = m) · ℙ(M = m) = 2^{-n} ∑_{m ∈ ℳ} ℙ(M = m) = 2^{-n}.\]</p>
 <p>Finally, by Bayes' Theorem,</p>
 <div class="arithmatex">\[\begin{align*}
 ℙ(M = m \; | \; C = c) &amp;= \frac{ℙ(C = c \; | \; M = m) · ℙ(M = m)}{ℙ(C = c)}\\

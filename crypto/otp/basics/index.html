@@ -1163,7 +1163,7 @@
 </ul>
 <hr />
 <h2 id="perfect-secrecy">Perfect Secrecy<a class="headerlink" href="#perfect-secrecy" title="Permanent link">#</a></h2>
-<p>The core theoretical property of OTP is </p>
+<p>The core theoretical property of OTP is</p>
 <div class="admonition info">
 <p>The ciphertext provides <em>no information</em> (other than max length)
 about the plaintext content.</p>
@@ -1204,7 +1204,7 @@ providing a concrete example of verifying a security property.</p>
    well-defined or easy to define in Lean. Mathlib has <code>Bool.xor</code> and <code>ZMod N</code> for modular arithmetic.</p>
 </li>
 <li>
-<p><strong>Clear Definitions:</strong> We can define types for plaintexts, keys, and ciphertexts 
+<p><strong>Clear Definitions:</strong> We can define types for plaintexts, keys, and ciphertexts
    (e.g., <code>List Bool</code>, <code>Vector Bool n</code>, or functions <code>Fin n → Bool</code>).</p>
 </li>
 <li>
@@ -1214,18 +1214,18 @@ providing a concrete example of verifying a security property.</p>
 <li>
 <p><strong>Mathlib Support</strong>. Mathlib has a growing library for probability theory on
    finite types (<code>Mathlib.Probability.ProbabilityMassFunction</code>), which is essential
-   for proving perfect secrecy. We don't need to build from scratch! </p>
+   for proving perfect secrecy. We don't need to build from scratch!</p>
 </li>
 </ul>
 <hr />
 <h2 id="what-to-formalize">What to Formalize<a class="headerlink" href="#what-to-formalize" title="Permanent link">#</a></h2>
 <ol>
 <li>
-<p><strong>Define message space, key space, ciphertext space</strong>. 
+<p><strong>Define message space, key space, ciphertext space</strong>.
     For simplicity, use <code>Vector Bool n</code> (vectors of Booleans of fixed length <code>n</code>).</p>
 </li>
 <li>
-<p><strong>Define encrypt and decrypt functions</strong>. 
+<p><strong>Define encrypt and decrypt functions</strong>.
     (e.g., element-wise XOR for <code>Vector Bool n</code>).</p>
 </li>
 <li>

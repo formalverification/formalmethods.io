@@ -1065,7 +1065,7 @@
 <h2 id="basic-definitions-of-probability-theory">🎲 Basic Definitions of Probability Theory<a class="headerlink" href="#basic-definitions-of-probability-theory" title="Permanent link">#</a></h2>
 <ul>
 <li>
-<p>Ω denotes an <strong>outcome space</strong> </p>
+<p>Ω denotes an <strong>outcome space</strong></p>
 </li>
 <li>
 <p>ω ∈ Ω denotes an <strong>outcome</strong> (e.g., of an experiment, trial, etc.)</p>
@@ -1077,8 +1077,8 @@
 <p>A <strong>probability mass function</strong> (pmf), or <strong>probability measure</strong>, on an outcome space is
    a function ℙ : Ω → ℝ such that, for all events 𝐸₀, 𝐸₁, …</p>
 </li>
-<li>ℙ ∅ = 0 and ℙ Ω = 1 </li>
-<li>0 ≤ ℙ 𝐸ᵢ ≤ 1 </li>
+<li>ℙ ∅ = 0 and ℙ Ω = 1</li>
+<li>0 ≤ ℙ 𝐸ᵢ ≤ 1</li>
 <li>𝐸ᵢ ⊆ 𝐸ⱼ → ℙ 𝐸ᵢ ≤ ℙ 𝐸ⱼ (monotone)</li>
 <li>ℙ(⋃ 𝐸ᵢ) ≤ ∑ ℙ 𝐸ᵢ (subadditive)</li>
 </ul>
@@ -1104,14 +1104,14 @@ set being 0, etc.) can be derived from this.</p>
 <p>🔑️ <strong>Key Concepts</strong></p>
 <ul>
 <li>
-<p><strong><code>PMF α</code></strong> represents a <strong>probability mass function</strong> (pmf) over a type <code>α</code>;<br />
+<p><strong><code>PMF α</code></strong> represents a <strong>probability mass function</strong> (pmf) over a type <code>α</code>;
    it's a function <code>α → NNReal</code> (non-negative reals) where the sum over all <code>a : α</code> is 1.</p>
 </li>
 <li>
 <p><strong><code>PMF.pure (a : α)</code></strong> is a pmf with all mass at <code>a</code> (prob 1 for <code>a</code>, 0 otherwise).</p>
 </li>
 <li>
-<p><strong><code>PMF.bind (p : PMF α) (f : α → PMF β)</code></strong> is used for creating dependent r.v.s;<br />
+<p><strong><code>PMF.bind (p : PMF α) (f : α → PMF β)</code></strong> is used for creating dependent r.v.s;
    given a r.v. <code>p</code> and function <code>f</code> mapping outcomes of <code>p</code> to new r.v.s, <code>bind</code> gives the resulting distribution on <code>β</code>.</p>
 </li>
 <li>
@@ -1140,7 +1140,7 @@ set being 0, etc.) can be derived from this.</p>
 <ul>
 <li><a href="https://github.com/leanprover-community/mathlib4/blob/4459088658417ad4ec82b194da3184cbe638b7e0/Mathlib/Probability/ConditionalExpectation.lean"><code>Probability/ConditionalExpectation.lean</code></a> conditional expectation</li>
 <li><a href="https://github.com/leanprover-community/mathlib4/blob/4459088658417ad4ec82b194da3184cbe638b7e0/Mathlib/Probability/CondVar.lean"><code>Probability/CondVar.lean</code></a> conditional variance</li>
-<li><a href="https://github.com/leanprover-community/mathlib4/blob/4459088658417ad4ec82b194da3184cbe638b7e0/Mathlib/Probability/Independence/Conditional.lean"><code>Probability/Independence/Conditional.lean</code></a> conditional independence </li>
+<li><a href="https://github.com/leanprover-community/mathlib4/blob/4459088658417ad4ec82b194da3184cbe638b7e0/Mathlib/Probability/Independence/Conditional.lean"><code>Probability/Independence/Conditional.lean</code></a> conditional independence</li>
 </ul>
 <!-- [Probability/ConditionalProbability.lean]: https://github.com/leanprover-community/mathlib4/blob/master/Mathlib/Probability/ConditionalProbability.lean -->
 <!-- [Probability/Independence/Conditional.lean]: https://github.com/leanprover-community/mathlib4/blob/master/Mathlib/Probability/Independence/Conditional.lean -->
