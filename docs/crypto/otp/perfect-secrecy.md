@@ -2,7 +2,7 @@
 
 ## Construction
 
-!!! info "Definition of \_⊕\_" 
+!!! info "Definition of \_⊕\_"
 
     \_⊕\_ is bitwise XOR: $\quad 0 ⊕ 0 = 0, \quad 0 ⊕ 1 = 1, \quad 1 ⊕ 0 = 1, \quad 1 ⊕ 1 = 0$.
 
@@ -18,10 +18,10 @@
 
 !!! note "An important property of \_⊕\_"
 
-    $a ⊕ b = c ⇔ a = b ⊕ c$, for all $a$, $b$, $c$. 
+    $a ⊕ b = c ⇔ a = b ⊕ c$, for all $a$, $b$, $c$.
 
 
-Fix an integer $n > 0$. 
+Fix an integer $n > 0$.
 
 Let $ℳ$ be the *message space* , $𝒦$ the *key space*, and $𝒞$ the *ciphertext space*.
 
@@ -49,7 +49,7 @@ Assume $ℳ$, $𝒦$, $𝒞$ all equal $\{0, 1\}^n$.
         If $m ∈ ℳ$, $c ∈ 𝒞$ and $ℙ(C = c) > 0$, then $ℙ (M = m \; | \; C = c) = ℙ(M = m)$.
 
     We first show what amounts to "$C$ is uniform if $K$ is uniform, regardless of $M$."
-    
+
     Compute $ℙ(C = c \; | \; M = m )$ for arbitrary $c ∈ 𝒞$ and $m ∈ ℳ$:
     \\[ℙ (C = c \; | \; M = m) = ℙ (\mathrm{Enc}_k (m) = c) = ℙ(k ⊕ m = c)= ℙ(k = m ⊕ c)= 2^{-n},\\]
 
@@ -57,7 +57,7 @@ Assume $ℳ$, $𝒦$, $𝒞$ all equal $\{0, 1\}^n$.
 
     For $c ∈ 𝒞$,
 
-    \\[ℙ (C = c) = ∑\_{m ∈ ℳ} ℙ (C = c \; | \; M = m) · ℙ(M = m) = 2^{-n} ∑\_{m ∈ ℳ} ℙ(M = m) = 2^{-n}.\\] 
+    \\[ℙ (C = c) = ∑\_{m ∈ ℳ} ℙ (C = c \; | \; M = m) · ℙ(M = m) = 2^{-n} ∑\_{m ∈ ℳ} ℙ(M = m) = 2^{-n}.\\]
 
     Finally, by Bayes' Theorem,
 

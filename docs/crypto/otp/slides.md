@@ -6,9 +6,9 @@
 
 ## Overview
 
-- **Goal**: Formalize basic discrete probability in Lean 4
-- **Case Study**: One-Time Pad (OTP) and Perfect Secrecy
-- **Key Concepts**:
+- 🥅 **Goal**: Formalize basic discrete probability in Lean 4
+- 🗄️ **Case Study**: One-Time Pad (OTP) and Perfect Secrecy
+- 🔑️ **Key Concepts**:
   - Probability Mass Functions (PMFs)
   - Independence and joint distributions
   - Conditional probability
@@ -21,7 +21,7 @@
 ### Informal Definition
 
 - **Message space**: $M = \{0,1\}^n$
-- **Key space**: $K = \{0,1\}^n$  
+- **Key space**: $K = \{0,1\}^n$
 - **Ciphertext space**: $C = \{0,1\}^n$
 - **Encryption**: $\text{Enc}(m, k) = m \oplus k$
 - **Decryption**: $\text{Dec}(c, k) = c \oplus k$
@@ -37,11 +37,11 @@ $$\text{Dec}(\text{Enc}(m, k), k) = (m \oplus k) \oplus k = m$$
 import Mathlib.Data.Vector.Basic
 
 def Plaintext  (n : Nat) := List.Vector Bool n
-def Key        (n : Nat) := List.Vector Bool n  
+def Key        (n : Nat) := List.Vector Bool n
 def Ciphertext (n : Nat) := List.Vector Bool n
 
 -- Element-wise XOR
-def vec_xor {n : Nat} (v₁ v₂ : List.Vector Bool n) := 
+def vec_xor {n : Nat} (v₁ v₂ : List.Vector Bool n) :=
   map₂ xor v₁ v₂
 
 def encrypt {n : Nat} (m : Plaintext n) (k : Key n) : Ciphertext n :=
@@ -81,7 +81,7 @@ import Mathlib.Probability.ProbabilityMassFunction.Constructions
 ```lean
 noncomputable def μK {n : ℕ} : PMF (Key n) :=
   uniformOfFintype (Key n)
-  
+
 -- For any key k: μK k = 1 / 2^n
 ```
 
@@ -91,18 +91,18 @@ noncomputable def μK {n : ℕ} : PMF (Key n) :=
 
 ### Independent product of PMFs
 ```lean
-noncomputable def μMK {n : ℕ} (μM : PMF (Plaintext n)) : 
+noncomputable def μMK {n : ℕ} (μM : PMF (Plaintext n)) :
   PMF (Plaintext n × Key n) :=
   PMF.bind μM (fun m => PMF.map (fun k => (m, k)) μK)
-  
+
 -- P(M = m, K = k) = P(M = m) · P(K = k)
 ```
 
 ### Ciphertext distribution
 ```lean
-noncomputable def μC {n : Nat} (μM : PMF (Plaintext n)) : 
+noncomputable def μC {n : Nat} (μM : PMF (Plaintext n)) :
   PMF (Ciphertext n) :=
-  PMF.bind (μMK μM) (fun mk => 
+  PMF.bind (μMK μM) (fun mk =>
     PMF.pure (encrypt mk.1 mk.2))
 ```
 
@@ -113,7 +113,7 @@ noncomputable def μC {n : Nat} (μM : PMF (Plaintext n)) :
 ```lean
 def xorEquiv {n : ℕ} (m : Plaintext n) : Key n ≃ Ciphertext n where
   toFun   := encrypt m     -- k ↦ m ⊕ k
-  invFun  := vec_xor m     -- c ↦ m ⊕ c  
+  invFun  := vec_xor m     -- c ↦ m ⊕ c
   left_inv := by           -- m ⊕ (m ⊕ k) = k
     intro k
     apply ext
@@ -132,14 +132,14 @@ For fixed $m$, the map $k \mapsto m \oplus k$ is a bijection!
 
 ```lean
 lemma map_uniformOfFintype_equiv
-    {α β : Type*} [Fintype α] [Fintype β] [DecidableEq β] 
+    {α β : Type*} [Fintype α] [Fintype β] [DecidableEq β]
     [Nonempty α] [Nonempty β] (e : α ≃ β) :
     PMF.map e (uniformOfFintype α) = uniformOfFintype β
 ```
 
 ### Intuition
 - If we have a uniform distribution on $\alpha$
-- And apply a bijection $e : \alpha \to \beta$  
+- And apply a bijection $e : \alpha \to \beta$
 - We get a uniform distribution on $\beta$
 - Crucial: bijections preserve cardinality!
 
@@ -154,7 +154,7 @@ $$P(M = m \; | \; C = c) = P(M = m)$$
 
 ### Lean 4 Version
 ```lean
-theorem perfect_secrecy {n : Nat} (μM : PMF (Plaintext n)) 
+theorem perfect_secrecy {n : Nat} (μM : PMF (Plaintext n))
   (m₀ : Plaintext n) (c₀ : Ciphertext n) :
   (μC_M m₀) c₀ * μM m₀ / (μC μM) c₀ = μM m₀
 ```
@@ -189,7 +189,7 @@ Where:
 ## Step 1: Conditional Distribution is Uniform
 
 ```lean
-lemma C_given_M_eq_inv_card_key {n : ℕ} 
+lemma C_given_M_eq_inv_card_key {n : ℕ}
   (m : Plaintext n) (c : Ciphertext n) :
   (μC_M m) c = 1 / card (Key n) := by
   -- μC_M m = map (encrypt m) μK
@@ -206,7 +206,7 @@ lemma C_given_M_eq_inv_card_key {n : ℕ}
 ## Step 2: Marginal Distribution is Uniform
 
 ```lean
-lemma prob_C_uniform_ennreal {n : Nat} (μM : PMF (Plaintext n)) 
+lemma prob_C_uniform_ennreal {n : Nat} (μM : PMF (Plaintext n))
   (c : Ciphertext n) :
   (μC μM) c = (card (Key n) : ENNReal)⁻¹
 ```
@@ -249,7 +249,7 @@ x * y / x = y
 - Can transform complex sums using bijections
 
 ### 3. **PMF Library is Well-Designed**
-- `bind` for dependent distributions  
+- `bind` for dependent distributions
 - `map` for transforming distributions
 - Uniform distributions built-in
 
@@ -283,8 +283,8 @@ example {n : Nat} (m : Plaintext n) (k : Key n) :
   encrypt m k = encrypt m k := by
   -- Lean's proof state shows current goal
   rfl  -- reflexivity
-  
-example {n : Nat} (m : Plaintext n) (k₁ k₂ : Key n) 
+
+example {n : Nat} (m : Plaintext n) (k₁ k₂ : Key n)
   (h : encrypt m k₁ = encrypt m k₂) : k₁ = k₂ := by
   -- Use key uniqueness
   have h_unique := key_uniqueness m k₁ (encrypt m k₂)

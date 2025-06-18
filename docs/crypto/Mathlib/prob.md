@@ -2,16 +2,16 @@
 
 ## 🎲 Basic Definitions of Probability Theory
 
-+  Ω denotes an **outcome space** 
++  Ω denotes an **outcome space**
 
 +  ω ∈ Ω denotes an **outcome** (e.g., of an experiment, trial, etc.)
-   
+
 +  An **event** 𝐸 is a set of outcomes: 𝐸 ⊆ Ω
 
 +  A **probability mass function** (pmf), or **probability measure**, on an outcome space is
    a function ℙ : Ω → ℝ such that, for all events 𝐸₀, 𝐸₁, …
-   + ℙ ∅ = 0 and ℙ Ω = 1 
-   + 0 ≤ ℙ 𝐸ᵢ ≤ 1 
+   + ℙ ∅ = 0 and ℙ Ω = 1
+   + 0 ≤ ℙ 𝐸ᵢ ≤ 1
    + 𝐸ᵢ ⊆ 𝐸ⱼ → ℙ 𝐸ᵢ ≤ ℙ 𝐸ⱼ (monotone)
    + ℙ(⋃ 𝐸ᵢ) ≤ ∑ ℙ 𝐸ᵢ (subadditive)
 
@@ -37,12 +37,12 @@
 
 🔑️ **Key Concepts**
 
-+  **`PMF α`** represents a **probability mass function** (pmf) over a type `α`;  
++  **`PMF α`** represents a **probability mass function** (pmf) over a type `α`;
    it's a function `α → NNReal` (non-negative reals) where the sum over all `a : α` is 1.
-      
+
 +  **`PMF.pure (a : α)`** is a pmf with all mass at `a` (prob 1 for `a`, 0 otherwise).
 
-+  **`PMF.bind (p : PMF α) (f : α → PMF β)`** is used for creating dependent r.v.s;  
++  **`PMF.bind (p : PMF α) (f : α → PMF β)`** is used for creating dependent r.v.s;
    given a r.v. `p` and function `f` mapping outcomes of `p` to new r.v.s, `bind` gives the resulting distribution on `β`.
 
 +  `PMF.map (f : α → β) (p : PMF α)`: If we apply a function `f` to the outcomes
@@ -57,7 +57,7 @@
  `Probability.ConditionalProbability`
 
 +  [`cond`][cond] is the **conditional probability measure** of measure `μ` on set `s`
- 
+
 +  it is `μ` restricted to `s` and scaled by the inverse of `μ s` (to make it a
    probability measure): `(μ s)⁻¹ • μ.restrict s`
 
@@ -69,7 +69,7 @@
 
 + [`Probability/ConditionalExpectation.lean`][Probability/ConditionalExpectation.lean] conditional expectation
 + [`Probability/CondVar.lean`][Probability/CondVar.lean] conditional variance
-+ [`Probability/Independence/Conditional.lean`][Probability/Independence/Conditional.lean] conditional independence 
++ [`Probability/Independence/Conditional.lean`][Probability/Independence/Conditional.lean] conditional independence
 
 
 [Probability/ConditionalExpectation.lean]: https://github.com/leanprover-community/mathlib4/blob/4459088658417ad4ec82b194da3184cbe638b7e0/Mathlib/Probability/ConditionalExpectation.lean

@@ -98,7 +98,7 @@ structure PMF (α : Type*) where
 
 +  In a perfect world, we might use a `Probability` type that restricts inhabitants
    to [0, 1].
-   
+
 +  Mathlib prioritizes compatibility with the broader mathematical ecosystem over type safety here.
 
 ### Honest Bottom Line

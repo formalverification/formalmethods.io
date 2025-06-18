@@ -27,7 +27,7 @@
 ### Informal Definition
 
 - **Message space**: $M = \{0,1\}^n$
-- **Key space**: $K = \{0,1\}^n$  
+- **Key space**: $K = \{0,1\}^n$
 - **Ciphertext space**: $C = \{0,1\}^n$
 - **Encryption**: $\text{Enc}(m, k) = m \oplus k$
 - **Decryption**: $\text{Dec}(c, k) = c \oplus k$
@@ -43,11 +43,11 @@ $$\text{Dec}(\text{Enc}(m, k), k) = (m \oplus k) \oplus k = m$$
 import Mathlib.Data.Vector.Basic
 
 def Plaintext  (n : Nat) := List.Vector Bool n
-def Key        (n : Nat) := List.Vector Bool n  
+def Key        (n : Nat) := List.Vector Bool n
 def Ciphertext (n : Nat) := List.Vector Bool n
 
 -- Element-wise xor
-def vec_xor {n : Nat} (v₁ v₂ : List.Vector Bool n) := 
+def vec_xor {n : Nat} (v₁ v₂ : List.Vector Bool n) :=
   map₂ xor v₁ v₂
 
 def encrypt {n : Nat} (m : Plaintext n) (k : Key n) : Ciphertext n :=
@@ -124,7 +124,7 @@ Key insight: Reduce vector equality to element-wise boolean equality
     ```
 
     !!! note "Teaching moment"
-    
+
         Lean can automatically find these properties, but stepping through shows us exactly why decryption works!
 
 ---
@@ -143,7 +143,7 @@ import Mathlib.Probability.ProbabilityMassFunction.Constructions
 ```lean
 noncomputable def μK {n : ℕ} : PMF (Key n) :=
   uniformOfFintype (Key n)
-  
+
 -- For any key k: μK k = 1 / 2^n
 ```
 
@@ -153,18 +153,18 @@ noncomputable def μK {n : ℕ} : PMF (Key n) :=
 
 ### Independent product of PMFs
 ```lean
-noncomputable def μMK {n : ℕ} (μM : PMF (Plaintext n)) : 
+noncomputable def μMK {n : ℕ} (μM : PMF (Plaintext n)) :
   PMF (Plaintext n × Key n) :=
   PMF.bind μM (fun m => PMF.map (fun k => (m, k)) μK)
-  
+
 -- P(M = m, K = k) = P(M = m) · P(K = k)
 ```
 
 ### Ciphertext distribution
 ```lean
-noncomputable def μC {n : Nat} (μM : PMF (Plaintext n)) : 
+noncomputable def μC {n : Nat} (μM : PMF (Plaintext n)) :
   PMF (Ciphertext n) :=
-  PMF.bind (μMK μM) (fun mk => 
+  PMF.bind (μMK μM) (fun mk =>
     PMF.pure (encrypt mk.1 mk.2))
 ```
 
@@ -177,7 +177,7 @@ noncomputable def μC {n : Nat} (μM : PMF (Plaintext n)) :
     ```lean
     def xorEquiv {n : ℕ} (m : Plaintext n) : Key n ≃ Ciphertext n where
       toFun   := encrypt m     -- k ↦ m ⊕ k
-      invFun  := vec_xor m     -- c ↦ m ⊕ c  
+      invFun  := vec_xor m     -- c ↦ m ⊕ c
       left_inv := by           -- m ⊕ (m ⊕ k) = k
         intro k
         apply ext
@@ -188,8 +188,6 @@ noncomputable def μC {n : Nat} (μM : PMF (Plaintext n)) :
         simp [encrypt, vec_xor, get_map₂, xor_aab_eq_b]
     ```
 
-    
-
 ??? note "Let me demonstrate why this bijection property is so important..."
 
     ```lean
@@ -198,7 +196,7 @@ noncomputable def μC {n : Nat} (μM : PMF (Plaintext n)) :
       open OTP
 
       -- Show that encryption with a fixed message is injective
-      example {n : Nat} (m : Plaintext n) (k₁ k₂ : Key n) 
+      example {n : Nat} (m : Plaintext n) (k₁ k₂ : Key n)
         (h : encrypt m k₁ = encrypt m k₂) : k₁ = k₂ := by
         -- Use the bijection property
         have bij := xorEquiv m
@@ -212,14 +210,14 @@ noncomputable def μC {n : Nat} (μM : PMF (Plaintext n)) :
         constructor
         · -- Existence
           simp [encrypt, vec_xor, xor_aab_eq_b]
-        · -- Uniqueness  
+        · -- Uniqueness
           intro k hk
           exact (key_uniqueness m k c).mp hk
     end BijectionDemo
     ```
 
     !!! note "Key insight"
-    
+
         This bijection is what guarantees that ciphertexts are uniformly distributed!
 
 ---
@@ -228,7 +226,7 @@ noncomputable def μC {n : Nat} (μM : PMF (Plaintext n)) :
 
     ```lean
     lemma map_uniformOfFintype_equiv
-        {α β : Type*} [Fintype α] [Fintype β] [DecidableEq β] 
+        {α β : Type*} [Fintype α] [Fintype β] [DecidableEq β]
         [Nonempty α] [Nonempty β] (σ : α ≃ β) :
         PMF.map σ (uniformOfFintype α) = uniformOfFintype β
     ```
@@ -260,7 +258,7 @@ noncomputable def μC {n : Nat} (μM : PMF (Plaintext n)) :
     ```
 
     !!! note "Key Point"
-    
+
         Both the key distribution and the conditional ciphertext distribution are uniform with the same probability!
 
 ---
@@ -277,15 +275,15 @@ It's easy to see this is equivalent to the assertion that $M$ and $C$ are indenp
 !!! info "Independence and Conditional Probability"
 
     By definition of conditional probability,
-    
+
     $$P(M = m \;|\; C = c) · P(C = c) = P(M = m, C = c) = P(C = c \;| \; M = m) · P(M = m).$$
 
-    $M$ and $C$ are <font color="slate">independent</font> provided 
+    $M$ and $C$ are <font color="slate">independent</font> provided
 
     $$P(M = m, C = c) = P(M = m) P(C = c).$$
 
     Therefore, assuming $P(C = c) > 0$ and $P(M = m) > 0$, the following are equivalent:
-    
+
     1. $P(M = m, C = c) = P(M = m) · P(C = c)$
 
     2. $P(M = m \;| \; C = c) = P(M = m)$,
@@ -350,7 +348,7 @@ We will prove the third assertion.
     ```
 
     !!! note "Critical observation"
-    
+
         Each of the 4 possible 2-bit ciphertexts appears exactly once. This uniform mapping is the essence of perfect secrecy!
 
 ---
@@ -381,7 +379,7 @@ We will prove the third assertion.
     ```
 
     !!! note "Security lesson"
-    
+
         If we xor two ciphertexts encrypted with the same key, the key cancels out, leaving $m_1 ⊕ m_2$. This leaks information about the messages!
 
 ---
@@ -402,7 +400,7 @@ We will prove the third assertion.
 
 ### 3. **PMF Library is Well-Designed**
 
-- `bind` for dependent distributions  
+- `bind` for dependent distributions
 - `map` for transforming distributions
 - Uniform distributions built-in
 
@@ -418,15 +416,15 @@ We will prove the third assertion.
      - sample a key `k` uniformly from all `2ⁿ` keys
      - output `encrypt m k`
 
-2. **Why it's uniform** 
+2. **Why it's uniform**
 
      - for each `m`, the map `k ↦ m ⊕ k` is a bijection
      - so each ciphertext `c` appears exactly once for each `m`
      - since keys are uniform, each `c` has probability `1/2ⁿ`
 
-3. **Perfect secrecy**: P(C = c | M = m) = 1/2ⁿ = P(C = c) 
+3. **Perfect secrecy**: P(C = c | M = m) = 1/2ⁿ = P(C = c)
 
-     - OTP achieves perfect secrecy because xor is a bijection 
+     - OTP achieves perfect secrecy because xor is a bijection
      - so both conditional and marginal distributions of ciphertexts are uniform
      - this is precisely independence between message and ciphertext.
 
@@ -471,7 +469,7 @@ We will prove the third assertion.
     + Probabilistic polynomial time
 
 3.  **Security Proofs**
-   
+
     + Semantic security
     + CPA/CCA security
     + Reduction proofs

@@ -43,7 +43,7 @@ uses the same key and the reverse operation
 
 ## Perfect Secrecy
 
-The core theoretical property of OTP is 
+The core theoretical property of OTP is
 
 !!! info ""
 
@@ -51,24 +51,24 @@ The core theoretical property of OTP is
     about the plaintext content.
 
 +  Formally, $P(\text{plaintext} = m \; | \; \text{ciphertext} = c) = P(\text{plaintext} = m)$.
-   
+
 +  Knowing $c$ doesn't change the probability distribution of the plaintext $m$.
 
 +  This holds *only if all the conditions for the key are met* (random, same length, used once).
 
---- 
+---
 
 ## Why OTP is interesting to cryptographers
 
 +  Highlights critical importance of key management (randomness, length,
    single-use, secrecy).
-   
+
 +  Most practical ciphers try to achieve similar security with
    shorter, reusable keys. (much harder)
 
 +  Understanding limitations of OTP motivates study of other cryptographic systems.
 
---- 
+---
 
 ## Feasibility of Formalizing OTP in Lean
 
@@ -78,7 +78,7 @@ providing a concrete example of verifying a security property.
 +  **Simple Operations**. The core operations (XOR, modular addition) are already
    well-defined or easy to define in Lean. Mathlib has `Bool.xor` and `ZMod N` for modular arithmetic.
 
-+  **Clear Definitions:** We can define types for plaintexts, keys, and ciphertexts 
++  **Clear Definitions:** We can define types for plaintexts, keys, and ciphertexts
    (e.g., `List Bool`, `Vector Bool n`, or functions `Fin n → Bool`).
 
 +  **Focus on a Key Property**. The main goal would be to formalize and prove its
@@ -86,16 +86,16 @@ providing a concrete example of verifying a security property.
 
 +  **Mathlib Support**. Mathlib has a growing library for probability theory on
    finite types (`Mathlib.Probability.ProbabilityMassFunction`), which is essential
-   for proving perfect secrecy. We don't need to build from scratch! 
+   for proving perfect secrecy. We don't need to build from scratch!
 
 ---
 
 ## What to Formalize
 
-1.  **Define message space, key space, ciphertext space**. 
+1.  **Define message space, key space, ciphertext space**.
     For simplicity, use `Vector Bool n` (vectors of Booleans of fixed length `n`).
 
-2.  **Define encrypt and decrypt functions**. 
+2.  **Define encrypt and decrypt functions**.
     (e.g., element-wise XOR for `Vector Bool n`).
 
 3.  **State assumptions about key**.

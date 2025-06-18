@@ -5,7 +5,7 @@
 In Lean/Mathlib, a `PMF α` (Probability Mass Function) is fundamentally:
 
 ```lean
-/-- A probability mass function, or discrete probability measures is 
+/-- A probability mass function, or discrete probability measures is
   a function `α → ℝ≥0∞` such that the values have (infinite) sum `1`. -/
 
 def PMF.{u} (α : Type u) : Type u :=
@@ -28,7 +28,7 @@ So a PMF is a **pair**
 - **Meaning**: For any n-bit message m, `μM m` is the probability that message m is sent.
 - **Example**: If all messages equally likely, `μM m = 1/2^n` for all m.
 
-### μK : PMF (Key n)  
+### μK : PMF (Key n)
 
 - **Type**: A function `Key n → ℝ≥0∞`
 - **Meaning**: For any n-bit key k, `μK k` is its probability
@@ -42,7 +42,7 @@ So a PMF is a **pair**
 
 ### μC : PMF (Ciphertext n)
 
-- **Type**: A function `Ciphertext n → ℝ≥0∞`  
+- **Type**: A function `Ciphertext n → ℝ≥0∞`
 - **Meaning**: For any n-bit ciphertext c, `μC c` is probability of observing c
 - **Computed**: By summing over all (m,k) pairs that produce c
 
@@ -137,7 +137,7 @@ In formal mathematics, we often work with noncomputable objects (like real numbe
 
 + In Lean, probability distributions are functions from outcomes to probabilities, bundled with a proof that probabilities sum to 1.
 
-+ Even though we work with finite spaces, these are marked `noncomputable` because they use real number arithmetic and infinite summation machinery. 
++ Even though we work with finite spaces, these are marked `noncomputable` because they use real number arithmetic and infinite summation machinery.
 
 + This doesn't limit our reasoning---we can still prove exact results like "each key has probability 1/8."
 
