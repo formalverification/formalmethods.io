@@ -77,11 +77,13 @@ nav:
       - Perfect Secrecy: crypto/otp/perfect-secrecy.md
       - OTP in Lean: crypto/otp/otp-lean.md
       - Presentation Notes:
-          - 2025 Jun 19: crypto/otp/2025Jun19-notes.md
-          - 2025 Jun 18: crypto/otp/2025Jun18-notes.md
+          - 2025 Juneteenth: crypto/otp/2025Jun19-notes.md
+          # - 2025 Jun 18: crypto/otp/2025Jun18-notes.md
+          - Proof objects from tactics: crypto/otp/proof-objects-from-tactics.md
           - Old Overview/Demo: crypto/otp/interleaved_demo_presentation.md
           - Older presentation: crypto/otp/slides.md
         # reveal_slides.html
+
     - Mathlib:
       - Vector and List: crypto/Mathlib/vector-and-list.md
       - Probability: crypto/Mathlib/prob.md

@@ -1,14 +1,11 @@
-# Lean4: a primer for pedantic provers
+# Lean4: a primer for paranoids and pedants
 
-We seek to not only demonstrate *how* to prove properties in Lean but also *why* the
+We will demonstrate not only *how* to prove properties in Lean but also *why* the
 methods work, connecting the seemingly magical world of tactics to the solid ground
 of **proof objects**, with which we are more familiar from Agda.
 
-Our proposed aim to bridge the gap between tactic-based proofs and their underlying
-proof terms has been called "an outstanding pedagogical approach."[^1]
-
-We'll start with a concrete, fundamental example that we touched upon in our previous
-meetings: computing the probability of choosing a specific key at random.
+We'll start by reviewing a concrete, fundamental example from last time: computing
+the probability of choosing a specific key at random.
 
 This will allow us to *bring the ideas down to earth* and immediately dive into and
 discuss the *tactic vs. proof object* dichotomy.
@@ -102,9 +99,32 @@ Looking under the hood,
 
 #### The Equivalent Proof Term
 
-In a term-based proof, this substitution is achieved using functions that show
-equality is respected by function application. The `rw` tactic is essentially a
-mechanical way of applying the principle of substitution (`Eq.subst` or `Eq.rec`).
+In a term-based proof, the substitution is achieved using functions that show
+equality is respected by function application.
+
+If we have a proof `h : μK = PMF.uniformOfFintype (Key 3)`, we can use it to rewrite
+the goal.
+
+The definition itself provides this proof `h`. The core idea is `Eq.subst` or `Eq.rec`.
+
+A proof term for just this step would look like this:
+
+```lean
+-- Let P be the property we are trying to prove for the definition.
+-- P := λ x => x ⟨[true, false, true], _⟩ = 1/8
+-- Our goal is `P (μK)`
+-- The definition of μK gives us `proof_of_definition : μK = PMF.uniformOfFintype (Key 3)`
+
+-- The new proof term is:
+Eq.subst proof_of_definition (new_goal : P (PMF.uniformOfFintype (Key 3)))
+```
+
+...which is a bit clunky.
+
+A more common term-based idiom is to simply start with the definition
+already unfolded.
+
+The tactic `rw` is essentially a mechanical way of applying `Eq.subst`.
 
 ---
 
@@ -120,14 +140,52 @@ Now we apply the definition of what `uniformOfFintype` evaluates to for a given 
 
 **The Tactic** `simp [PMF.uniformOfFintype_apply]`
 
-The lemma `PMF.uniformOfFintype_apply` states: If `a` is an inhabitant of the finite
-type `α`, then `PMF.uniformOfFintype α a` is equal to `(Fintype.card α)⁻¹`.
+The lemma `PMF.uniformOfFintype_apply` states:
+
+If `a` is an inhabitant of the finite type `α`, then
+
+`PMF.uniformOfFintype α a` is equal to `(Fintype.card α)⁻¹`.
 
 🥅 **Goal State After the Tactic** 🥅
 
 ```lean
 ⊢ (Fintype.card (Key 3))⁻¹ = 1 / 8
 ```
+
+---
+
+#### Why this works
+
+Looking under the hood,
+
+* `simp` finds a lemma `PMF.uniformOfFintype_apply` in the library;
+
+* This lemma matches the pattern `PMF.uniformOfFintype (Key 3) ...` on the lhs of our goal;
+
+* `simp` using the lemma to rewrites the lhs as `(Fintype.card (Key 3))⁻¹`.
+
+---
+
+#### The Equivalent Proof Term
+
+This is a direct application of the lemma.
+
+The proof term for the rewrite is `PMF.uniformOfFintype_apply (Key 3) ⟨...⟩`.
+
+Applying this equality to our goal transforms it.
+
+A proof would look like:
+
+```lean
+-- h₁ : PMF.uniformOfFintype (Key 3) ⟨...⟩ = (Fintype.card (Key 3))⁻¹
+-- This comes from the lemma PMF.uniformOfFintype_apply
+-- We use this to transform the goal into proving:
+-- ⊢ (Fintype.card (Key 3))⁻¹ = 1 / 8
+```
+
+This is again a form of `Eq.subst`.
+
+The `rw` tactic is the most direct parallel: `rw [PMF.uniformOfFintype_apply]`.
 
 ---
 
@@ -154,17 +212,44 @@ The goal is solved!
 
 Looking under the hood,
 
-1.  **Typeclass Inference**. Lean finds the `Fintype` instance for `Key 3`
-    (`Vector Bool 3`) to determine its size.
+1.  **Typeclass Inference**. Lean needs to know the size of `Key 3`. The type `Key 3`,
+    which is `Vector Bool 3`, has an instance of the `Fintype` typeclass. This
+    instance provides a computable function to get the number of elements.
 
 2.  **Computation**. The `simp` tactic (or the `norm_num` tactic it calls internally)
     executes the cardinality function, simplifying `Fintype.card (Key 3)` to `8`. The
     goal becomes `(8 : ENNReal)⁻¹ = 1/8`.
 
-3.  **Normalization**. The `simp` engine knows that `8⁻¹` is notation for `1/8`.
+3.  **Normalization**. The `simp` engine has lemmas about `ENNReal` arithmetic.
+    It knows that `8⁻¹` is the same as `1/8`.
 
 4.  **Reflexivity**. The goal becomes `1/8 = 1/8`. `simp` reduces both sides to the
     same term, and the final `rfl` tactic confirms this equality and closes the goal.
+
+---
+
+#### The Equivalent Proof Term
+
+A term-based proof must explicitly provide proofs for each of these steps.
+
+```lean
+-- A lemma that proves card (Key 3) = 8
+have card_proof : Fintype.card (Key 3) = 8 := by-- ... proof using vector cardinality lemmas
+
+-- We use this proof to rewrite the goal
+-- The goal becomes ⊢ 8⁻¹ = 1/8
+-- This is true by reflexivity, since 8⁻¹ is just notation for 1/8 in ENNReal.
+-- The final term is:
+rfl
+```
+
+The `simp` tactic automated the process of finding `card_proof`, applying it, and
+then seeing that the result was definitionally equal.
+
+ The full proof term generated by our original `by simp [...]` is effectively a
+ composition of all these steps, applying congruence lemmas (`congr_arg`) and
+ transitivity (`Eq.trans`) to chain all the intermediate equalities together into one
+ grand proof that the starting expression equals the final one.
 
 ---
 
@@ -174,6 +259,7 @@ Looking under the hood,
 | :--- | :--- | :--- |
 | `by simp [μK, ...]` | A powerful, automatic rewrite sequence. | A complex, generated term chaining together multiple equalities; a function that takes no arguments and returns a proof of `LHS = RHS`. |
 | `rw [μK]` | Replaces `μK` with its definition. | Application of `Eq.subst` or `Eq.rec` using definitional equality of `μK`. |
+| `rw [lem]` | Rewrites goal using a proven lemma `lem : A = B`. | Application of `Eq.subst` using lemma `lem` as proof of equality. |
 | `rfl` | Solves a goal of the form `A = A`. | The constructor for equality, `Eq.refl A`; it's a direct proof object. |
 
 +  From an Agda perspective, a tactic proof is essentially a **program that writes a
@@ -182,23 +268,75 @@ Looking under the hood,
 +  `simp` is a very high-level command, like a call to a complex library, while `rw`
    and `rfl` are more like fundamental operations.
 
+This first example was heavy on `simp`. Next, let's tackle a proof that requires more
+manual, step-by-step tactics like `intro`, `apply`, and `let`, which have even
+clearer one-to-one correspondences with proof-term constructs like `fun`, function
+application, and `let ... in ...`.
+
 ---
 
 ## Part 2: Deconstructing a Compositional Proof with `bind` and `pure`
 
-Now we move into a more structured proof that requires several foundational tactics,
-proving a property of the ciphertext distribution `μC`.
+For our next step, we move beyond proofs that are solved by a single `simp` command
+and into a more structured proof that requires several foundational tactics.
+
+We will prove a fundamental property about the ciphertext distribution `μC`, which we
+defined last time using `bind` and `pure`.
+
+This give us the perfect opportunity to explore tactics like `rw`, `intro`, and
+`apply`, and examine their corresponding proof term constructions.
+
+---
+
+### Recall construction of `μC`
+
+Last time we saw that the ciphertext distribution `μC` can be constructed by
+chaining two probabilistic processes:
+
+1.  Sample a message `m` and a key `k` from their joint distribution `μMK`.
+
+2.  Deterministically compute the ciphertext `c = encrypt m k`.
+
+We captured this nicely in Lean as follows:
+
+```lean
+μC = bind μMK (λ mk => pure (encrypt mk.1 mk.2))
+```
+
+Let's prove a theorem that shows what this actually *means* when we
+compute the probability of a specific ciphertext `c`.
+
+The **law of total probability** says that `P(C=c)` is the sum of probabilities of
+all `(m, k)` pairs that produce `c`.
+
+!!! note "**Theorem**"
+
+    ```lean
+    μC c = ∑' (⟨m , k⟩ : Plaintext n × Key n), if encrypt m k = c then μMK ⟨m , k⟩ else 0
+    ```
+
+Proving this will require unpacking the meaning of `bind` and `pure`.
+
+---
 
 ### Step 0: Setup for the Proof
 
-First we add the necessary definitions. For simplicity, we use XOR for encryption and
-assume a uniform distribution for messages.
+First we add the necessary definitions to our Lean file.
+
+We need `Plaintext`s, an encryption function, and the distributions `μMK` and `μC`.
+
+For simplicity, we use a simple xor for encryption and assume a uniform distribution
+for messages.
 
 ```lean
+/-!
+## Part 2: Deconstructing `bind` and `pure`
+-/
+
 -- Assume a uniform distribution on messages for this example.
 noncomputable def μM {n : ℕ} : PMF (Plaintext n) := PMF.uniformOfFintype (Plaintext n)
 
--- The joint distribution, assuming independence of message and key.
+-- The joint distribution assumes independence of message and key.
 -- This is a manual construction of the product distribution P(m, k) = P(m) * P(k).
 noncomputable def μMK {n : ℕ} : PMF (Plaintext n × Key n) :=
   PMF.bind μM (λ m => PMF.map (λ k => (m, k)) μK)
@@ -223,7 +361,8 @@ Here is the complete, corrected proof in Lean:
 ```lean
 open Classical
 theorem μC_apply_eq_sum {n : ℕ} (c : Ciphertext n) :
-    μC c = ∑' mk : Plaintext n × Key n, if encrypt mk.1 mk.2 = c then μMK mk else 0 := by
+  μC c = ∑' mk : Plaintext n × Key n, if encrypt mk.1 mk.2 = c then μMK mk else 0
+  := by
   rw [μC, PMF.bind_apply]
   simp only [PMF.pure_apply, mul_boole]
   congr 1
@@ -231,26 +370,72 @@ theorem μC_apply_eq_sum {n : ℕ} (c : Ciphertext n) :
   simp only [eq_comm]
 ```
 
-#### Step 1: Unfold `bind` and `pure`
+#### Step 1: Unfold `bind`
 
-The tactics `rw [μC, PMF.bind_apply]` and `simp only [PMF.pure_apply, mul_boole]`
-unfold the definitions as before. They apply the law of total probability
-(`PMF.bind_apply`), the definition of a deterministic distribution
-(`PMF.pure_apply`), and a lemma about multiplication (`mul_boole`). This leaves the
-goal:
+**Tactics**. `rw [μC, PMF.bind_apply]`
+
++  `rw [μC]`: as before, this is a substitution.
+
+    It replaces `μC` with its definition, `PMF.bind μMK ...`.
+
+    The proof term equivalent is `Eq.subst`.
+
++  `rw [PMF.bind_apply]`: this is the core of Step 1.
+
+    `PMF.bind_apply` is a theorem in Mathlib that states:
+
+    ```lean
+    (PMF.bind p f) y = ∑' x, p x * (f x) y
+    ```
+
+    This is a formal expression of the *law of total probability*.
+
+    `rw` finds this lemma and mechanically rewrites the lhs of our goal to match it.
+
+
+---
+
+#### Step 1: Unfold `pure`
+
+
+🥅 **Goal State** 🥅
 
 ```lean
-⊢ (∑' mk, if c = encrypt mk.1 mk.2 then μMK mk else 0) = (∑' mk, if encrypt mk.1 mk.2 = c then μMK mk else 0)
+n : ℕ
+c : Ciphertext n
+⊢ ∑' (a : Plaintext n × Key n),
+    μMK a * (match a with | (m, k) => PMF.pure (encrypt m k)) c
+= ∑' (mk : Plaintext n × Key n), if encrypt mk.1 mk.2 = c then μMK mk else 0
 ```
 
-The only difference between the two sides is the order of the equality `c = ...`
-versus `... = c`.
+**Tactics**. `simp only [PMF.pure_apply, mul_boole]`
+
++  `PMF.pure_apply` says `(pure a) b` is 1 if `a = b` and 0 otherwise.
+
+   `simp` is smart enough to apply this inside the summation.
+
++  `mul_boole` simplifies multiplication with the indicator function.
+
+   It turns the `if` into a multiplication by `1` or `0`.
+
+🥅 **Goal State After the Tactics** 🥅
+
+```lean
+⊢ (∑' mk, if c = encrypt mk.1 mk.2 then μMK mk else 0)
+= (∑' mk, if encrypt mk.1 mk.2 = c then μMK mk else 0)
+```
+
+Now the only difference between the two sides is the order of the equality:
+
+`c = ...` versus `... = c`.
+
+---
 
 #### Step 2: Aligning the Summations
 
 We need to show the bodies of the two summations are equal.
 
-**The Tactic**. `congr 1; ext mk`
+**Tactics**. `congr 1; ext mk`
 
 * `congr 1`. This "congruence" tactic focuses the proof on the first arguments of the
   equality—in this case, the functions inside the summations `∑'`.
@@ -265,11 +450,13 @@ mk: Plaintext n × Key n
 ⊢ (if c = encrypt mk.1 mk.2 then μMK mk else 0) = (if encrypt mk.1 mk.2 = c then μMK mk else 0)
 ```
 
+---
+
 #### Step 3: Finishing with `eq_comm`
 
 Now we just resolve the switched equality.
 
-**The Tactic.** `simp only [eq_comm]`
+**Tactic**. `simp only [eq_comm]`
 
 * The lemma `eq_comm` states that `a = b` is equivalent to `b = a`. `simp` uses this
   to rewrite the goal, making the two sides identical and closing the proof.
@@ -300,10 +487,9 @@ Our goal is to prove that this distribution is uniform.
 
 ### A Detour into Equivalences (`≃`)
 
-To prove the theorem, the key mathematical insight is that for a fixed `m`, the
-function `encrypt m` is a bijection. In Lean, a computationally useful bijection is
-captured by the type `Equiv`, written `α ≃ β`. Instead of completing the proof, let's
-understand this fundamental tool.
+Key mathematical insight: for a fixed `m`, the function `encrypt m` is a bijection.
+
+In Lean, such a bijection is captured by the type `Equiv`, written `α ≃ β`.
 
 #### What is an `Equiv`?
 
@@ -315,22 +501,23 @@ The formal definition in Mathlib is:
 structure Equiv (α : Sort*) (β : Sort*) where
   toFun    : α → β        -- The forward function
   invFun   : β → α        -- The inverse function
-  left_inv  : Function.LeftInverse invFun toFun   -- proof that invFun (toFun x) = x
-  right_inv : Function.RightInverse invFun toFun  -- proof that toFun (invFun y) = y
+  left_inv  : Function.LeftInverse invFun toFun   -- proof of invFun (toFun x) = x
+  right_inv : Function.RightInverse invFun toFun  -- proof of toFun (invFun y) = y
 ```
 
-#### How to Construct an `Equiv` (Introduction)
+#### How to Construct an `Equiv` (Intro)
 
 There are two main ways to build an equivalence.
 
 1.  **From an Involutive Function (High-Level)**
 
     If a function is its own inverse, like `not` or our `encrypt m`, you can use the
-    constructor `Equiv.ofInvolutive`. This is what we did in our Lean code.
+    constructor `Equiv.ofInvolutive`.
 
     ```lean
     -- Helper lemma: For a fixed message m, encryption is its own inverse.
-    lemma encrypt_involutive {n : ℕ} (m : Plaintext n) : Function.Involutive (encrypt m) := ...
+    lemma encrypt_involutive {n : ℕ} (m : Plaintext n) :
+      Function.Involutive (encrypt m) := by ...
 
     -- We build the Equiv directly from this property.
     def encrypt_equiv {n : ℕ} (m : Plaintext n) : Key n ≃ Ciphertext n :=
@@ -350,7 +537,7 @@ There are two main ways to build an equivalence.
       right_inv := Bool.not_not
     ```
 
-#### How to Use an `Equiv` (Elimination)
+#### How to Use an `Equiv` (Elim)
 
 Once you have an `Equiv`, you can use it in several ways.
 
@@ -374,52 +561,4 @@ example (e : α ≃ β) (x : α) : e.symm (e x) = x := by
    still uniform.
 
 ---
-
-## Revealing Proof Objects from Tactics
-
-Let's see how we can get Lean to reveal the proof objects that a proof generates.
-
-**The Feature**
-
-Lean has a tactic called `show_term`.
-
-It executes the tactics within it and then, instead of closing the goal, it prints the raw proof term that was generated.
-
-**How to Demonstrate It:**
-
-1.  Pick a simple proof, like our very first one.
-
-2.  In VS Code, change the proof to
-
-    ```lean
-    -- Our theorem: The probability of the key [true, false, true] is 1/8.
-    example : μK ⟨[true, false, true], rfl⟩ = (1/8 : ENNReal) := by
-      show_term -- Add this tactic
-        simp [μK, PMF.uniformOfFintype_apply]; rfl
-    ```
-
-3.  When the cursor is on the `show_term` line, the "Lean Infoview" panel will display the generated proof term.
-
-4.  **Warning** (and the point)
-
-    The term is long, ugly, and full of machine-generated names.
-
-    It looks something like `Eq.trans (PMF.uniformOfFintype_apply ... ) (congr_arg Inv.inv (Fintype.card_vector ...))`.
-
-5.  **Explanation**
-
-    For Agda developers, it's natural to ask: where is the proof object?
-
-    Tactic proofs *generate* proof objects. We can ask Lean to show us the term it
-    generated using the `show_term` tactic.
-
-    Apparently, the result is extremely verbose and not really meant for human consumption.
-
-    This is the fundamental trade-off: tactics let us write short, conceptual proofs
-    at the expense of creating these complex, machine-readable proof terms under the
-    hood.
-
-
-
-[^1]: ...by the Gemini AI Agent.
 

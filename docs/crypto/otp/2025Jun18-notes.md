@@ -226,7 +226,8 @@ Looking under the hood,
 3.  **Normalization**. The `simp` engine has lemmas about `ENNReal` arithmetic.
     It knows that `8⁻¹` is the same as `1/8`.
 
-4.  **Reflexivity**. The goal becomes `1/8 = 1/8`. This is true by reflexivity, `rfl`.
+4.  **Reflexivity**. The goal becomes `1/8 = 1/8`. `simp` reduces both sides to the
+    same term, and the final `rfl` tactic confirms this equality and closes the goal.
 
 ---
 
@@ -382,6 +383,7 @@ def encrypt (m : Plaintext n) (k : Key n) : Ciphertext n :=
 noncomputable def μM {n : ℕ} : PMF (Plaintext n) := PMF.uniformOfFintype (Plaintext n)
 
 -- The joint distribution assumes independence of message and key.
+-- This is a manual construction of the product distribution P(m, k) = P(m) * P(k).
 noncomputable def μMK {n : ℕ} : PMF (Plaintext n × Key n) :=
   -- This is the PMF product, which corresponds to P(m, k) = P(m) * P(k)
   PMF.prod μM μK
