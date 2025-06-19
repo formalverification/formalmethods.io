@@ -536,21 +536,6 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fintypecard-key-31-1-8" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⊢ (Fintype.card (Key 3))⁻¹ = 1 / 8
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="⊢ (Fintype.card (Key 3))⁻¹ = 1 / 8">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
   <a href="#step-3-computing-the-cardinality-and-final-simplification" class="md-nav__link">
     <span class="md-ellipsis">
@@ -1397,21 +1382,6 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fintypecard-key-31-1-8" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⊢ (Fintype.card (Key 3))⁻¹ = 1 / 8
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="⊢ (Fintype.card (Key 3))⁻¹ = 1 / 8">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
   <a href="#step-3-computing-the-cardinality-and-final-simplification" class="md-nav__link">
     <span class="md-ellipsis">
@@ -1692,8 +1662,9 @@ mechanical way of applying the principle of substitution (<code>Eq.subst</code> 
 <p>The lemma <code>PMF.uniformOfFintype_apply</code> states: If <code>a</code> is an inhabitant of the finite
 type <code>α</code>, then <code>PMF.uniformOfFintype α a</code> is equal to <code>(Fintype.card α)⁻¹</code>.</p>
 <p>🥅 <strong>Goal State After the Tactic</strong> 🥅</p>
-<h2 id="fintypecard-key-31-1-8"><div class="language-lean highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="bp">⊢</span><span class="w"> </span><span class="o">(</span><span class="n">Fintype.card</span><span class="w"> </span><span class="o">(</span><span class="n">Key</span><span class="w"> </span><span class="mi">3</span><span class="o">))</span><span class="bp">⁻¹</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="bp">/</span><span class="w"> </span><span class="mi">8</span>
-</span></code></pre></div><a class="headerlink" href="#fintypecard-key-31-1-8" title="Permanent link">#</a></h2>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="bp">⊢</span><span class="w"> </span><span class="o">(</span><span class="n">Fintype.card</span><span class="w"> </span><span class="o">(</span><span class="n">Key</span><span class="w"> </span><span class="mi">3</span><span class="o">))</span><span class="bp">⁻¹</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="bp">/</span><span class="w"> </span><span class="mi">8</span>
+</span></code></pre></div>
+<hr />
 <h3 id="step-3-computing-the-cardinality-and-final-simplification">Step 3: Computing the Cardinality and Final Simplification<a class="headerlink" href="#step-3-computing-the-cardinality-and-final-simplification" title="Permanent link">#</a></h3>
 <p>This is where <code>simp</code> really shines by combining computation and proof.</p>
 <p>🥅 <strong>Goal State Before the Tactic</strong> 🥅</p>
@@ -1925,20 +1896,36 @@ constructor <code>Equiv.ofInvolutive</code>. This is what we did in our Lean cod
 <p>It executes the tactics within it and then, instead of closing the goal, it prints the raw proof term that was generated.</p>
 <p><strong>How to Demonstrate It:</strong></p>
 <ol>
-<li>Pick a simple proof, like our very first one.</li>
 <li>
-<p>In your VS Code, change the proof to this:</p>
-<p><div class="language-lean highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1">-- Our theorem: The probability of the key [true, false, true] is 1/8.</span>
+<p>Pick a simple proof, like our very first one.</p>
+</li>
+<li>
+<p>In VS Code, change the proof to</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1">-- Our theorem: The probability of the key [true, false, true] is 1/8.</span>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="kd">example</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">μK</span><span class="w"> </span><span class="o">⟨[</span><span class="n">true</span><span class="o">,</span><span class="w"> </span><span class="n">false</span><span class="o">,</span><span class="w"> </span><span class="n">true</span><span class="o">],</span><span class="w"> </span><span class="n">rfl</span><span class="o">⟩</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="o">(</span><span class="mi">1</span><span class="bp">/</span><span class="mi">8</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ENNReal</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">by</span>
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">  </span><span class="n">show_term</span><span class="w"> </span><span class="c1">-- Add this tactic</span>
 </span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="n">simp</span><span class="w"> </span><span class="o">[</span><span class="n">μK</span><span class="o">,</span><span class="w"> </span><span class="n">PMF.uniformOfFintype_apply</span><span class="o">]</span><span class="bp">;</span><span class="w"> </span><span class="n">rfl</span>
 </span></code></pre></div>
-3.  When you put your cursor on the <code>show_term</code> line, the "Lean Infoview" panel will display the generated proof term.
-4.  <strong>The Warning (and the point):</strong> The term will be long, ugly, and full of machine-generated names. It will look something like <code>Eq.trans (PMF.uniformOfFintype_apply ... ) (congr_arg Inv.inv (Fintype.card_vector ...))</code>.
-5.  <strong>Your Explanation:</strong> "For those of us from an Agda background, it's natural to ask: where is the proof object? Tactic proofs <em>generate</em> proof objects. We can ask Lean to show us the term it generated using the <code>show_term</code> tactic. As you can see, the result is incredibly verbose and not meant for human consumption. This is the fundamental trade-off: tactics let us write short, conceptual proofs at the expense of creating these complex, machine-readable proof terms under the hood."</p>
+</li>
+<li>
+<p>When the cursor is on the <code>show_term</code> line, the "Lean Infoview" panel will display the generated proof term.</p>
+</li>
+<li>
+<p><strong>Warning</strong> (and the point)</p>
+<p>The term is long, ugly, and full of machine-generated names.</p>
+<p>It looks something like <code>Eq.trans (PMF.uniformOfFintype_apply ... ) (congr_arg Inv.inv (Fintype.card_vector ...))</code>.</p>
+</li>
+<li>
+<p><strong>Explanation</strong></p>
+<p>For Agda developers, it's natural to ask: where is the proof object?</p>
+<p>Tactic proofs <em>generate</em> proof objects. We can ask Lean to show us the term it
+generated using the <code>show_term</code> tactic.</p>
+<p>Apparently, the result is extremely verbose and not really meant for human consumption.</p>
+<p>This is the fundamental trade-off: tactics let us write short, conceptual proofs
+at the expense of creating these complex, machine-readable proof terms under the
+hood.</p>
 </li>
 </ol>
-<p>This demonstration makes your point perfectly without the need to prepare a separate file. It respects the Agda perspective while highlighting Lean's different philosophy.</p>
 <p>[^1]: ...by the Gemini AI Agent.</p>
 <!-- internal links -->
 <!-- external links -->
