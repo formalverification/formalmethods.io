@@ -76,8 +76,11 @@ nav:
       - Basics: crypto/otp/basics.md
       - Perfect Secrecy: crypto/otp/perfect-secrecy.md
       - OTP in Lean: crypto/otp/otp-lean.md
-      - Overview/Demo: crypto/otp/interleaved_demo_presentation.md
-      - Older presentation: crypto/otp/slides.md
+      - Presentation Notes:
+          - 2025 Jun 19: crypto/otp/2025Jun19-notes.md
+          - 2025 Jun 18: crypto/otp/2025Jun18-notes.md
+          - Old Overview/Demo: crypto/otp/interleaved_demo_presentation.md
+          - Older presentation: crypto/otp/slides.md
         # reveal_slides.html
     - Mathlib:
       - Vector and List: crypto/Mathlib/vector-and-list.md
@@ -87,15 +90,6 @@ nav:
           - Why [0, ∞] for Distributions?: crypto/Mathlib/WhyExtendedNNReals.md
           - Joint Distributions with bind: crypto/Mathlib/bind_and_pure.md
 
-  # - Formal Ledger Spec:
-  #   - Introduction: cardano-ledger/intro.md
-  #   - Byron: cardano-ledger/byron.md
-  #   - Shelley:
-  #       - Introduction: cardano-ledger/shelley/intro.md
-  #   - Mary: cardano-ledger/mary.md
-  #   - Alonzo: cardano-ledger/alonzo.md
-  #   - Conway: cardano-ledger/conway.md
-
   - Miscellany:
     - MkDocs doc:
       - MkDocs: mkdocs.md
@@ -103,9 +97,9 @@ nav:
       - Diagrams: mkdocs/diagrams.md
       - Code blocks: mkdocs/code-blocks.md
       - Content tabs: mkdocs/content-tabs.md
-    
+
   - About:
-    - Contributors: contributors.md  
+    - Contributors: contributors.md
     - License: license.md
 
 plugins:
