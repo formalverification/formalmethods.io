@@ -11,6 +11,10 @@
         <link rel="canonical" href="https://formalmethods.io/crypto/otp/2025Jun18-notes/">
       
       
+        <link rel="prev" href="../2025Jun19-notes/">
+      
+      
+        <link rel="next" href="../interleaved_demo_presentation/">
       
       
       <link rel="icon" href="../../../img/formal_methods_favicon.svg">
@@ -18,7 +22,7 @@
     
     
       
-        <title>Lean4: a guide for the pedantic programmer/prover - Formal Methods</title>
+        <title>2025 Jun 18 - Formal Methods</title>
       
     
     
@@ -70,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lean4-a-guide-for-the-pedantic-programmerprover" class="md-skip">
+        <a href="#lean4-a-primer-for-pedantic-provers" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lean4: a guide for the pedantic programmer/prover
+              2025 Jun 18
             
           </span>
         </div>
@@ -241,17 +245,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -266,7 +272,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             FM Crypto
@@ -277,17 +283,19 @@
                 
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -302,7 +310,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             OTP
@@ -379,6 +387,507 @@
                 
   
   
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_4" id="__nav_2_1_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Presentation Notes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            Presentation Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2025Jun19-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2025 Jun 19
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    2025 Jun 18
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    2025 Jun 18
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-a-concrete-first-proof" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 1: A Concrete First Proof
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: A Concrete First Proof">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deconstructing-simp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deconstructing simp
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-unfolding-the-definition-of-k" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Unfolding the Definition of μK
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Unfolding the Definition of μK">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-this-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why this works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-equivalent-proof-term" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Equivalent Proof Term
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-unfolding-definition-of-uniform-pmf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Unfolding Definition of Uniform PMF
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Unfolding Definition of Uniform PMF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-this-works_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why this works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-equivalent-proof-term_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Equivalent Proof Term
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-computing-the-cardinality-and-final-simplification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Computing the Cardinality and Final Simplification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Computing the Cardinality and Final Simplification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-this-works_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why this works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-equivalent-proof-term_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Equivalent Proof Term
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-agda-perspective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary &amp; Agda Perspective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lean-code-version-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lean Code (Version 1.0)**
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-deconstructing-a-compositional-proof-with-bind-and-pure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 2: Deconstructing a Compositional Proof with bind and pure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: Deconstructing a Compositional Proof with bind and pure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recall-construction-of-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recall construction of μC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-0-setup-for-the-proof" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 0: Setup for the Proof
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-unfold-everything" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Unfold Everything
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Unfold Everything">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-this-works-proof-term-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why this works &amp; proof term view
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-simplify-the-pure-term" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Simplify the pure Term
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Simplify the pure Term">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-tactic-based-proof-continuing" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Tactic-Based Proof (Continuing)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-works-proof-term-view_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why this works &amp; proof term view
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-final-touches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Final Touches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Final Touches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-tactic-based-proof-finishing" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Tactic-Based Proof (Finishing)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-lean-code-file-version-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Lean Code File (Version 2.0)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-proving-a-cryptographic-property-one-time-pad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 3: Proving a Cryptographic Property (One-Time Pad)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: Proving a Cryptographic Property (One-Time Pad)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-0-setup-for-the-proof_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 0: Setup for the Proof
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-introducing-hypotheses-with-intro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Introducing Hypotheses with intro
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Introducing Hypotheses with intro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-equivalent-proof-term_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Equivalent Proof Term
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-proving-function-equality-with-ext" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Proving Function Equality with ext
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Proving Function Equality with ext">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-equivalent-proof-term_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Equivalent Proof Term
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-using-the-mathlib-machinery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Using the Mathlib Machinery
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Using the Mathlib Machinery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tactic-based-proof-finishing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tactic-Based Proof (Finishing)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tactic-based-proof-alt-ending" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tactic-Based Proof (Alt Ending)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-lean-code-file-version-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Lean Code File (Version 3.0)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
   
   
     <li class="md-nav__item">
@@ -386,7 +895,7 @@
         
   
   <span class="md-ellipsis">
-    Overview/Demo
+    Old Overview/Demo
     
   </span>
   
@@ -414,6 +923,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -943,16 +1460,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#departures" class="md-nav__link">
-    <span class="md-ellipsis">
-      Departures
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Departures">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#part-1-a-concrete-first-proof" class="md-nav__link">
     <span class="md-ellipsis">
       Part 1: A Concrete First Proof
@@ -963,9 +1470,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#goal-deconstruct-simp" class="md-nav__link">
+  <a href="#deconstructing-simp" class="md-nav__link">
     <span class="md-ellipsis">
-      🥅 Goal: deconstruct simp
+      Deconstructing simp
     </span>
   </a>
   
@@ -974,18 +1481,66 @@
           <li class="md-nav__item">
   <a href="#step-1-unfolding-the-definition-of-k" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 1: Unfolding the Definition of μK 🕵️‍♂️
+      Step 1: Unfolding the Definition of μK
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Unfolding the Definition of μK">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-this-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why this works
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-unfolding-the-definition-of-the-uniform-pmf" class="md-nav__link">
+  <a href="#the-equivalent-proof-term" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 2: Unfolding the Definition of the Uniform PMF
+      The Equivalent Proof Term
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-unfolding-definition-of-uniform-pmf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Unfolding Definition of Uniform PMF
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Unfolding Definition of Uniform PMF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-this-works_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why this works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-equivalent-proof-term_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Equivalent Proof Term
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -996,6 +1551,25 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Step 3: Computing the Cardinality and Final Simplification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-this-works_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why this works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-equivalent-proof-term_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Equivalent Proof Term
+    </span>
+  </a>
+  
 </li>
         
       </ul>
@@ -1004,9 +1578,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#summary-your-agda-perspective" class="md-nav__link">
+  <a href="#summary-agda-perspective" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary &amp; Your Agda Perspective
+      Summary &amp; Agda Perspective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lean-code-version-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lean Code (Version 1.0)**
     </span>
   </a>
   
@@ -1014,6 +1597,243 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-deconstructing-a-compositional-proof-with-bind-and-pure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 2: Deconstructing a Compositional Proof with bind and pure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: Deconstructing a Compositional Proof with bind and pure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recall-construction-of-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recall construction of μC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-0-setup-for-the-proof" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 0: Setup for the Proof
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-unfold-everything" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Unfold Everything
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Unfold Everything">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-this-works-proof-term-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why this works &amp; proof term view
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-simplify-the-pure-term" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Simplify the pure Term
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Simplify the pure Term">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-tactic-based-proof-continuing" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Tactic-Based Proof (Continuing)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-works-proof-term-view_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why this works &amp; proof term view
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-final-touches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Final Touches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Final Touches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-tactic-based-proof-finishing" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Tactic-Based Proof (Finishing)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-lean-code-file-version-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Lean Code File (Version 2.0)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-proving-a-cryptographic-property-one-time-pad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 3: Proving a Cryptographic Property (One-Time Pad)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: Proving a Cryptographic Property (One-Time Pad)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-0-setup-for-the-proof_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 0: Setup for the Proof
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-introducing-hypotheses-with-intro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Introducing Hypotheses with intro
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Introducing Hypotheses with intro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-equivalent-proof-term_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Equivalent Proof Term
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-proving-function-equality-with-ext" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Proving Function Equality with ext
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Proving Function Equality with ext">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-equivalent-proof-term_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Equivalent Proof Term
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-using-the-mathlib-machinery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Using the Mathlib Machinery
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Using the Mathlib Machinery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tactic-based-proof-finishing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tactic-Based Proof (Finishing)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tactic-based-proof-alt-ending" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tactic-Based Proof (Alt Ending)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-lean-code-file-version-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Lean Code File (Version 3.0)
+    </span>
+  </a>
   
 </li>
       
@@ -1033,123 +1853,172 @@
 
 
 
-<h1 id="lean4-a-guide-for-the-pedantic-programmerprover">Lean4: a guide for the pedantic programmer/prover<a class="headerlink" href="#lean4-a-guide-for-the-pedantic-programmerprover" title="Permanent link">#</a></h1>
-<p>We seek to create a presentation that not only demonstrates <em>how</em> to prove properties
-in Lean but also reveals <em>why</em> the methods work, connecting the seemingly magical
-world of tactics to the solid ground of <strong>proof objects</strong> with which we are familiar
-from Agda.</p>
-<p>Our desire to bridge the gap between tactic-based proofs and their underlying proof
-terms has been called "an outstanding pedagogical approach" (by the Gemini 2.5 Pro AI
-Agent).</p>
-<h2 id="departures">Departures<a class="headerlink" href="#departures" title="Permanent link">#</a></h2>
-<p>Let's start with a concrete, fundamental example that we touched upon in our previous
-meetings: proving the probability that a specific key is chosen.</p>
+<h1 id="lean4-a-primer-for-pedantic-provers">Lean4: a primer for pedantic provers<a class="headerlink" href="#lean4-a-primer-for-pedantic-provers" title="Permanent link">#</a></h1>
+<p>We seek to not only demonstrate <em>how</em> to prove properties in Lean but also <em>why</em> the
+methods work, connecting the seemingly magical world of tactics to the solid ground
+of <strong>proof objects</strong>, with which we are more familiar from Agda.</p>
+<p>Our proposed aim to bridge the gap between tactic-based proofs and their underlying
+proof terms has been called "an outstanding pedagogical approach."[^1]</p>
+<p>We'll start with a concrete, fundamental example that we touched upon in our previous
+meetings: computing the probability of choosing a specific key at random.</p>
 <p>This will allow us to <em>bring the ideas down to earth</em> and immediately dive into and
 discuss the <em>tactic vs. proof object</em> dichotomy.</p>
-<h3 id="part-1-a-concrete-first-proof">Part 1: A Concrete First Proof<a class="headerlink" href="#part-1-a-concrete-first-proof" title="Permanent link">#</a></h3>
-<p>Let's start with the following</p>
-<p><strong>Claim</strong>.  The probability of randomly choosing a specific 3-bit key is 1/8.</p>
-<p>In Lean, the theorem and its tactic-based proof are surprisingly concise:</p>
-<div class="language-lean highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="n">Mathlib.Probability.ProbabilityMassFunction.Basic</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">-- To make our example concrete, we&#39;ll define Key n as vectors of booleans.</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1">-- This is equivalent to `Fin n → Bool` or other n-bit types.</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">abbrev</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="o">(</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="n">Bool</span><span class="w"> </span><span class="n">n</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1">-- The uniform distribution over keys.</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="kd">noncomputable</span><span class="w"> </span><span class="kd">def</span><span class="w"> </span><span class="n">μK</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="o">(</span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">PMF.uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="o">)</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1">-- Our claim: probability of choosing the key [true, false, true] is 1/8.</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="kd">example</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">μK</span><span class="w"> </span><span class="o">⟨[</span><span class="n">true</span><span class="o">,</span><span class="w"> </span><span class="n">false</span><span class="o">,</span><span class="w"> </span><span class="n">true</span><span class="o">],</span><span class="w"> </span><span class="kd">by</span><span class="w"> </span><span class="n">simp</span><span class="o">⟩</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="o">(</span><span class="mi">1</span><span class="bp">/</span><span class="mi">8</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ENNReal</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">by</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="n">simp</span><span class="w"> </span><span class="o">[</span><span class="n">μK</span><span class="o">,</span><span class="w"> </span><span class="n">PMF.uniformOfFintype_apply</span><span class="o">]</span>
-</span></code></pre></div>
-<p>This is fine for a user who knows what <code>simp</code> means and does, but it's a "magical incantation" for a newcomer.</p>
-<p>Let's unpack it!</p>
-<h4 id="goal-deconstruct-simp">🥅 Goal: deconstruct <code>simp</code><a class="headerlink" href="#goal-deconstruct-simp" title="Permanent link">#</a></h4>
-<p>The <code>simp</code> tactic is an automated rewriter.</p>
-<p>It tries to simplify the main goal by applying a list of theorems (called a "simpset") from left to right, over and over, until no more simplifications can be made.</p>
-<p>When you write <code>simp [foo, bar]</code>, you are telling it: "Please use your standard simpset, and also add the definitions or lemmas <code>foo</code> and <code>bar</code> to the set of tools you can use."</p>
-<p>Let's break down the proof step-by-step, showing the tactic at each stage and then discussing the proof object it's building.</p>
 <hr />
-<h4 id="step-1-unfolding-the-definition-of-k">Step 1: Unfolding the Definition of <code>μK</code> 🕵️‍♂️<a class="headerlink" href="#step-1-unfolding-the-definition-of-k" title="Permanent link">#</a></h4>
-<p><strong>The State Before the Tactic</strong></p>
+<h2 id="part-1-a-concrete-first-proof">Part 1: A Concrete First Proof<a class="headerlink" href="#part-1-a-concrete-first-proof" title="Permanent link">#</a></h2>
+<p>Let's start with the</p>
+<p><strong>Claim</strong>. The probability of randomly choosing a specific 3-bit key is 1/8.</p>
+<p>In Lean, the theorem and its tactic-based proof are very concise.</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="n">Mathlib.Probability.Distributions.Uniform</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">-- (Assuming a file OTP.Basic with the definition of Key)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kn">open</span><span class="w"> </span><span class="n">OTP</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">-- Recall, we define `Key n` as vectors of booleans.</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1">-- This is equivalent to `Fin n → Bool` or other n-bit types.</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1">-- Here is the uniform distribution over keys of length n.</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="kd">noncomputable</span><span class="w"> </span><span class="kd">def</span><span class="w"> </span><span class="n">μK</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="o">(</span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">PMF.uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="o">)</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1">-- Our claim: the probability of choosing key [true, false, true] is 1/8.</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="kd">example</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">μK</span><span class="w"> </span><span class="o">⟨[</span><span class="n">true</span><span class="o">,</span><span class="w"> </span><span class="n">false</span><span class="o">,</span><span class="w"> </span><span class="n">true</span><span class="o">],</span><span class="w"> </span><span class="n">rfl</span><span class="o">⟩</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="o">(</span><span class="mi">1</span><span class="bp">/</span><span class="mi">8</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ENNReal</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w"> </span><span class="c1">-- and here&#39;s the tactic-based proof in Lean:</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="kd">by</span><span class="w"> </span><span class="n">simp</span><span class="w"> </span><span class="o">[</span><span class="n">μK</span><span class="o">,</span><span class="w"> </span><span class="n">PMF.uniformOfFintype_apply</span><span class="o">]</span><span class="bp">;</span><span class="w"> </span><span class="n">rfl</span>
+</span></code></pre></div>
+<p>This is great for a user who knows what <code>simp</code> means and does,
+but it may seem like a magical incantation for the newcomer.</p>
+<p>So, let's unpack it.</p>
+<hr />
+<h3 id="deconstructing-simp">Deconstructing <code>simp</code><a class="headerlink" href="#deconstructing-simp" title="Permanent link">#</a></h3>
+<p>The <code>simp</code> tactic is an automated rewriter.</p>
+<p>It tries to simplify the main goal by applying a list of theorems (called a
+"simpset") from left to right, over and over, until no more simplifications can be
+made.</p>
+<p>When you write <code>simp [foo, bar]</code>, you are telling Lean:</p>
+<p>"Please use your standard simpset, plus the definitions/lemmas <code>foo</code> and <code>bar</code> to the
+set of tools you can use to simplify or reduce the goal."</p>
+<hr />
+<h3 id="step-1-unfolding-the-definition-of-k">Step 1: Unfolding the Definition of <code>μK</code><a class="headerlink" href="#step-1-unfolding-the-definition-of-k" title="Permanent link">#</a></h3>
+<p>Let's break down the proof step-by-step, showing the tactic at each stage, and then
+discuss the proof object it's building.</p>
+<p>🥅 <strong>Goal State Before the Tactic</strong> 🥅</p>
 <div class="language-lean highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="bp">⊢</span><span class="w"> </span><span class="n">μK</span><span class="w"> </span><span class="o">⟨[</span><span class="n">true</span><span class="o">,</span><span class="w"> </span><span class="n">false</span><span class="o">,</span><span class="w"> </span><span class="n">true</span><span class="o">],</span><span class="w"> </span><span class="n">rfl</span><span class="o">⟩</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="bp">/</span><span class="w"> </span><span class="mi">8</span>
 </span></code></pre></div>
 <p>Here, <code>⊢</code> indicates the goal we are trying to prove.</p>
 <p><strong>The Tactic</strong> <code>simp [μK]</code> or <code>rw [μK]</code></p>
-<p>This tells Lean to substitute <code>μK</code> with its definition.</p>
-<p><strong>The State After the Tactic:</strong></p>
+<p>tells Lean to substitute <code>μK</code> with its definition.</p>
+<p>🥅 <strong>Goal State After the Tactic</strong> 🥅</p>
 <div class="language-lean highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="bp">⊢</span><span class="w"> </span><span class="n">PMF.uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Key</span><span class="w"> </span><span class="mi">3</span><span class="o">)</span><span class="w"> </span><span class="o">⟨[</span><span class="n">true</span><span class="o">,</span><span class="w"> </span><span class="n">false</span><span class="o">,</span><span class="w"> </span><span class="n">true</span><span class="o">],</span><span class="w"> </span><span class="n">rfl</span><span class="o">⟩</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="bp">/</span><span class="w"> </span><span class="mi">8</span>
 </span></code></pre></div>
-<p><strong>Why this works</strong> ("under the hood")</p>
+<hr />
+<h4 id="why-this-works">Why this works<a class="headerlink" href="#why-this-works" title="Permanent link">#</a></h4>
+<p>Looking under the hood,</p>
 <ul>
-<li><code>μK</code> is defined as <code>PMF.uniformOfFintype (Key n)</code>.</li>
-<li>The <code>simp</code> tactic (and the more targeted <code>rw</code> tactic) has access to all definitions in the context.</li>
-<li>It sees the term <code>μK</code> in the goal and replaces it with its definition. This is a simple substitution.</li>
+<li>
+<p><code>μK</code> is defined as <code>PMF.uniformOfFintype (Key n)</code>.</p>
+</li>
+<li>
+<p><code>simp</code> (and the more targeted <code>rw</code>) can access all definitions in context.</p>
+</li>
+<li>
+<p>It sees the term <code>μK</code> in the goal and replaces it with its definition; a
+  simple substitution.</p>
+</li>
 </ul>
-<p><strong>The Equivalent Proof Term</strong></p>
-<p>In a term-based proof, this substitution is achieved using functions that show
+<hr />
+<h4 id="the-equivalent-proof-term">The Equivalent Proof Term<a class="headerlink" href="#the-equivalent-proof-term" title="Permanent link">#</a></h4>
+<p>In a term-based proof, the substitution is achieved using functions that show
 equality is respected by function application.</p>
 <p>If we have a proof <code>h : μK = PMF.uniformOfFintype (Key 3)</code>, we can use it to rewrite
 the goal.</p>
 <p>The definition itself provides this proof <code>h</code>. The core idea is <code>Eq.subst</code> or <code>Eq.rec</code>.</p>
 <p>A proof term for just this step would look like this:</p>
-<p><div class="language-lean highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">-- Let P be the property we are trying to prove for the definition.</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1">-- P := fun x =&gt; x ⟨[true, false, true], _⟩ = 1/8</span>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">-- Let P be the property we are trying to prove for the definition.</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1">-- P := λ x =&gt; x ⟨[true, false, true], _⟩ = 1/8</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">-- Our goal is `P (μK)`</span>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1">-- The definition of μK gives us `proof_of_definition : μK = PMF.uniformOfFintype (Key 3)`</span>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1">-- The new proof term is:</span>
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">Eq.subst</span><span class="w"> </span><span class="n">proof_of_definition</span><span class="w"> </span><span class="o">(</span><span class="n">new_goal</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">P</span><span class="w"> </span><span class="o">(</span><span class="n">PMF.uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Key</span><span class="w"> </span><span class="mi">3</span><span class="o">)))</span>
 </span></code></pre></div>
-This is clunky. A more common term-based idiom is to simply start with the definition
+<p>...which is a bit clunky.</p>
+<p>A more common term-based idiom is to simply start with the definition
 already unfolded.</p>
 <p>The tactic <code>rw</code> is essentially a mechanical way of applying <code>Eq.subst</code>.</p>
 <hr />
-<h4 id="step-2-unfolding-the-definition-of-the-uniform-pmf"><strong>Step 2: Unfolding the Definition of the Uniform PMF</strong><a class="headerlink" href="#step-2-unfolding-the-definition-of-the-uniform-pmf" title="Permanent link">#</a></h4>
-<p>Now we apply the definition of what <code>uniformOfFintype</code> actually means for a given input.</p>
-<p><strong>The State Before the Tactic:</strong></p>
+<h3 id="step-2-unfolding-definition-of-uniform-pmf">Step 2: Unfolding Definition of Uniform PMF<a class="headerlink" href="#step-2-unfolding-definition-of-uniform-pmf" title="Permanent link">#</a></h3>
+<p>Now we apply the definition of what <code>uniformOfFintype</code> evaluates to for a given input.</p>
+<p>🥅 <strong>Goal State Before the Tactic</strong> 🥅</p>
 <div class="language-lean highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="bp">⊢</span><span class="w"> </span><span class="n">PMF.uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Key</span><span class="w"> </span><span class="mi">3</span><span class="o">)</span><span class="w"> </span><span class="o">⟨[</span><span class="n">true</span><span class="o">,</span><span class="w"> </span><span class="n">false</span><span class="o">,</span><span class="w"> </span><span class="n">true</span><span class="o">],</span><span class="w"> </span><span class="n">rfl</span><span class="o">⟩</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="bp">/</span><span class="w"> </span><span class="mi">8</span>
 </span></code></pre></div>
-<p><strong>The Tactic:</strong> <code>simp [PMF.uniformOfFintype_apply]</code></p>
-<p>The lemma <code>PMF.uniformOfFintype_apply</code> states that for any element <code>a</code> of a finite type <code>α</code>, <code>PMF.uniformOfFintype α a</code> is equal to <code>(Fintype.card α)⁻¹</code>.</p>
-<p><strong>The State After the Tactic:</strong></p>
+<p><strong>The Tactic</strong> <code>simp [PMF.uniformOfFintype_apply]</code></p>
+<p>The lemma <code>PMF.uniformOfFintype_apply</code> states:</p>
+<p>If <code>a</code> is an inhabitant of the finite type <code>α</code>, then</p>
+<p><code>PMF.uniformOfFintype α a</code> is equal to <code>(Fintype.card α)⁻¹</code>.</p>
+<p>🥅 <strong>Goal State After the Tactic</strong> 🥅</p>
 <div class="language-lean highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="bp">⊢</span><span class="w"> </span><span class="o">(</span><span class="n">Fintype.card</span><span class="w"> </span><span class="o">(</span><span class="n">Key</span><span class="w"> </span><span class="mi">3</span><span class="o">))</span><span class="bp">⁻¹</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="bp">/</span><span class="w"> </span><span class="mi">8</span>
 </span></code></pre></div>
-<p><strong>Why this works ("Under the Hood"):</strong></p>
+<hr />
+<h4 id="why-this-works_1">Why this works<a class="headerlink" href="#why-this-works_1" title="Permanent link">#</a></h4>
+<p>Looking under the hood,</p>
 <ul>
-<li>The <code>simp</code> engine found a lemma <code>PMF.uniformOfFintype_apply</code> in the library.</li>
-<li>This lemma matches the pattern <code>PMF.uniformOfFintype (Key 3) ...</code> on the left side of our goal.</li>
-<li>It rewrites the left side of the goal using this lemma, replacing it with <code>(Fintype.card (Key 3))⁻¹</code>.</li>
+<li>
+<p><code>simp</code> finds a lemma <code>PMF.uniformOfFintype_apply</code> in the library;</p>
+</li>
+<li>
+<p>This lemma matches the pattern <code>PMF.uniformOfFintype (Key 3) ...</code> on the lhs of our goal;</p>
+</li>
+<li>
+<p><code>simp</code> using the lemma to rewrites the lhs as <code>(Fintype.card (Key 3))⁻¹</code>.</p>
+</li>
 </ul>
-<p><strong>The Equivalent Proof Term:</strong></p>
-<p>This is a direct application of the lemma. The proof term for this rewrite is <code>PMF.uniformOfFintype_apply (Key 3) ⟨...⟩</code>. Applying this equality to our goal transforms it. A proof would look like:</p>
-<p><div class="language-lean highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">-- h₁ : PMF.uniformOfFintype (Key 3) ⟨...⟩ = (Fintype.card (Key 3))⁻¹</span>
+<hr />
+<h4 id="the-equivalent-proof-term_1">The Equivalent Proof Term<a class="headerlink" href="#the-equivalent-proof-term_1" title="Permanent link">#</a></h4>
+<p>This is a direct application of the lemma.</p>
+<p>The proof term for the rewrite is <code>PMF.uniformOfFintype_apply (Key 3) ⟨...⟩</code>.</p>
+<p>Applying this equality to our goal transforms it.</p>
+<p>A proof would look like:</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">-- h₁ : PMF.uniformOfFintype (Key 3) ⟨...⟩ = (Fintype.card (Key 3))⁻¹</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1">-- This comes from the lemma PMF.uniformOfFintype_apply</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1">-- We use this to transform the goal into proving:</span>
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1">-- ⊢ (Fintype.card (Key 3))⁻¹ = 1 / 8</span>
 </span></code></pre></div>
-This is again a form of <code>Eq.subst</code>. The <code>rw</code> tactic is the most direct parallel: <code>rw [PMF.uniformOfFintype_apply]</code>.</p>
+<p>This is again a form of <code>Eq.subst</code>.</p>
+<p>The <code>rw</code> tactic is the most direct parallel: <code>rw [PMF.uniformOfFintype_apply]</code>.</p>
 <hr />
-<h4 id="step-3-computing-the-cardinality-and-final-simplification"><strong>Step 3: Computing the Cardinality and Final Simplification</strong><a class="headerlink" href="#step-3-computing-the-cardinality-and-final-simplification" title="Permanent link">#</a></h4>
+<h3 id="step-3-computing-the-cardinality-and-final-simplification">Step 3: Computing the Cardinality and Final Simplification<a class="headerlink" href="#step-3-computing-the-cardinality-and-final-simplification" title="Permanent link">#</a></h3>
 <p>This is where <code>simp</code> really shines by combining computation and proof.</p>
-<p><strong>The State Before the Tactic:</strong></p>
+<p>🥅 <strong>Goal State Before the Tactic</strong> 🥅</p>
 <div class="language-lean highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="bp">⊢</span><span class="w"> </span><span class="o">(</span><span class="n">Fintype.card</span><span class="w"> </span><span class="o">(</span><span class="n">Key</span><span class="w"> </span><span class="mi">3</span><span class="o">))</span><span class="bp">⁻¹</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="bp">/</span><span class="w"> </span><span class="mi">8</span>
 </span></code></pre></div>
-<p><strong>The Tactic:</strong> <code>simp</code></p>
+<p><strong>The Tactic</strong> <code>simp</code></p>
 <p>We don't need to provide any more lemmas. The rest is handled by Lean's built-in capabilities.</p>
-<p><strong>The State After the Tactic:</strong></p>
+<p>🥅 <strong>Goal State After the Tactic</strong> 🥅</p>
 <p>The goal is solved!</p>
-<p><strong>Why this works ("Under the Hood"):</strong></p>
+<h4 id="why-this-works_2">Why this works<a class="headerlink" href="#why-this-works_2" title="Permanent link">#</a></h4>
+<p>Looking under the hood,</p>
 <ol>
-<li><strong>Typeclass Inference:</strong> Lean needs to know the size of <code>Key 3</code>. The type <code>Key 3</code>, which is <code>Vector Bool 3</code>, has an instance of the <code>Fintype</code> typeclass. This instance provides a computable function to get the number of elements.</li>
-<li><strong>Computation:</strong> The <code>simp</code> tactic (or the <code>norm_num</code> tactic it calls internally) executes this function. It knows <code>Vector Bool 3</code> has <code>2^3 = 8</code> elements. So it simplifies <code>Fintype.card (Key 3)</code> to the value <code>8</code>. The goal becomes <code>(8 : ENNReal)⁻¹ = 1/8</code>.</li>
-<li><strong>Normalization:</strong> The <code>simp</code> engine has lemmas about <code>ENNReal</code> arithmetic. It knows that <code>(8)⁻¹</code> is the same as <code>1/8</code>.</li>
-<li><strong>Reflexivity:</strong> The goal becomes <code>1/8 = 1/8</code>. This is true by reflexivity (<code>rfl</code>).</li>
+<li>
+<p><strong>Typeclass Inference</strong>. Lean needs to know the size of <code>Key 3</code>. The type <code>Key 3</code>,
+    which is <code>Vector Bool 3</code>, has an instance of the <code>Fintype</code> typeclass. This
+    instance provides a computable function to get the number of elements.</p>
+</li>
+<li>
+<p><strong>Computation</strong>. The <code>simp</code> tactic (or the <code>norm_num</code> tactic it calls internally)
+    executes this function. It knows <code>Vector Bool 3</code> has <code>2^3 = 8</code> elements. So it
+    simplifies <code>Fintype.card (Key 3)</code> to the value <code>8</code>. The goal becomes
+    <code>(8 : ENNReal)⁻¹ = 1/8</code>.</p>
+</li>
+<li>
+<p><strong>Normalization</strong>. The <code>simp</code> engine has lemmas about <code>ENNReal</code> arithmetic.
+    It knows that <code>8⁻¹</code> is the same as <code>1/8</code>.</p>
+</li>
+<li>
+<p><strong>Reflexivity</strong>. The goal becomes <code>1/8 = 1/8</code>. This is true by reflexivity, <code>rfl</code>.</p>
+</li>
 </ol>
-<p><strong>The Equivalent Proof Term:</strong></p>
-<p>A term-based proof would need to explicitly provide the proofs for each of these steps:</p>
-<p><div class="language-lean highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">-- A lemma that proves card (Key 3) = 8</span>
+<hr />
+<h4 id="the-equivalent-proof-term_2">The Equivalent Proof Term<a class="headerlink" href="#the-equivalent-proof-term_2" title="Permanent link">#</a></h4>
+<p>A term-based proof must explicitly provide proofs for each of these steps.</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">-- A lemma that proves card (Key 3) = 8</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">have</span><span class="w"> </span><span class="n">card_proof</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Fintype.card</span><span class="w"> </span><span class="o">(</span><span class="n">Key</span><span class="w"> </span><span class="mi">3</span><span class="o">)</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">by</span><span class="c1">-- ... proof using vector cardinality lemmas</span>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1">-- We use this proof to rewrite the goal</span>
@@ -1158,8 +2027,14 @@ This is again a form of <code>Eq.subst</code>. The <code>rw</code> tactic is the
 </span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1">-- The final term is:</span>
 </span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="n">rfl</span>
 </span></code></pre></div>
-The <code>simp</code> tactic automated the process of finding <code>card_proof</code>, applying it, and then seeing that the result was definitionally equal. The full proof term generated by our original <code>by simp [...]</code> is effectively a composition of all these steps, applying congruence lemmas (<code>congr_arg</code>) and transitivity (<code>Eq.trans</code>) to chain all the intermediate equalities together into one grand proof that the starting expression equals the final one.</p>
-<h3 id="summary-your-agda-perspective"><strong>Summary &amp; Your Agda Perspective</strong><a class="headerlink" href="#summary-your-agda-perspective" title="Permanent link">#</a></h3>
+<p>The <code>simp</code> tactic automated the process of finding <code>card_proof</code>, applying it, and
+then seeing that the result was definitionally equal.</p>
+<p>The full proof term generated by our original <code>by simp [...]</code> is effectively a
+ composition of all these steps, applying congruence lemmas (<code>congr_arg</code>) and
+ transitivity (<code>Eq.trans</code>) to chain all the intermediate equalities together into one
+ grand proof that the starting expression equals the final one.</p>
+<hr />
+<h3 id="summary-agda-perspective">Summary &amp; Agda Perspective<a class="headerlink" href="#summary-agda-perspective" title="Permanent link">#</a></h3>
 <table>
 <thead>
 <tr>
@@ -1172,27 +2047,541 @@ The <code>simp</code> tactic automated the process of finding <code>card_proof</
 <tr>
 <td style="text-align: left;"><code>by simp [μK, ...]</code></td>
 <td style="text-align: left;">A powerful, automatic rewrite sequence.</td>
-<td style="text-align: left;">A complex, generated term chaining together multiple equalities. It's a function that takes no arguments and returns a proof of <code>LHS = RHS</code>.</td>
+<td style="text-align: left;">A complex, generated term chaining together multiple equalities; a function that takes no arguments and returns a proof of <code>LHS = RHS</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>rw [μK]</code></td>
 <td style="text-align: left;">Replaces <code>μK</code> with its definition.</td>
-<td style="text-align: left;">Application of <code>Eq.subst</code> or <code>Eq.rec</code> using the definitional equality of <code>μK</code>.</td>
+<td style="text-align: left;">Application of <code>Eq.subst</code> or <code>Eq.rec</code> using definitional equality of <code>μK</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>rw [lem]</code></td>
-<td style="text-align: left;">Rewrites the goal using a proven lemma <code>lem : A = B</code>.</td>
-<td style="text-align: left;">Application of <code>Eq.subst</code> using the lemma <code>lem</code> as the proof of equality.</td>
+<td style="text-align: left;">Rewrites goal using a proven lemma <code>lem : A = B</code>.</td>
+<td style="text-align: left;">Application of <code>Eq.subst</code> using lemma <code>lem</code> as proof of equality.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>rfl</code></td>
 <td style="text-align: left;">Solves a goal of the form <code>A = A</code>.</td>
-<td style="text-align: left;">The constructor for equality, <code>Eq.refl A</code>. It's a direct proof object.</td>
+<td style="text-align: left;">The constructor for equality, <code>Eq.refl A</code>; it's a direct proof object.</td>
 </tr>
 </tbody>
 </table>
-<p>From your Agda perspective, you can think of a tactic proof as a <strong>program that writes a proof term</strong>. Each tactic is a command in this program. <code>simp</code> is a very high-level command, like a call to a complex library, while <code>rw</code> and <code>rfl</code> are more like fundamental operations.</p>
-<p>This first example was heavy on <code>simp</code>. Next, we can tackle a proof that requires more manual, step-by-step tactics like <code>intro</code>, <code>apply</code>, and <code>let</code>, which have even clearer one-to-one correspondences with proof-term constructs like <code>fun</code>, function application, and <code>let ... in ...</code>.</p>
+<ul>
+<li>
+<p>From an Agda perspective, a tactic proof is essentially a <strong>program that writes a
+   proof term</strong>, which is why tactic writing is metaprogramming.</p>
+</li>
+<li>
+<p><code>simp</code> is a very high-level command, like a call to a complex library, while <code>rw</code>
+   and <code>rfl</code> are more like fundamental operations.</p>
+</li>
+</ul>
+<p>This first example was heavy on <code>simp</code>. Next, let's tackle a proof that requires more
+manual, step-by-step tactics like <code>intro</code>, <code>apply</code>, and <code>let</code>, which have even
+clearer one-to-one correspondences with proof-term constructs like <code>fun</code>, function
+application, and <code>let ... in ...</code>.</p>
+<hr />
+<h3 id="lean-code-version-10">Lean Code (Version 1.0)**<a class="headerlink" href="#lean-code-version-10" title="Permanent link">#</a></h3>
+<p>Here is the initial Lean file containing the setup from our first example.</p>
+<p>Copy this into <code>presentation_examples.lean</code> in your VS Code project.</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">-- We need to import the necessary parts of Mathlib.</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kn">import</span><span class="w"> </span><span class="n">Mathlib.Probability.ProbabilityMassFunction.Basic</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kn">import</span><span class="w"> </span><span class="n">Mathlib.Data.Vector.Basic</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="c">/-</span><span class="cm">!</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="cm">### Part 1: A Concrete First Proof</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="cm">-/</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="c1">-- To make our example concrete, we&#39;ll define Key n as vectors of booleans.</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="c1">-- This is equivalent to `Fin n → Bool` or other n-bit types.</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="n">abbrev</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="o">(</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="n">Bool</span><span class="w"> </span><span class="n">n</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="c1">-- The uniform distribution over keys, as mentioned in your notes.</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="kd">noncomputable</span><span class="w"> </span><span class="kd">def</span><span class="w"> </span><span class="n">μK</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="o">(</span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">PMF.uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="o">)</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="c1">-- Our theorem: The probability of the key [true, false, true] is 1/8.</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="kd">example</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">μK</span><span class="w"> </span><span class="o">⟨[</span><span class="n">true</span><span class="o">,</span><span class="w"> </span><span class="n">false</span><span class="o">,</span><span class="w"> </span><span class="n">true</span><span class="o">],</span><span class="w"> </span><span class="kd">by</span><span class="w"> </span><span class="n">simp</span><span class="o">⟩</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="o">(</span><span class="mi">1</span><span class="bp">/</span><span class="mi">8</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ENNReal</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">by</span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">  </span><span class="c1">-- This proof works by unfolding definitions and simplifying.</span>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="w">  </span><span class="c1">-- 1. `μK` unfolds to `PMF.uniformOfFintype (Key 3)`.</span>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="w">  </span><span class="c1">-- 2. `PMF.uniformOfFintype_apply` rewrites the goal to `(Fintype.card (Key 3))⁻¹`.</span>
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="w">  </span><span class="c1">-- 3. The `Fintype` instance for `Vector Bool 3` computes the cardinality to `8`.</span>
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="w">  </span><span class="c1">-- 4. The goal simplifies to `8⁻¹ = 1/8`, which is true by definition (`rfl`).</span>
+</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="w">  </span><span class="n">simp</span><span class="w"> </span><span class="o">[</span><span class="n">μK</span><span class="o">,</span><span class="w"> </span><span class="n">PMF.uniformOfFintype_apply</span><span class="o">]</span>
+</span></code></pre></div>
+<hr />
+<h2 id="part-2-deconstructing-a-compositional-proof-with-bind-and-pure">Part 2: Deconstructing a Compositional Proof with <code>bind</code> and <code>pure</code><a class="headerlink" href="#part-2-deconstructing-a-compositional-proof-with-bind-and-pure" title="Permanent link">#</a></h2>
+<p>For our next step, we move beyond proofs that are solved by a single <code>simp</code> command
+and into a more structured proof that requires several foundational tactics.</p>
+<p>We will prove a fundamental property about the ciphertext distribution <code>μC</code>, which we
+defined last time using <code>bind</code> and <code>pure</code>.</p>
+<p>This give us the perfect opportunity to explore tactics like <code>rw</code>, <code>intro</code>, and
+<code>apply</code>, and examine their corresponding proof term constructions.</p>
+<hr />
+<h3 id="recall-construction-of-c">Recall construction of <code>μC</code><a class="headerlink" href="#recall-construction-of-c" title="Permanent link">#</a></h3>
+<p>Last time we saw that the ciphertext distribution <code>μC</code> can be constructed by
+chaining two probabilistic processes:</p>
+<ol>
+<li>
+<p>Sample a message <code>m</code> and a key <code>k</code> from their joint distribution <code>μMK</code>.</p>
+</li>
+<li>
+<p>Deterministically compute the ciphertext <code>c = encrypt m k</code>.</p>
+</li>
+</ol>
+<p>We captured this nicely in Lean as follows:</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">μC</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">bind</span><span class="w"> </span><span class="n">μMK</span><span class="w"> </span><span class="o">(</span><span class="bp">λ</span><span class="w"> </span><span class="n">mk</span><span class="w"> </span><span class="bp">=&gt;</span><span class="w"> </span><span class="n">pure</span><span class="w"> </span><span class="o">(</span><span class="n">encrypt</span><span class="w"> </span><span class="n">mk</span><span class="bp">.</span><span class="mi">1</span><span class="w"> </span><span class="n">mk</span><span class="bp">.</span><span class="mi">2</span><span class="o">))</span>
+</span></code></pre></div>
+<p>Let's prove a theorem that shows what this actually <em>means</em> when we
+compute the probability of a specific ciphertext <code>c</code>.</p>
+<p>The <strong>law of total probability</strong> says that <code>P(C=c)</code> is the sum of probabilities of
+all <code>(m, k)</code> pairs that produce <code>c</code>.</p>
+<div class="admonition note">
+<p class="admonition-title"><strong>Theorem</strong></p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">μC</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="bp">∑&#39;</span><span class="w"> </span><span class="o">(⟨</span><span class="n">m</span><span class="w"> </span><span class="o">,</span><span class="w"> </span><span class="n">k</span><span class="o">⟩</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="bp">×</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="o">),</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">encrypt</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="n">μMK</span><span class="w"> </span><span class="o">⟨</span><span class="n">m</span><span class="w"> </span><span class="o">,</span><span class="w"> </span><span class="n">k</span><span class="o">⟩</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="mi">0</span>
+</span></code></pre></div>
+</div>
+<p>Proving this will require unpacking the meaning of <code>bind</code> and <code>pure</code>.</p>
+<hr />
+<h3 id="step-0-setup-for-the-proof">Step 0: Setup for the Proof<a class="headerlink" href="#step-0-setup-for-the-proof" title="Permanent link">#</a></h3>
+<p>First we add the necessary definitions to our Lean file.</p>
+<p>We need <code>Plaintext</code>s, an encryption function, and the distributions <code>μMK</code> and <code>μC</code>.</p>
+<p>For simplicity, we use a simple xor for encryption and assume a uniform distribution
+for messages.</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c">/-</span><span class="cm">!</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="cm">## Part 2: Deconstructing `bind` and `pure`</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="cm">-/</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="c1">-- For our example, Plaintexts are also n-bit vectors.</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="n">abbrev</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="o">(</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="n">Bool</span><span class="w"> </span><span class="n">n</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="n">abbrev</span><span class="w"> </span><span class="n">Ciphertext</span><span class="w"> </span><span class="o">(</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="n">Bool</span><span class="w"> </span><span class="n">n</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="c1">-- A simple toy encryption function: pointwise XOR.</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="kd">def</span><span class="w"> </span><span class="n">encrypt</span><span class="w"> </span><span class="o">(</span><span class="n">m</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="n">k</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">:=</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">  </span><span class="n">Vector.map₂</span><span class="w"> </span><span class="n">Bool.xor</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="n">k</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="c1">-- Assume a uniform distribution on messages for this example.</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="kd">noncomputable</span><span class="w"> </span><span class="kd">def</span><span class="w"> </span><span class="n">μM</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="o">(</span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">PMF.uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="c1">-- The joint distribution assumes independence of message and key.</span>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="kd">noncomputable</span><span class="w"> </span><span class="kd">def</span><span class="w"> </span><span class="n">μMK</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="o">(</span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="bp">×</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span>
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">  </span><span class="c1">-- This is the PMF product, which corresponds to P(m, k) = P(m) * P(k)</span>
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="w">  </span><span class="n">PMF.prod</span><span class="w"> </span><span class="n">μM</span><span class="w"> </span><span class="n">μK</span>
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="c1">-- The ciphertext distribution, built with bind and pure.</span>
+</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="kd">noncomputable</span><span class="w"> </span><span class="kd">def</span><span class="w"> </span><span class="n">μC</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="o">(</span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span>
+</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="w">  </span><span class="n">PMF.bind</span><span class="w"> </span><span class="n">μMK</span><span class="w"> </span><span class="o">(</span><span class="k">fun</span><span class="w"> </span><span class="n">mk</span><span class="w"> </span><span class="bp">=&gt;</span><span class="w"> </span><span class="n">PMF.pure</span><span class="w"> </span><span class="o">(</span><span class="n">encrypt</span><span class="w"> </span><span class="n">mk</span><span class="bp">.</span><span class="mi">1</span><span class="w"> </span><span class="n">mk</span><span class="bp">.</span><span class="mi">2</span><span class="o">))</span>
+</span></code></pre></div>
+<hr />
+<h3 id="step-1-unfold-everything">Step 1: Unfold Everything<a class="headerlink" href="#step-1-unfold-everything" title="Permanent link">#</a></h3>
+<p>The first step in many proofs is to reveal the definitions of the objects we are
+reasoning about.</p>
+<p>🥅 <strong>Goal State Before the Tactic</strong> 🥅</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kd">theorem</span><span class="w"> </span><span class="n">μC_apply_eq_sum</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">(</span><span class="n">c</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="n">μC</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="bp">∑&#39;</span><span class="w"> </span><span class="o">(</span><span class="n">mk</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="bp">×</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="o">),</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">encrypt</span><span class="w"> </span><span class="n">mk</span><span class="bp">.</span><span class="mi">1</span><span class="w"> </span><span class="n">mk</span><span class="bp">.</span><span class="mi">2</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="n">μMK</span><span class="w"> </span><span class="n">mk</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">by</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="c1">-- First, let&#39;s see what μC is.</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">  </span><span class="n">rw</span><span class="w"> </span><span class="o">[</span><span class="n">μC</span><span class="o">]</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">  </span><span class="c1">-- Now, let&#39;s apply the definition of how `bind` works on a specific output.</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">  </span><span class="c1">-- This is the crucial lemma `PMF.bind_apply`.</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">  </span><span class="n">rw</span><span class="w"> </span><span class="o">[</span><span class="n">PMF.bind_apply</span><span class="o">]</span>
+</span></code></pre></div>
+<p>🥅 <strong>Goal State After the Tactic</strong> 🥅</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="bp">⊢</span><span class="w"> </span><span class="o">(</span><span class="bp">∑&#39;</span><span class="w"> </span><span class="o">(</span><span class="n">x</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="bp">×</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="o">),</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="n">μMK</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="bp">*</span><span class="w"> </span><span class="o">(</span><span class="n">PMF.pure</span><span class="w"> </span><span class="o">(</span><span class="n">encrypt</span><span class="w"> </span><span class="n">x</span><span class="bp">.</span><span class="mi">1</span><span class="w"> </span><span class="n">x</span><span class="bp">.</span><span class="mi">2</span><span class="o">))</span><span class="w"> </span><span class="n">c</span><span class="o">)</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">  </span><span class="bp">=</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">  </span><span class="bp">∑&#39;</span><span class="w"> </span><span class="o">(</span><span class="n">mk</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="bp">×</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="o">),</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">encrypt</span><span class="w"> </span><span class="n">mk</span><span class="bp">.</span><span class="mi">1</span><span class="w"> </span><span class="n">mk</span><span class="bp">.</span><span class="mi">2</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="n">μMK</span><span class="w"> </span><span class="n">mk</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="mi">0</span>
+</span></code></pre></div>
+<hr />
+<h4 id="why-this-works-proof-term-view">Why this works &amp; proof term view<a class="headerlink" href="#why-this-works-proof-term-view" title="Permanent link">#</a></h4>
+<p>Looking under the hood,</p>
+<ol>
+<li>
+<p><code>rw [μC]</code>: as before, this is a substitution.</p>
+<p>It replaces <code>μC</code> with its definition, <code>PMF.bind μMK ...</code>.</p>
+<p>The proof term equivalent is <code>Eq.subst</code>.</p>
+</li>
+<li>
+<p><code>rw [PMF.bind_apply]</code>: this is the core of Step 1.</p>
+<p><code>PMF.bind_apply</code> is a theorem in Mathlib that states:</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="o">(</span><span class="n">PMF.bind</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="n">f</span><span class="o">)</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="bp">∑&#39;</span><span class="w"> </span><span class="n">x</span><span class="o">,</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="bp">*</span><span class="w"> </span><span class="o">(</span><span class="n">f</span><span class="w"> </span><span class="n">x</span><span class="o">)</span><span class="w"> </span><span class="n">y</span>
+</span></code></pre></div>
+<p>This lemma is the formal expression of the "law of total probability."</p>
+<p>The <code>rw</code> tactic finds this lemma and mechanically rewrites the left-hand side of
+our goal to match it.</p>
+</li>
+</ol>
+<hr />
+<h3 id="step-2-simplify-the-pure-term">Step 2: Simplify the <code>pure</code> Term<a class="headerlink" href="#step-2-simplify-the-pure-term" title="Permanent link">#</a></h3>
+<p>Our goal now involves a sum containing the term <code>(PMF.pure (encrypt x.1 x.2)) c</code>,</p>
+<p>where <code>pure</code> creates a deterministic distribution.</p>
+<p>Let's simplify that.</p>
+<h4 id="the-tactic-based-proof-continuing">The Tactic-Based Proof (Continuing)<a class="headerlink" href="#the-tactic-based-proof-continuing" title="Permanent link">#</a></h4>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1">-- We have `... * (PMF.pure ...)` inside the sum. Let&#39;s simplify it.</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="c1">-- The `PMF.pure_apply` lemma says `(pure a) b` is 1 if a=b and 0 otherwise.</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="c1">-- `simp` is smart enough to apply this inside the summation.</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="n">simp</span><span class="w"> </span><span class="o">[</span><span class="n">PMF.pure_apply</span><span class="o">]</span>
+</span></code></pre></div>
+<p>🥅 <strong>Goal State After the Tactic</strong> 🥅</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="bp">⊢</span><span class="w"> </span><span class="o">(</span><span class="bp">∑&#39;</span><span class="w"> </span><span class="o">(</span><span class="n">x</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="bp">×</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="o">),</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="n">μMK</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="bp">*</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">encrypt</span><span class="w"> </span><span class="n">x</span><span class="bp">.</span><span class="mi">1</span><span class="w"> </span><span class="n">x</span><span class="bp">.</span><span class="mi">2</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="mi">0</span><span class="o">)</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span><span class="bp">=</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">  </span><span class="bp">∑&#39;</span><span class="w"> </span><span class="o">(</span><span class="n">mk</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="bp">×</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="o">),</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">encrypt</span><span class="w"> </span><span class="n">mk</span><span class="bp">.</span><span class="mi">1</span><span class="w"> </span><span class="n">mk</span><span class="bp">.</span><span class="mi">2</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="n">μMK</span><span class="w"> </span><span class="n">mk</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="mi">0</span>
+</span></code></pre></div>
+<hr />
+<h4 id="why-this-works-proof-term-view_1">Why this works &amp; proof term view<a class="headerlink" href="#why-this-works-proof-term-view_1" title="Permanent link">#</a></h4>
+<ul>
+<li>
+<p><code>PMF.pure_apply</code> states <code>(PMF.pure a) b = if a = b then 1 else 0</code>.</p>
+</li>
+<li>
+<p><code>simp</code> applies this rewrite inside the summation (it "simplifies under binders").</p>
+</li>
+<li>
+<p>For each <code>x</code> in the sum, it replaces <code>(PMF.pure (encrypt x.1 x.2)) c</code> with
+   <code>if encrypt x.1 x.2 = c then 1 else 0</code>.</p>
+</li>
+<li>
+<p>The corresponding proof term would involve a congruence lemma for summations,
+   <code>tsum_congr_args</code>, which says that two sums are equal provided their bodies are
+   equal for all inputs.</p>
+</li>
+</ul>
+<p>The proof of equality of the bodies would then use <code>PMF.pure_apply</code>.</p>
+<p><code>simp</code> does all of this.</p>
+<hr />
+<h3 id="step-3-final-touches">Step 3: Final Touches<a class="headerlink" href="#step-3-final-touches" title="Permanent link">#</a></h3>
+<p>The two sides of the equation look almost identical.</p>
+<p>We just need to convince Lean that <code>P * (if cond then 1 else 0)</code> is the same as <code>if cond then P else 0</code>.</p>
+<h4 id="the-tactic-based-proof-finishing">The Tactic-Based Proof (Finishing)<a class="headerlink" href="#the-tactic-based-proof-finishing" title="Permanent link">#</a></h4>
+<p><div class="language-lean highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="w">  </span><span class="c1">-- The goal is now to show that `P * (if ...)` is the same as `if ... then P else ...`</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">  </span><span class="c1">-- This is a standard algebraic simplification.</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span><span class="n">simp</span>
+</span></code></pre></div>
+The goal is solved. <code>simp</code> has a lemma called <code>mul_boole</code> that proves exactly this identity.</p>
+<p><strong>The Equivalent Proof Term (<code>rfl</code>)</strong></p>
+<p>After the final <code>simp</code>, the left and right sides are syntactically identical.</p>
+<p>The final step is just reflexivity, <code>Eq.refl</code>.</p>
+<p>The genius of <code>simp</code> is that it did the <code>rw [mul_boole]</code> and <code>rfl</code> for us.</p>
+<hr />
+<h2 id="the-lean-code-file-version-20">The Lean Code File (Version 2.0)<a class="headerlink" href="#the-lean-code-file-version-20" title="Permanent link">#</a></h2>
+<p>Here is the complete, updated file with our new definitions and the full proof.</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1">-- We need to import the necessary parts of Mathlib.</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="kn">import</span><span class="w"> </span><span class="n">Mathlib.Probability.ProbabilityMassFunction.Basic</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="kn">import</span><span class="w"> </span><span class="n">Mathlib.Data.Vector.Basic</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="c">/-</span><span class="cm">!</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="cm">### Part 1: A Concrete First Proof</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="cm">-/</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="c1">-- To make our example concrete, we&#39;ll define Key n as vectors of booleans.</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="c1">-- This is equivalent to `Fin n → Bool` or other n-bit types.</span>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="n">abbrev</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="o">(</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="n">Bool</span><span class="w"> </span><span class="n">n</span>
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="c1">-- The uniform distribution over keys, as mentioned in your notes.</span>
+</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="kd">noncomputable</span><span class="w"> </span><span class="kd">def</span><span class="w"> </span><span class="n">μK</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="o">(</span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">PMF.uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="o">)</span>
+</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>
+</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="c1">-- Our theorem: The probability of the key [true, false, true] is 1/8.</span>
+</span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a><span class="kd">example</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">μK</span><span class="w"> </span><span class="o">⟨[</span><span class="n">true</span><span class="o">,</span><span class="w"> </span><span class="n">false</span><span class="o">,</span><span class="w"> </span><span class="n">true</span><span class="o">],</span><span class="w"> </span><span class="kd">by</span><span class="w"> </span><span class="n">simp</span><span class="o">⟩</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="o">(</span><span class="mi">1</span><span class="bp">/</span><span class="mi">8</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ENNReal</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">by</span>
+</span><span id="__span-19-18"><a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a><span class="w">  </span><span class="c1">-- This proof works by unfolding definitions and simplifying.</span>
+</span><span id="__span-19-19"><a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a><span class="w">  </span><span class="c1">-- 1. `μK` unfolds to `PMF.uniformOfFintype (Key 3)`.</span>
+</span><span id="__span-19-20"><a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a><span class="w">  </span><span class="c1">-- 2. `PMF.uniformOfFintype_apply` rewrites the goal to `(Fintype.card (Key 3))⁻¹`.</span>
+</span><span id="__span-19-21"><a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a><span class="w">  </span><span class="c1">-- 3. The `Fintype` instance for `Vector Bool 3` computes the cardinality to `8`.</span>
+</span><span id="__span-19-22"><a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a><span class="w">  </span><span class="c1">-- 4. The goal simplifies to `8⁻¹ = 1/8`, which is true by definition (`rfl`).</span>
+</span><span id="__span-19-23"><a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a><span class="w">  </span><span class="n">simp</span><span class="w"> </span><span class="o">[</span><span class="n">μK</span><span class="o">,</span><span class="w"> </span><span class="n">PMF.uniformOfFintype_apply</span><span class="o">]</span>
+</span><span id="__span-19-24"><a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a>
+</span><span id="__span-19-25"><a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a>
+</span><span id="__span-19-26"><a id="__codelineno-19-26" name="__codelineno-19-26" href="#__codelineno-19-26"></a><span class="c">/-</span><span class="cm">!</span>
+</span><span id="__span-19-27"><a id="__codelineno-19-27" name="__codelineno-19-27" href="#__codelineno-19-27"></a><span class="cm">### Part 2: Deconstructing `bind` and `pure`</span>
+</span><span id="__span-19-28"><a id="__codelineno-19-28" name="__codelineno-19-28" href="#__codelineno-19-28"></a><span class="cm">-/</span>
+</span><span id="__span-19-29"><a id="__codelineno-19-29" name="__codelineno-19-29" href="#__codelineno-19-29"></a>
+</span><span id="__span-19-30"><a id="__codelineno-19-30" name="__codelineno-19-30" href="#__codelineno-19-30"></a><span class="c1">-- For our example, Plaintexts are also n-bit vectors.</span>
+</span><span id="__span-19-31"><a id="__codelineno-19-31" name="__codelineno-19-31" href="#__codelineno-19-31"></a><span class="n">abbrev</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="o">(</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="n">Bool</span><span class="w"> </span><span class="n">n</span>
+</span><span id="__span-19-32"><a id="__codelineno-19-32" name="__codelineno-19-32" href="#__codelineno-19-32"></a><span class="n">abbrev</span><span class="w"> </span><span class="n">Ciphertext</span><span class="w"> </span><span class="o">(</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="n">Bool</span><span class="w"> </span><span class="n">n</span>
+</span><span id="__span-19-33"><a id="__codelineno-19-33" name="__codelineno-19-33" href="#__codelineno-19-33"></a>
+</span><span id="__span-19-34"><a id="__codelineno-19-34" name="__codelineno-19-34" href="#__codelineno-19-34"></a><span class="c1">-- A simple toy encryption function: pointwise XOR.</span>
+</span><span id="__span-19-35"><a id="__codelineno-19-35" name="__codelineno-19-35" href="#__codelineno-19-35"></a><span class="kd">def</span><span class="w"> </span><span class="n">encrypt</span><span class="w"> </span><span class="o">(</span><span class="n">m</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="n">k</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">:=</span>
+</span><span id="__span-19-36"><a id="__codelineno-19-36" name="__codelineno-19-36" href="#__codelineno-19-36"></a><span class="w">  </span><span class="n">Vector.map₂</span><span class="w"> </span><span class="n">Bool.xor</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="n">k</span>
+</span><span id="__span-19-37"><a id="__codelineno-19-37" name="__codelineno-19-37" href="#__codelineno-19-37"></a>
+</span><span id="__span-19-38"><a id="__codelineno-19-38" name="__codelineno-19-38" href="#__codelineno-19-38"></a><span class="c1">-- Assume a uniform distribution on messages for this example.</span>
+</span><span id="__span-19-39"><a id="__codelineno-19-39" name="__codelineno-19-39" href="#__codelineno-19-39"></a><span class="kd">noncomputable</span><span class="w"> </span><span class="kd">def</span><span class="w"> </span><span class="n">μM</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="o">(</span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">PMF.uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span>
+</span><span id="__span-19-40"><a id="__codelineno-19-40" name="__codelineno-19-40" href="#__codelineno-19-40"></a>
+</span><span id="__span-19-41"><a id="__codelineno-19-41" name="__codelineno-19-41" href="#__codelineno-19-41"></a><span class="c1">-- The joint distribution assumes independence of message and key.</span>
+</span><span id="__span-19-42"><a id="__codelineno-19-42" name="__codelineno-19-42" href="#__codelineno-19-42"></a><span class="kd">noncomputable</span><span class="w"> </span><span class="kd">def</span><span class="w"> </span><span class="n">μMK</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="o">(</span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="bp">×</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span>
+</span><span id="__span-19-43"><a id="__codelineno-19-43" name="__codelineno-19-43" href="#__codelineno-19-43"></a><span class="w">  </span><span class="c1">-- This is the PMF product, which corresponds to P(m, k) = P(m) * P(k)</span>
+</span><span id="__span-19-44"><a id="__codelineno-19-44" name="__codelineno-19-44" href="#__codelineno-19-44"></a><span class="w">  </span><span class="n">PMF.prod</span><span class="w"> </span><span class="n">μM</span><span class="w"> </span><span class="n">μK</span>
+</span><span id="__span-19-45"><a id="__codelineno-19-45" name="__codelineno-19-45" href="#__codelineno-19-45"></a>
+</span><span id="__span-19-46"><a id="__codelineno-19-46" name="__codelineno-19-46" href="#__codelineno-19-46"></a><span class="c1">-- The ciphertext distribution, built with bind and pure.</span>
+</span><span id="__span-19-47"><a id="__codelineno-19-47" name="__codelineno-19-47" href="#__codelineno-19-47"></a><span class="kd">noncomputable</span><span class="w"> </span><span class="kd">def</span><span class="w"> </span><span class="n">μC</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="o">(</span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span>
+</span><span id="__span-19-48"><a id="__codelineno-19-48" name="__codelineno-19-48" href="#__codelineno-19-48"></a><span class="w">  </span><span class="n">PMF.bind</span><span class="w"> </span><span class="n">μMK</span><span class="w"> </span><span class="o">(</span><span class="k">fun</span><span class="w"> </span><span class="n">mk</span><span class="w"> </span><span class="bp">=&gt;</span><span class="w"> </span><span class="n">PMF.pure</span><span class="w"> </span><span class="o">(</span><span class="n">encrypt</span><span class="w"> </span><span class="n">mk</span><span class="bp">.</span><span class="mi">1</span><span class="w"> </span><span class="n">mk</span><span class="bp">.</span><span class="mi">2</span><span class="o">))</span>
+</span><span id="__span-19-49"><a id="__codelineno-19-49" name="__codelineno-19-49" href="#__codelineno-19-49"></a>
+</span><span id="__span-19-50"><a id="__codelineno-19-50" name="__codelineno-19-50" href="#__codelineno-19-50"></a>
+</span><span id="__span-19-51"><a id="__codelineno-19-51" name="__codelineno-19-51" href="#__codelineno-19-51"></a><span class="c1">-- Theorem: The probability of a ciphertext `c` is the sum of probabilities</span>
+</span><span id="__span-19-52"><a id="__codelineno-19-52" name="__codelineno-19-52" href="#__codelineno-19-52"></a><span class="c1">-- of all (message, key) pairs that produce `c`.</span>
+</span><span id="__span-19-53"><a id="__codelineno-19-53" name="__codelineno-19-53" href="#__codelineno-19-53"></a><span class="kd">theorem</span><span class="w"> </span><span class="n">μC_apply_eq_sum</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">(</span><span class="n">c</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:</span>
+</span><span id="__span-19-54"><a id="__codelineno-19-54" name="__codelineno-19-54" href="#__codelineno-19-54"></a><span class="w">    </span><span class="n">μC</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="bp">∑&#39;</span><span class="w"> </span><span class="o">(</span><span class="n">mk</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="bp">×</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="o">),</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">encrypt</span><span class="w"> </span><span class="n">mk</span><span class="bp">.</span><span class="mi">1</span><span class="w"> </span><span class="n">mk</span><span class="bp">.</span><span class="mi">2</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="n">μMK</span><span class="w"> </span><span class="n">mk</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">by</span>
+</span><span id="__span-19-55"><a id="__codelineno-19-55" name="__codelineno-19-55" href="#__codelineno-19-55"></a><span class="w">  </span><span class="c1">-- First, let&#39;s see what μC is.</span>
+</span><span id="__span-19-56"><a id="__codelineno-19-56" name="__codelineno-19-56" href="#__codelineno-19-56"></a><span class="w">  </span><span class="n">rw</span><span class="w"> </span><span class="o">[</span><span class="n">μC</span><span class="o">]</span>
+</span><span id="__span-19-57"><a id="__codelineno-19-57" name="__codelineno-19-57" href="#__codelineno-19-57"></a><span class="w">  </span><span class="c1">-- Now, let&#39;s apply the definition of how `bind` works on a specific output.</span>
+</span><span id="__span-19-58"><a id="__codelineno-19-58" name="__codelineno-19-58" href="#__codelineno-19-58"></a><span class="w">  </span><span class="c1">-- This is the crucial lemma `PMF.bind_apply`.</span>
+</span><span id="__span-19-59"><a id="__codelineno-19-59" name="__codelineno-19-59" href="#__codelineno-19-59"></a><span class="w">  </span><span class="n">rw</span><span class="w"> </span><span class="o">[</span><span class="n">PMF.bind_apply</span><span class="o">]</span>
+</span><span id="__span-19-60"><a id="__codelineno-19-60" name="__codelineno-19-60" href="#__codelineno-19-60"></a><span class="w">  </span><span class="c1">-- We have `... * (PMF.pure ...)` inside the sum. Let&#39;s simplify it.</span>
+</span><span id="__span-19-61"><a id="__codelineno-19-61" name="__codelineno-19-61" href="#__codelineno-19-61"></a><span class="w">  </span><span class="c1">-- The `PMF.pure_apply` lemma says `(pure a) b` is 1 if a=b and 0 otherwise.</span>
+</span><span id="__span-19-62"><a id="__codelineno-19-62" name="__codelineno-19-62" href="#__codelineno-19-62"></a><span class="w">  </span><span class="c1">-- `simp` is smart enough to apply this inside the summation.</span>
+</span><span id="__span-19-63"><a id="__codelineno-19-63" name="__codelineno-19-63" href="#__codelineno-19-63"></a><span class="w">  </span><span class="n">simp</span><span class="w"> </span><span class="n">only</span><span class="w"> </span><span class="o">[</span><span class="n">PMF.pure_apply</span><span class="o">]</span>
+</span><span id="__span-19-64"><a id="__codelineno-19-64" name="__codelineno-19-64" href="#__codelineno-19-64"></a><span class="w">  </span><span class="c1">-- The goal is now to show that `P * (if ...)` is the same as `if ... then P else ...`</span>
+</span><span id="__span-19-65"><a id="__codelineno-19-65" name="__codelineno-19-65" href="#__codelineno-19-65"></a><span class="w">  </span><span class="c1">-- This is a standard algebraic simplification handled by `mul_boole`.</span>
+</span><span id="__span-19-66"><a id="__codelineno-19-66" name="__codelineno-19-66" href="#__codelineno-19-66"></a><span class="w">  </span><span class="n">simp</span>
+</span></code></pre></div>
+<p>This second example shows how we can construct proofs by successively applying
+theorems (<code>rw</code>) and simplifying (<code>simp</code>).</p>
+<p>Next, we'll prove a more cryptographic property, namely, a simple one-time pad lemma,
+which requires us to introduce assumptions with <code>intro</code> and use them with <code>apply</code>.</p>
+<hr />
+<p>So far, we have explored how distributions are defined and how to prove basic equalities by unfolding those definitions. Now, let's use these building blocks to prove a foundational cryptographic property: a key lemma for the <strong>perfect secrecy of the One-Time Pad (OTP)</strong>.</p>
+<p>This example is powerful because it's simple enough to grasp intuitively but complex enough to require new and fundamental proof tactics. It will also show how we can leverage the vast library of mathematical facts within Mathlib to our advantage.</p>
+<hr />
+<h2 id="part-3-proving-a-cryptographic-property-one-time-pad">Part 3: Proving a Cryptographic Property (One-Time Pad)<a class="headerlink" href="#part-3-proving-a-cryptographic-property-one-time-pad" title="Permanent link">#</a></h2>
+<p>The core idea of the one-time pad is that if you encrypt a message with a truly
+random key, the resulting ciphertext is also completely random.</p>
+<p>In other words, observing a ciphertext <code>c</code> gives an attacker no information
+whatsoever about the plaintext <code>m</code> that was encrypted.</p>
+<p>The standard way to prove this is to show that the conditional distribution of
+ciphertexts, given a <em>fixed</em> plaintext message <code>m</code>, is uniform.</p>
+<p>This is the conditional distribution <code>P(C | M=m)</code> we discussed previously, which we
+can formalize in Lean.</p>
+<hr />
+<h3 id="step-0-setup-for-the-proof_1">Step 0: Setup for the Proof<a class="headerlink" href="#step-0-setup-for-the-proof_1" title="Permanent link">#</a></h3>
+<p>Let's define the conditional ciphertext distribution, <code>μC_M m</code>.</p>
+<p>This represents the distribution of ciphertexts when we encrypt a <em>specific, known</em>
+message <code>m</code> with a random key drawn from <code>μK</code>.</p>
+<p>In Lean, this is a straightforward <code>map</code> operation.</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c">/-</span><span class="cm">!</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="cm">### Part 3: Proving a Cryptographic Property (One-Time Pad)</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="cm">-/</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="c1">-- The distribution of ciphertexts, conditioned on a fixed message `m`.</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="c1">-- This is created by taking the key distribution `μK` and mapping the function</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="c1">-- `encrypt m` over it. For each random key `k`, we produce `encrypt m k`.</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="kd">noncomputable</span><span class="w"> </span><span class="kd">def</span><span class="w"> </span><span class="n">μC_M</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">(</span><span class="n">m</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="o">(</span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">  </span><span class="n">PMF.map</span><span class="w"> </span><span class="o">(</span><span class="n">encrypt</span><span class="w"> </span><span class="n">m</span><span class="o">)</span><span class="w"> </span><span class="n">μK</span>
+</span></code></pre></div>
+<p>Our goal is to prove that this distribution is the uniform distribution.</p>
+<p><strong>Theorem:</strong> For any message <code>m</code>, <code>μC_M m</code> is the uniform distribution over
+ciphertexts; that is,</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="bp">∀</span><span class="w"> </span><span class="o">(</span><span class="n">m</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="o">),</span><span class="w"> </span><span class="n">μC_M</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">PMF.uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="step-1-introducing-hypotheses-with-intro">Step 1: Introducing Hypotheses with <code>intro</code><a class="headerlink" href="#step-1-introducing-hypotheses-with-intro" title="Permanent link">#</a></h3>
+<p>Our theorem starts with <code>∀ m...</code>, so we need to introduce an arbitrary <code>m</code>.</p>
+<p><strong>The Tactic</strong>. <code>intro m</code></p>
+<p>The <code>intro</code> tactic consumes a universal quantifier (<code>∀</code>) or implication (<code>→</code>).</p>
+<p>It takes the quantified variable (<code>m</code>) and moves it into the local context as an hypothesis.</p>
+<p>🥅 <strong>Goal State Before the Tactic</strong> 🥅</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="bp">⊢</span><span class="w"> </span><span class="bp">∀</span><span class="w"> </span><span class="o">(</span><span class="n">m</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="o">),</span><span class="w"> </span><span class="n">μC_M</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">PMF.uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span>
+</span></code></pre></div>
+<p><strong>Applying <code>intro m</code></strong></p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kd">theorem</span><span class="w"> </span><span class="n">otp_perfect_secrecy_lemma</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">:</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">    </span><span class="bp">∀</span><span class="w"> </span><span class="o">(</span><span class="n">m</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="o">),</span><span class="w"> </span><span class="n">μC_M</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">PMF.uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">by</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">  </span><span class="n">intro</span><span class="w"> </span><span class="n">m</span>
+</span></code></pre></div>
+<p>🥅 <strong>Goal State After the Tactic</strong> 🥅</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">m</span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="bp">⊢</span><span class="w"> </span><span class="n">μC_M</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">PMF.uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span>
+</span></code></pre></div>
+<h4 id="the-equivalent-proof-term_3">The Equivalent Proof Term<a class="headerlink" href="#the-equivalent-proof-term_3" title="Permanent link">#</a></h4>
+<p>This is the most beautiful part for Agda fans.</p>
+<p>The <code>intro</code> tactic corresponds to creating a <strong>lambda abstraction</strong>.</p>
+<p>The proof term starts</p>
+<p><div class="language-lean highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="bp">λ</span><span class="w"> </span><span class="o">(</span><span class="n">m</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="bp">=&gt;</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">  </span><span class="c1">-- The rest of the proof, which must produce a proof of</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">  </span><span class="c1">-- `μC_M m = PMF.uniformOfFintype (Ciphertext n)`</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">  </span><span class="bp">...</span>
+</span></code></pre></div>
+<code>intro</code> is the tactic equivalent of <code>λ (m : ...) =&gt; ...</code>.</p>
+<hr />
+<h3 id="step-2-proving-function-equality-with-ext">Step 2: Proving Function Equality with <code>ext</code><a class="headerlink" href="#step-2-proving-function-equality-with-ext" title="Permanent link">#</a></h3>
+<p>The goal is now to prove that two <code>PMF</code>s are equal.</p>
+<p>A <code>PMF</code> is fundamentally a function.</p>
+<div class="admonition info">
+<p class="admonition-title">The principle of <strong>function extensionality</strong> (funext)</p>
+<p>Two functions <code>f</code> and <code>g</code> are equal iff <code>f x = g x</code> for all <code>x</code>.</p>
+</div>
+<p><strong>The Tactic</strong>. <code>ext c</code></p>
+<p>The <code>ext</code> tactic applies the funext principle, replacing the goal <code>f = g</code> with the
+goal <code>∀ x, f x = g x</code>, and automatically running <code>intro x</code>.</p>
+<p>🥅 <strong>Goal State Before the Tactic</strong> 🥅</p>
+<p><div class="language-lean highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">m</span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="bp">⊢</span><span class="w"> </span><span class="n">μC_M</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">PMF.uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span>
+</span></code></pre></div>
+<strong>Applying <code>ext c</code>:</strong>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="w">  </span><span class="c1">-- To prove two PMFs are equal, we show they give the same probability to every output.</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">  </span><span class="n">ext</span><span class="w"> </span><span class="n">c</span>
+</span></code></pre></div></p>
+<p>🥅 <strong>Goal State After the Tactic</strong> 🥅</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">m</span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="n">c</span><span class="o">:</span><span class="w"> </span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="bp">⊢</span><span class="w"> </span><span class="n">μC_M</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">PMF.uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="n">c</span>
+</span></code></pre></div>
+<h4 id="the-equivalent-proof-term_4">The Equivalent Proof Term<a class="headerlink" href="#the-equivalent-proof-term_4" title="Permanent link">#</a></h4>
+<p>The <code>ext</code> tactic is a shortcut for applying the <code>funext</code> axiom.</p>
+<p>The proof term would look like</p>
+<p><div class="language-lean highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="k">fun</span><span class="w"> </span><span class="o">(</span><span class="n">m</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="bp">=&gt;</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">  </span><span class="n">funext</span><span class="w"> </span><span class="o">(</span><span class="k">fun</span><span class="w"> </span><span class="o">(</span><span class="n">c</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="bp">=&gt;</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">    </span><span class="c1">-- The rest of the proof, which must produce a proof of</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="w">    </span><span class="c1">-- `μC_M m c = ...`</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="w">    </span><span class="bp">...</span>
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="w">  </span><span class="o">)</span>
+</span></code></pre></div>
+So,</p>
+<ul>
+<li><code>intro</code> builds lambdas for <code>∀</code>,</li>
+<li><code>ext</code> builds lambdas for function equality.</li>
+</ul>
+<hr />
+<h3 id="step-3-using-the-mathlib-machinery">Step 3: Using the Mathlib Machinery<a class="headerlink" href="#step-3-using-the-mathlib-machinery" title="Permanent link">#</a></h3>
+<p>We could now unfold all the definitions with <code>rw</code> and prove this from first principles.</p>
+<p>However, Mathlib has already done the hard work for us!</p>
+<p>There is a powerful theorem, <code>PMF.map_of_bijective</code>, that says:</p>
+<p><em>If you <code>map</code> a uniform distribution through a <code>bijective</code> function, the result is another uniform distribution.</em></p>
+<p>Our <code>encrypt m</code> function (which is <code>λ k =&gt; m xor k</code>) is a bijection from <code>Key n</code> to <code>Ciphertext n</code>.</p>
+<p>Let's use that fact.</p>
+<hr />
+<h4 id="tactic-based-proof-finishing">Tactic-Based Proof (Finishing)<a class="headerlink" href="#tactic-based-proof-finishing" title="Permanent link">#</a></h4>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="w">  </span><span class="c1">-- Unfold the definition of μC_M to expose the `map`.</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">  </span><span class="n">rw</span><span class="w"> </span><span class="o">[</span><span class="n">μC_M</span><span class="o">]</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="w">  </span><span class="c1">-- Now, apply the powerful lemma from Mathlib.</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="w">  </span><span class="n">rw</span><span class="w"> </span><span class="o">[</span><span class="n">PMF.map_of_bijective</span><span class="w"> </span><span class="o">(</span><span class="n">encrypt</span><span class="w"> </span><span class="n">m</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="bp">λ</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="bp">=&gt;</span><span class="w"> </span><span class="n">encrypt_is_bijective</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="n">k</span><span class="o">)]</span>
+</span></code></pre></div>
+<p>This is a bit complex:</p>
+<ul>
+<li>
+<p>The <code>rw</code> tactic here uses <code>PMF.map_of_bijective</code>.</p>
+</li>
+<li>
+<p>This requires a proof that our encryption function is bijective.</p>
+</li>
+<li>
+<p>We pass that as an argument: <code>(encrypt_is_bijective m)</code>.</p>
+</li>
+</ul>
+<hr />
+<h4 id="tactic-based-proof-alt-ending">Tactic-Based Proof (Alt Ending)<a class="headerlink" href="#tactic-based-proof-alt-ending" title="Permanent link">#</a></h4>
+<p>The <code>simp</code> tactic is actually smart enough to figure this out if we set it up correctly!</p>
+<p>A cleaner proof looks like this:</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="c1">-- First, we prove that encryption is a bijection. This is a helper lemma.</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="kd">lemma</span><span class="w"> </span><span class="n">encrypt_bijective</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">(</span><span class="n">m</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Function.Bijective</span><span class="w"> </span><span class="o">(</span><span class="n">encrypt</span><span class="w"> </span><span class="n">m</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="w">  </span><span class="c1">-- This is true because XORing with a constant is its own inverse.</span>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="w">  </span><span class="n">Function.Bijective.of_involutive</span><span class="w"> </span><span class="o">(</span><span class="bp">λ</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="bp">=&gt;</span><span class="w"> </span><span class="kd">by</span><span class="w"> </span><span class="n">simp</span><span class="w"> </span><span class="o">[</span><span class="n">encrypt</span><span class="o">,</span><span class="w"> </span><span class="n">Vector.map₂_map</span><span class="o">,</span><span class="w"> </span><span class="n">Bool.xor_comm</span><span class="o">,</span><span class="w"> </span><span class="n">Bool.xor_self</span><span class="o">])</span>
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>
+</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="c1">-- Now the main proof becomes incredibly clean.</span>
+</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="kd">theorem</span><span class="w"> </span><span class="n">otp_perfect_secrecy_lemma</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">:</span>
+</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="w">    </span><span class="bp">∀</span><span class="w"> </span><span class="o">(</span><span class="n">m</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="o">),</span><span class="w"> </span><span class="n">μC_M</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">PMF.uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">by</span>
+</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a><span class="w">  </span><span class="n">intro</span><span class="w"> </span><span class="n">m</span>
+</span><span id="__span-31-10"><a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a><span class="w">  </span><span class="n">rw</span><span class="w"> </span><span class="o">[</span><span class="n">μC_M</span><span class="o">]</span><span class="w"> </span><span class="c1">-- Unfold our definition</span>
+</span><span id="__span-31-11"><a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a><span class="w">  </span><span class="c1">-- `simp` finds the `map_of_bijective` lemma and our `encrypt_bijective` lemma!</span>
+</span><span id="__span-31-12"><a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a><span class="w">  </span><span class="n">simp</span><span class="w"> </span><span class="o">[</span><span class="n">μK</span><span class="o">,</span><span class="w"> </span><span class="n">PMF.map_of_bijective</span><span class="o">,</span><span class="w"> </span><span class="n">encrypt_bijective</span><span class="w"> </span><span class="n">m</span><span class="o">]</span>
+</span></code></pre></div>
+<p>The <code>simp</code> call does all the work:</p>
+<ul>
+<li>unfolds <code>μK</code> to see it's uniform,</li>
+<li>sees the <code>PMF.map</code>,</li>
+<li>finds the <code>map_of_bijective</code> lemma,</li>
+<li>proves the side-condition by applying our <code>encrypt_bijective</code> helper lemma.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Typical workflow</p>
+<ol>
+<li>Identify the high-level mathematical property you need (e.g., mapping a distribution over a bijection).</li>
+<li>Prove it as a separate lemma.</li>
+<li>Use that lemma to make your main proof clean and conceptual.</li>
+</ol>
+</div>
+<hr />
+<h2 id="the-lean-code-file-version-30">The Lean Code File (Version 3.0)<a class="headerlink" href="#the-lean-code-file-version-30" title="Permanent link">#</a></h2>
+<p>Here is the complete file. It now contains the proof of the OTP secrecy lemma, which
+you can test and explore in VS Code.</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="c1">-- We need to import the necessary parts of Mathlib.</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="kn">import</span><span class="w"> </span><span class="n">Mathlib.Probability.ProbabilityMassFunction.Basic</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="kn">import</span><span class="w"> </span><span class="n">Mathlib.Data.Vector.Basic</span>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="c">/-</span><span class="cm">!</span>
+</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="cm">### Part 1: A Concrete First Proof</span>
+</span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a><span class="cm">-/</span>
+</span><span id="__span-32-8"><a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>
+</span><span id="__span-32-9"><a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="c1">-- To make our example concrete, we&#39;ll define Key n as vectors of booleans.</span>
+</span><span id="__span-32-10"><a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a><span class="n">abbrev</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="o">(</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="n">Bool</span><span class="w"> </span><span class="n">n</span>
+</span><span id="__span-32-11"><a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a>
+</span><span id="__span-32-12"><a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a><span class="c1">-- The uniform distribution over keys, as mentioned in your notes.</span>
+</span><span id="__span-32-13"><a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a><span class="kd">noncomputable</span><span class="w"> </span><span class="kd">def</span><span class="w"> </span><span class="n">μK</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="o">(</span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">PMF.uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="o">)</span>
+</span><span id="__span-32-14"><a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a>
+</span><span id="__span-32-15"><a id="__codelineno-32-15" name="__codelineno-32-15" href="#__codelineno-32-15"></a><span class="c1">-- Our theorem: The probability of the key [true, false, true] is 1/8.</span>
+</span><span id="__span-32-16"><a id="__codelineno-32-16" name="__codelineno-32-16" href="#__codelineno-32-16"></a><span class="kd">example</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">μK</span><span class="w"> </span><span class="o">⟨[</span><span class="n">true</span><span class="o">,</span><span class="w"> </span><span class="n">false</span><span class="o">,</span><span class="w"> </span><span class="n">true</span><span class="o">],</span><span class="w"> </span><span class="kd">by</span><span class="w"> </span><span class="n">simp</span><span class="o">⟩</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="o">(</span><span class="mi">1</span><span class="bp">/</span><span class="mi">8</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ENNReal</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">by</span>
+</span><span id="__span-32-17"><a id="__codelineno-32-17" name="__codelineno-32-17" href="#__codelineno-32-17"></a><span class="w">  </span><span class="n">simp</span><span class="w"> </span><span class="o">[</span><span class="n">μK</span><span class="o">,</span><span class="w"> </span><span class="n">PMF.uniformOfFintype_apply</span><span class="o">]</span>
+</span><span id="__span-32-18"><a id="__codelineno-32-18" name="__codelineno-32-18" href="#__codelineno-32-18"></a>
+</span><span id="__span-32-19"><a id="__codelineno-32-19" name="__codelineno-32-19" href="#__codelineno-32-19"></a>
+</span><span id="__span-32-20"><a id="__codelineno-32-20" name="__codelineno-32-20" href="#__codelineno-32-20"></a><span class="c">/-</span><span class="cm">!</span>
+</span><span id="__span-32-21"><a id="__codelineno-32-21" name="__codelineno-32-21" href="#__codelineno-32-21"></a><span class="cm">### Part 2: Deconstructing `bind` and `pure`</span>
+</span><span id="__span-32-22"><a id="__codelineno-32-22" name="__codelineno-32-22" href="#__codelineno-32-22"></a><span class="cm">-/</span>
+</span><span id="__span-32-23"><a id="__codelineno-32-23" name="__codelineno-32-23" href="#__codelineno-32-23"></a>
+</span><span id="__span-32-24"><a id="__codelineno-32-24" name="__codelineno-32-24" href="#__codelineno-32-24"></a><span class="c1">-- For our example, Plaintexts are also n-bit vectors.</span>
+</span><span id="__span-32-25"><a id="__codelineno-32-25" name="__codelineno-32-25" href="#__codelineno-32-25"></a><span class="n">abbrev</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="o">(</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="n">Bool</span><span class="w"> </span><span class="n">n</span>
+</span><span id="__span-32-26"><a id="__codelineno-32-26" name="__codelineno-32-26" href="#__codelineno-32-26"></a><span class="n">abbrev</span><span class="w"> </span><span class="n">Ciphertext</span><span class="w"> </span><span class="o">(</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="n">Bool</span><span class="w"> </span><span class="n">n</span>
+</span><span id="__span-32-27"><a id="__codelineno-32-27" name="__codelineno-32-27" href="#__codelineno-32-27"></a>
+</span><span id="__span-32-28"><a id="__codelineno-32-28" name="__codelineno-32-28" href="#__codelineno-32-28"></a><span class="c1">-- A simple toy encryption function: pointwise XOR.</span>
+</span><span id="__span-32-29"><a id="__codelineno-32-29" name="__codelineno-32-29" href="#__codelineno-32-29"></a><span class="kd">def</span><span class="w"> </span><span class="n">encrypt</span><span class="w"> </span><span class="o">(</span><span class="n">m</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="n">k</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">:=</span>
+</span><span id="__span-32-30"><a id="__codelineno-32-30" name="__codelineno-32-30" href="#__codelineno-32-30"></a><span class="w">  </span><span class="n">Vector.map₂</span><span class="w"> </span><span class="n">Bool.xor</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="n">k</span>
+</span><span id="__span-32-31"><a id="__codelineno-32-31" name="__codelineno-32-31" href="#__codelineno-32-31"></a>
+</span><span id="__span-32-32"><a id="__codelineno-32-32" name="__codelineno-32-32" href="#__codelineno-32-32"></a><span class="c1">-- Assume a uniform distribution on messages for this example.</span>
+</span><span id="__span-32-33"><a id="__codelineno-32-33" name="__codelineno-32-33" href="#__codelineno-32-33"></a><span class="kd">noncomputable</span><span class="w"> </span><span class="kd">def</span><span class="w"> </span><span class="n">μM</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="o">(</span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">PMF.uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span>
+</span><span id="__span-32-34"><a id="__codelineno-32-34" name="__codelineno-32-34" href="#__codelineno-32-34"></a>
+</span><span id="__span-32-35"><a id="__codelineno-32-35" name="__codelineno-32-35" href="#__codelineno-32-35"></a><span class="c1">-- The joint distribution assumes independence of message and key.</span>
+</span><span id="__span-32-36"><a id="__codelineno-32-36" name="__codelineno-32-36" href="#__codelineno-32-36"></a><span class="kd">noncomputable</span><span class="w"> </span><span class="kd">def</span><span class="w"> </span><span class="n">μMK</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="o">(</span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="bp">×</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span>
+</span><span id="__span-32-37"><a id="__codelineno-32-37" name="__codelineno-32-37" href="#__codelineno-32-37"></a><span class="w">  </span><span class="n">PMF.prod</span><span class="w"> </span><span class="n">μM</span><span class="w"> </span><span class="n">μK</span>
+</span><span id="__span-32-38"><a id="__codelineno-32-38" name="__codelineno-32-38" href="#__codelineno-32-38"></a>
+</span><span id="__span-32-39"><a id="__codelineno-32-39" name="__codelineno-32-39" href="#__codelineno-32-39"></a><span class="c1">-- The ciphertext distribution, built with bind and pure.</span>
+</span><span id="__span-32-40"><a id="__codelineno-32-40" name="__codelineno-32-40" href="#__codelineno-32-40"></a><span class="kd">noncomputable</span><span class="w"> </span><span class="kd">def</span><span class="w"> </span><span class="n">μC</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="o">(</span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span>
+</span><span id="__span-32-41"><a id="__codelineno-32-41" name="__codelineno-32-41" href="#__codelineno-32-41"></a><span class="w">  </span><span class="n">PMF.bind</span><span class="w"> </span><span class="n">μMK</span><span class="w"> </span><span class="o">(</span><span class="k">fun</span><span class="w"> </span><span class="n">mk</span><span class="w"> </span><span class="bp">=&gt;</span><span class="w"> </span><span class="n">PMF.pure</span><span class="w"> </span><span class="o">(</span><span class="n">encrypt</span><span class="w"> </span><span class="n">mk</span><span class="bp">.</span><span class="mi">1</span><span class="w"> </span><span class="n">mk</span><span class="bp">.</span><span class="mi">2</span><span class="o">))</span>
+</span><span id="__span-32-42"><a id="__codelineno-32-42" name="__codelineno-32-42" href="#__codelineno-32-42"></a>
+</span><span id="__span-32-43"><a id="__codelineno-32-43" name="__codelineno-32-43" href="#__codelineno-32-43"></a>
+</span><span id="__span-32-44"><a id="__codelineno-32-44" name="__codelineno-32-44" href="#__codelineno-32-44"></a><span class="c1">-- Theorem: The probability of a ciphertext `c` is the sum of probabilities</span>
+</span><span id="__span-32-45"><a id="__codelineno-32-45" name="__codelineno-32-45" href="#__codelineno-32-45"></a><span class="c1">-- of all (message, key) pairs that produce `c`.</span>
+</span><span id="__span-32-46"><a id="__codelineno-32-46" name="__codelineno-32-46" href="#__codelineno-32-46"></a><span class="kd">theorem</span><span class="w"> </span><span class="n">μC_apply_eq_sum</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">(</span><span class="n">c</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:</span>
+</span><span id="__span-32-47"><a id="__codelineno-32-47" name="__codelineno-32-47" href="#__codelineno-32-47"></a><span class="w">    </span><span class="n">μC</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="bp">∑&#39;</span><span class="w"> </span><span class="o">(</span><span class="n">mk</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="bp">×</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="o">),</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">encrypt</span><span class="w"> </span><span class="n">mk</span><span class="bp">.</span><span class="mi">1</span><span class="w"> </span><span class="n">mk</span><span class="bp">.</span><span class="mi">2</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="n">μMK</span><span class="w"> </span><span class="n">mk</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">by</span>
+</span><span id="__span-32-48"><a id="__codelineno-32-48" name="__codelineno-32-48" href="#__codelineno-32-48"></a><span class="w">  </span><span class="n">rw</span><span class="w"> </span><span class="o">[</span><span class="n">μC</span><span class="o">,</span><span class="w"> </span><span class="n">PMF.bind_apply</span><span class="o">]</span>
+</span><span id="__span-32-49"><a id="__codelineno-32-49" name="__codelineno-32-49" href="#__codelineno-32-49"></a><span class="w">  </span><span class="n">simp</span><span class="w"> </span><span class="n">only</span><span class="w"> </span><span class="o">[</span><span class="n">PMF.pure_apply</span><span class="o">,</span><span class="w"> </span><span class="n">mul_boole</span><span class="o">]</span>
+</span><span id="__span-32-50"><a id="__codelineno-32-50" name="__codelineno-32-50" href="#__codelineno-32-50"></a>
+</span><span id="__span-32-51"><a id="__codelineno-32-51" name="__codelineno-32-51" href="#__codelineno-32-51"></a>
+</span><span id="__span-32-52"><a id="__codelineno-32-52" name="__codelineno-32-52" href="#__codelineno-32-52"></a><span class="c">/-</span><span class="cm">!</span>
+</span><span id="__span-32-53"><a id="__codelineno-32-53" name="__codelineno-32-53" href="#__codelineno-32-53"></a><span class="cm">### Part 3: Proving a Cryptographic Property (One-Time Pad)</span>
+</span><span id="__span-32-54"><a id="__codelineno-32-54" name="__codelineno-32-54" href="#__codelineno-32-54"></a><span class="cm">-/</span>
+</span><span id="__span-32-55"><a id="__codelineno-32-55" name="__codelineno-32-55" href="#__codelineno-32-55"></a>
+</span><span id="__span-32-56"><a id="__codelineno-32-56" name="__codelineno-32-56" href="#__codelineno-32-56"></a><span class="c1">-- The distribution of ciphertexts, conditioned on a fixed message `m`.</span>
+</span><span id="__span-32-57"><a id="__codelineno-32-57" name="__codelineno-32-57" href="#__codelineno-32-57"></a><span class="kd">noncomputable</span><span class="w"> </span><span class="kd">def</span><span class="w"> </span><span class="n">μC_M</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">(</span><span class="n">m</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="o">(</span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span>
+</span><span id="__span-32-58"><a id="__codelineno-32-58" name="__codelineno-32-58" href="#__codelineno-32-58"></a><span class="w">  </span><span class="n">PMF.map</span><span class="w"> </span><span class="o">(</span><span class="n">encrypt</span><span class="w"> </span><span class="n">m</span><span class="o">)</span><span class="w"> </span><span class="n">μK</span>
+</span><span id="__span-32-59"><a id="__codelineno-32-59" name="__codelineno-32-59" href="#__codelineno-32-59"></a>
+</span><span id="__span-32-60"><a id="__codelineno-32-60" name="__codelineno-32-60" href="#__codelineno-32-60"></a><span class="c1">-- Helper lemma: For a fixed message m, encryption is a bijection from keys to ciphertexts.</span>
+</span><span id="__span-32-61"><a id="__codelineno-32-61" name="__codelineno-32-61" href="#__codelineno-32-61"></a><span class="kd">lemma</span><span class="w"> </span><span class="n">encrypt_bijective</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">(</span><span class="n">m</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Function.Bijective</span><span class="w"> </span><span class="o">(</span><span class="n">encrypt</span><span class="w"> </span><span class="n">m</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span>
+</span><span id="__span-32-62"><a id="__codelineno-32-62" name="__codelineno-32-62" href="#__codelineno-32-62"></a><span class="w">  </span><span class="c1">-- This is true because XORing with a constant is its own inverse.</span>
+</span><span id="__span-32-63"><a id="__codelineno-32-63" name="__codelineno-32-63" href="#__codelineno-32-63"></a><span class="w">  </span><span class="c1">-- The proof is to show that applying the function twice gets you back to the start.</span>
+</span><span id="__span-32-64"><a id="__codelineno-32-64" name="__codelineno-32-64" href="#__codelineno-32-64"></a><span class="w">  </span><span class="n">Function.Bijective.of_involutive</span><span class="w"> </span><span class="o">(</span><span class="k">fun</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="bp">=&gt;</span><span class="w"> </span><span class="kd">by</span>
+</span><span id="__span-32-65"><a id="__codelineno-32-65" name="__codelineno-32-65" href="#__codelineno-32-65"></a><span class="w">    </span><span class="c1">-- We need to show `encrypt m (encrypt m k) = k`</span>
+</span><span id="__span-32-66"><a id="__codelineno-32-66" name="__codelineno-32-66" href="#__codelineno-32-66"></a><span class="w">    </span><span class="n">simp</span><span class="w"> </span><span class="o">[</span><span class="n">encrypt</span><span class="o">,</span><span class="w"> </span><span class="n">Vector.map₂_map</span><span class="o">,</span><span class="w"> </span><span class="n">Bool.xor_comm</span><span class="o">,</span><span class="w"> </span><span class="n">Bool.xor_assoc</span><span class="o">,</span><span class="w"> </span><span class="n">Bool.xor_self</span><span class="o">,</span><span class="w"> </span><span class="n">Bool.xor_false</span><span class="o">])</span>
+</span><span id="__span-32-67"><a id="__codelineno-32-67" name="__codelineno-32-67" href="#__codelineno-32-67"></a>
+</span><span id="__span-32-68"><a id="__codelineno-32-68" name="__codelineno-32-68" href="#__codelineno-32-68"></a><span class="c1">-- Theorem: For any message m, the distribution of ciphertexts is uniform.</span>
+</span><span id="__span-32-69"><a id="__codelineno-32-69" name="__codelineno-32-69" href="#__codelineno-32-69"></a><span class="c1">-- This is a key lemma for proving the perfect secrecy of the one-time pad.</span>
+</span><span id="__span-32-70"><a id="__codelineno-32-70" name="__codelineno-32-70" href="#__codelineno-32-70"></a><span class="kd">theorem</span><span class="w"> </span><span class="n">otp_perfect_secrecy_lemma</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">:</span>
+</span><span id="__span-32-71"><a id="__codelineno-32-71" name="__codelineno-32-71" href="#__codelineno-32-71"></a><span class="w">    </span><span class="bp">∀</span><span class="w"> </span><span class="o">(</span><span class="n">m</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="o">),</span><span class="w"> </span><span class="n">μC_M</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">PMF.uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">by</span>
+</span><span id="__span-32-72"><a id="__codelineno-32-72" name="__codelineno-32-72" href="#__codelineno-32-72"></a><span class="w">  </span><span class="c1">-- Consider an arbitrary message m.</span>
+</span><span id="__span-32-73"><a id="__codelineno-32-73" name="__codelineno-32-73" href="#__codelineno-32-73"></a><span class="w">  </span><span class="n">intro</span><span class="w"> </span><span class="n">m</span>
+</span><span id="__span-32-74"><a id="__codelineno-32-74" name="__codelineno-32-74" href="#__codelineno-32-74"></a><span class="w">  </span><span class="c1">-- Unfold the definition of our conditional distribution.</span>
+</span><span id="__span-32-75"><a id="__codelineno-32-75" name="__codelineno-32-75" href="#__codelineno-32-75"></a><span class="w">  </span><span class="n">rw</span><span class="w"> </span><span class="o">[</span><span class="n">μC_M</span><span class="o">]</span>
+</span><span id="__span-32-76"><a id="__codelineno-32-76" name="__codelineno-32-76" href="#__codelineno-32-76"></a><span class="w">  </span><span class="c1">-- The main argument: mapping a uniform distribution over a bijection yields</span>
+</span><span id="__span-32-77"><a id="__codelineno-32-77" name="__codelineno-32-77" href="#__codelineno-32-77"></a><span class="w">  </span><span class="c1">-- a uniform distribution. `simp` can apply this high-level theorem for us.</span>
+</span><span id="__span-32-78"><a id="__codelineno-32-78" name="__codelineno-32-78" href="#__codelineno-32-78"></a><span class="w">  </span><span class="c1">-- It uses our `encrypt_bijective` lemma to satisfy the precondition.</span>
+</span><span id="__span-32-79"><a id="__codelineno-32-79" name="__codelineno-32-79" href="#__codelineno-32-79"></a><span class="w">  </span><span class="n">simp</span><span class="w"> </span><span class="o">[</span><span class="n">μK</span><span class="o">,</span><span class="w"> </span><span class="n">PMF.map_of_bijective</span><span class="o">,</span><span class="w"> </span><span class="n">encrypt_bijective</span><span class="w"> </span><span class="n">m</span><span class="o">]</span>
+</span></code></pre></div>
+<p>[1] ...by the Gemini AI Agent.</p>
 <!-- internal links -->
 <!-- external links -->
 
@@ -1219,6 +2608,44 @@ The <code>simp</code> tactic automated the process of finding <code>card_proof</
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../2025Jun19-notes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2025 Jun 19">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                2025 Jun 19
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../interleaved_demo_presentation/" class="md-footer__link md-footer__link--next" aria-label="Next: Old Overview/Demo">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Old Overview/Demo
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
