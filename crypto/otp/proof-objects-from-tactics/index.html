@@ -8,9 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://formalmethods.io/cardano-ledger/shelley/intro/">
+        <link rel="canonical" href="https://formalmethods.io/crypto/otp/proof-objects-from-tactics/">
       
       
+        <link rel="prev" href="../2025Jun19-notes/">
+      
+      
+        <link rel="next" href="../interleaved_demo_presentation/">
       
       
       <link rel="icon" href="../../../img/formal_methods_favicon.svg">
@@ -18,7 +22,7 @@
     
     
       
-        <title>Intro - Formal Methods</title>
+        <title>Proof objects from tactics - Formal Methods</title>
       
     
     
@@ -69,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#revealing-proof-objects-from-tactics" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -100,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Intro
+              Proof objects from tactics
             
           </span>
         </div>
@@ -236,17 +245,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -261,7 +272,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             FM Crypto
@@ -272,17 +283,19 @@
                 
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -297,7 +310,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             OTP
@@ -311,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../crypto/otp/basics/" class="md-nav__link">
+      <a href="../basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -333,7 +346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../crypto/otp/perfect-secrecy/" class="md-nav__link">
+      <a href="../perfect-secrecy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -355,7 +368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../crypto/otp/otp-lean/" class="md-nav__link">
+      <a href="../otp-lean/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -374,17 +387,19 @@
                 
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_4" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1_4" id="__nav_2_1_4_label" tabindex="0">
@@ -399,7 +414,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1_4">
             <span class="md-nav__icon md-icon"></span>
             Presentation Notes
@@ -413,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../crypto/otp/2025Jun19-notes/" class="md-nav__link">
+      <a href="../2025Jun19-notes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -432,10 +447,29 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../crypto/otp/proof-objects-from-tactics/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Proof objects from tactics
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -445,6 +479,33 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#revealing-proof-objects-from-tactics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Revealing Proof Objects from Tactics
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -457,7 +518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../crypto/otp/interleaved_demo_presentation/" class="md-nav__link">
+      <a href="../interleaved_demo_presentation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -479,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../crypto/otp/slides/" class="md-nav__link">
+      <a href="../slides/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -553,7 +614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../crypto/Mathlib/vector-and-list/" class="md-nav__link">
+      <a href="../../Mathlib/vector-and-list/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -575,7 +636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../crypto/Mathlib/prob/" class="md-nav__link">
+      <a href="../../Mathlib/prob/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -633,7 +694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../crypto/Mathlib/DistributionsInLean/" class="md-nav__link">
+      <a href="../../Mathlib/DistributionsInLean/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -655,7 +716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../crypto/Mathlib/WhyExtendedNNReals/" class="md-nav__link">
+      <a href="../../Mathlib/WhyExtendedNNReals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -677,7 +738,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../crypto/Mathlib/bind_and_pure/" class="md-nav__link">
+      <a href="../../Mathlib/bind_and_pure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1017,6 +1078,23 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#revealing-proof-objects-from-tactics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Revealing Proof Objects from Tactics
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1031,65 +1109,45 @@
 
 
 
-  <h1>Intro</h1>
+  <h1>Proof objects from tactics</h1>
 
-<p>This document is a formal specification of the functionality of the
-<abbr title="a ledger is...">ledger</abbr> on the <abbr title="blah blah blah ...">blockchain</abbr>. This includes the <abbr title="blah blah blah ...">blockchain</abbr> layer determining
-what is a valid block, but does not include any concurrency issues such
-as chain selection. The details of the background and the larger context
-for the design decisions formalized in this document are presented
-in [@shelley-delegation-design].</p>
-<p>In this document, we present the most important properties that any
-implementation of the <abbr title="a ledger is...">ledger</abbr> must have. Specifically, we model the
-following aspects of the functionality of the <abbr title="a ledger is...">ledger</abbr> on the <abbr title="blah blah blah ...">blockchain</abbr>:</p>
-<p>Preservation of value</p>
-<p>:   Every coin in the system must be accounted for, and the total amount
-    is unchanged by every transaction and epoch change. In particular,
-    every coin is accounted for by exactly one of the following
-    categories:</p>
-<div class="language-text highlight"><pre><span></span><code>-   Circulation (UTxO)
-
--   Deposit pot
-
--   Fee pot
-
--   Reserves (monetary expansion)
-
--   Rewards (account addresses)
-
--   Treasury
-</code></pre></div>
-<p>Witnesses</p>
-<p>:   Authentication of parts of the transaction data by means of
-    cryptographic entities (such as signatures and private keys)
-    contained in these transactions.</p>
-<p>Delegation</p>
-<p>:   Validity of delegation certificates, which delegate block-signing
-    rights.</p>
-<p>Stake</p>
-<p>:   Staking rights associated to an address.</p>
-<p>Rewards</p>
-<p>:   Reward calculation and distribution.</p>
-<p>Updates</p>
-<p>:   The update mechanism for Shelley protocol parameters and software.</p>
-<p>While the <abbr title="blah blah blah ...">blockchain</abbr> protocol is a reactive system that is driven by the
-arrival of blocks causing updates to the <abbr title="a ledger is...">ledger</abbr>, the formal description
-is a collection of rules that compose a static description of what a
-<em>valid <abbr title="a ledger is...">ledger</abbr></em> is. A valid <abbr title="a ledger is...">ledger</abbr> state can only be reached by applying
-a sequence of inference rules and any valid <abbr title="a ledger is...">ledger</abbr> state is reachable by
-applying some sequence of these rules. The specifics of the semantics we
-use to define and apply the rules we present in this document are
-explained in detail in [@small-step-semantics] (this document will
-really help the reader's understanding of the contents of this
-specification).</p>
-<p>The structure of the rules that we give here is such that their
-application is deterministic. That is, given a specific initial state
-and relevant environmental constants, there is no ambiguity about which
-rule should be applied at any given time (i.e. which state transition is
-allowed to take place). This property ensures that the specification is
-totally precise --- no choice is left to the implementor and any two
-implementations must behave the same when it comes to deciding whether a
-block is valid.</p>
+<h2 id="revealing-proof-objects-from-tactics">Revealing Proof Objects from Tactics<a class="headerlink" href="#revealing-proof-objects-from-tactics" title="Permanent link">#</a></h2>
+<p>Let's see how we can get Lean to reveal the proof objects that a proof generates.</p>
+<p><strong>The Feature</strong></p>
+<p>Lean has a tactic called <code>show_term</code>.</p>
+<p>It executes the tactics within it and then, instead of closing the goal, it prints the raw proof term that was generated.</p>
+<p><strong>How to Demonstrate It:</strong></p>
+<ol>
+<li>
+<p>Pick a simple proof, like our very first one.</p>
+</li>
+<li>
+<p>In VS Code, change the proof to</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">-- Our theorem: The probability of the key [true, false, true] is 1/8.</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">example</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">μK</span><span class="w"> </span><span class="o">⟨[</span><span class="n">true</span><span class="o">,</span><span class="w"> </span><span class="n">false</span><span class="o">,</span><span class="w"> </span><span class="n">true</span><span class="o">],</span><span class="w"> </span><span class="n">rfl</span><span class="o">⟩</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="o">(</span><span class="mi">1</span><span class="bp">/</span><span class="mi">8</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ENNReal</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">by</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="n">show_term</span><span class="w"> </span><span class="c1">-- Add this tactic</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">simp</span><span class="w"> </span><span class="o">[</span><span class="n">μK</span><span class="o">,</span><span class="w"> </span><span class="n">PMF.uniformOfFintype_apply</span><span class="o">]</span><span class="bp">;</span><span class="w"> </span><span class="n">rfl</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>When the cursor is on the <code>show_term</code> line, the "Lean Infoview" panel will display the generated proof term.</p>
+</li>
+<li>
+<p><strong>Warning</strong> (and the point)</p>
+<p>The term is long, ugly, and full of machine-generated names.</p>
+<p>It looks something like <code>Eq.trans (PMF.uniformOfFintype_apply ... ) (congr_arg Inv.inv (Fintype.card_vector ...))</code>.</p>
+</li>
+<li>
+<p><strong>Explanation</strong></p>
+<p>For Agda developers, it's natural to ask: where is the proof object?</p>
+<p>Tactic proofs <em>generate</em> proof objects. We can ask Lean to show us the term it
+generated using the <code>show_term</code> tactic.</p>
+<p>Apparently, the result is extremely verbose and not really meant for human consumption.</p>
+<p>This is the fundamental trade-off: tactics let us write short, conceptual proofs
+at the expense of creating these complex, machine-readable proof terms under the
+hood.</p>
+</li>
+</ol>
 <!-- internal links -->
 <!-- external links -->
 
@@ -1116,6 +1174,44 @@ block is valid.</p>
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../2025Jun19-notes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2025 Juneteenth">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                2025 Juneteenth
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../interleaved_demo_presentation/" class="md-footer__link md-footer__link--next" aria-label="Next: Old Overview/Demo">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Old Overview/Demo
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
