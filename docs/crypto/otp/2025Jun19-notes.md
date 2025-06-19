@@ -128,6 +128,7 @@ type `α`, then `PMF.uniformOfFintype α a` is equal to `(Fintype.card α)⁻¹`
 ```lean
 ⊢ (Fintype.card (Key 3))⁻¹ = 1 / 8
 ```
+
 ---
 
 ### Step 3: Computing the Cardinality and Final Simplification
@@ -387,7 +388,8 @@ It executes the tactics within it and then, instead of closing the goal, it prin
 **How to Demonstrate It:**
 
 1.  Pick a simple proof, like our very first one.
-2.  In your VS Code, change the proof to this:
+
+2.  In VS Code, change the proof to
 
     ```lean
     -- Our theorem: The probability of the key [true, false, true] is 1/8.
@@ -395,12 +397,27 @@ It executes the tactics within it and then, instead of closing the goal, it prin
       show_term -- Add this tactic
         simp [μK, PMF.uniformOfFintype_apply]; rfl
     ```
-3.  When you put your cursor on the `show_term` line, the "Lean Infoview" panel will display the generated proof term.
-4.  **The Warning (and the point):** The term will be long, ugly, and full of machine-generated names. It will look something like `Eq.trans (PMF.uniformOfFintype_apply ... ) (congr_arg Inv.inv (Fintype.card_vector ...))`.
-5.  **Your Explanation:** "For those of us from an Agda background, it's natural to ask: where is the proof object? Tactic proofs *generate* proof objects. We can ask Lean to show us the term it generated using the `show_term` tactic. As you can see, the result is incredibly verbose and not meant for human consumption. This is the fundamental trade-off: tactics let us write short, conceptual proofs at the expense of creating these complex, machine-readable proof terms under the hood."
 
-This demonstration makes your point perfectly without the need to prepare a separate file. It respects the Agda perspective while highlighting Lean's different philosophy.
+3.  When the cursor is on the `show_term` line, the "Lean Infoview" panel will display the generated proof term.
 
+4.  **Warning** (and the point)
+
+    The term is long, ugly, and full of machine-generated names.
+
+    It looks something like `Eq.trans (PMF.uniformOfFintype_apply ... ) (congr_arg Inv.inv (Fintype.card_vector ...))`.
+
+5.  **Explanation**
+
+    For Agda developers, it's natural to ask: where is the proof object?
+
+    Tactic proofs *generate* proof objects. We can ask Lean to show us the term it
+    generated using the `show_term` tactic.
+
+    Apparently, the result is extremely verbose and not really meant for human consumption.
+
+    This is the fundamental trade-off: tactics let us write short, conceptual proofs
+    at the expense of creating these complex, machine-readable proof terms under the
+    hood.
 
 
 
