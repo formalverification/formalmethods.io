@@ -752,6 +752,57 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#next" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computable-vs-noncomputable-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computable vs. Noncomputable Definitions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computable vs. Noncomputable Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#def-xorequiv-constructive" class="md-nav__link">
+    <span class="md-ellipsis">
+      def xorEquiv (Constructive)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#noncomputable-def-encrypt_equiv-classical" class="md-nav__link">
+    <span class="md-ellipsis">
+      noncomputable def encrypt_equiv (Classical)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explaining-the-otp_perfect_secrecy_lemma-proof" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explaining the otp_perfect_secrecy_lemma Proof
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1640,6 +1691,57 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#next" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computable-vs-noncomputable-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computable vs. Noncomputable Definitions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computable vs. Noncomputable Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#def-xorequiv-constructive" class="md-nav__link">
+    <span class="md-ellipsis">
+      def xorEquiv (Constructive)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#noncomputable-def-encrypt_equiv-classical" class="md-nav__link">
+    <span class="md-ellipsis">
+      noncomputable def encrypt_equiv (Classical)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explaining-the-otp_perfect_secrecy_lemma-proof" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explaining the otp_perfect_secrecy_lemma Proof
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2112,6 +2214,142 @@ constructor <code>Equiv.ofInvolutive</code>.</p>
 </li>
 </ul>
 <hr />
+<h3 id="next">Next<a class="headerlink" href="#next" title="Permanent link">#</a></h3>
+<ol>
+<li>
+<p>A detailed Markdown explanation of our proof for <code>otp_perfect_secrecy_lemma</code>.</p>
+</li>
+<li>
+<p>An explanation for why <code>encrypt_equiv</code> must be <code>noncomputable</code> while <code>xorEquiv</code> is not.</p>
+</li>
+</ol>
+<p>Let's tackle the <code>noncomputable</code> question first, as it's a deep and important concept in Lean.</p>
+<hr />
+<h3 id="computable-vs-noncomputable-definitions">Computable vs. Noncomputable Definitions<a class="headerlink" href="#computable-vs-noncomputable-definitions" title="Permanent link">#</a></h3>
+<p>The reason one definition is <code>noncomputable</code> and the other is not comes down to <strong>how the inverse function is provided</strong>.</p>
+<p>It's a classic case of being <em>constructive</em> versus <em>classical</em>.</p>
+<h4 id="def-xorequiv-constructive"><code>def xorEquiv</code> (Constructive)<a class="headerlink" href="#def-xorequiv-constructive" title="Permanent link">#</a></h4>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kd">def</span><span class="w"> </span><span class="n">xorEquiv</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">(</span><span class="n">m</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="bp">≃</span><span class="w"> </span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="n">where</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span><span class="n">toFun</span><span class="w">     </span><span class="o">:=</span><span class="w"> </span><span class="n">encrypt</span><span class="w"> </span><span class="n">m</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">  </span><span class="n">invFun</span><span class="w">    </span><span class="o">:=</span><span class="w"> </span><span class="n">vec_xor</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="c1">-- We explicitly provide the inverse function</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">  </span><span class="n">left_inv</span><span class="w">  </span><span class="o">:=</span><span class="w"> </span><span class="kd">by</span><span class="w"> </span><span class="bp">...</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">  </span><span class="n">right_inv</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">by</span><span class="w"> </span><span class="bp">...</span>
+</span></code></pre></div>
+<p>Here, we create the <code>Equiv</code> structure by hand. We provide all four components:</p>
+<ol>
+<li>
+<p><code>toFun</code>: The forward function, <code>encrypt m</code>.</p>
+</li>
+<li>
+<p><code>invFun</code>: The inverse function, <code>vec_xor m</code>. <strong>We explicitly construct and provid this function.</strong></p>
+</li>
+<li>
+<p><code>left_inv</code>: A proof that <code>vec_xor m (encrypt m k) = k</code>.</p>
+</li>
+<li>
+<p><code>right_inv</code>: A proof that <code>encrypt m (vec_xor m c) = c</code>.</p>
+</li>
+</ol>
+<p>Because every component is explicitly defined and computable, the entire <code>xorEquiv</code> definition is computable.</p>
+<hr />
+<h4 id="noncomputable-def-encrypt_equiv-classical"><code>noncomputable def encrypt_equiv</code> (Classical)<a class="headerlink" href="#noncomputable-def-encrypt_equiv-classical" title="Permanent link">#</a></h4>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kd">noncomputable</span><span class="w"> </span><span class="kd">def</span><span class="w"> </span><span class="n">encrypt_equiv</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">(</span><span class="n">m</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="bp">≃</span><span class="w"> </span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">:=</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">  </span><span class="n">Equiv.ofBijective</span><span class="w"> </span><span class="o">(</span><span class="n">encrypt</span><span class="w"> </span><span class="n">m</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="n">encrypt_bijective</span><span class="w"> </span><span class="n">m</span><span class="o">)</span>
+</span></code></pre></div>
+<p>Here, we use the high-level constructor <code>Equiv.ofBijective</code>. We provide it with:</p>
+<ol>
+<li>
+<p>A function, <code>encrypt m</code>.</p>
+</li>
+<li>
+<p>A proof, <code>encrypt_bijective m</code>, which proves that the function is both injective and surjective.</p>
+</li>
+</ol>
+<p>But notice what's missing: <strong>we never told Lean what the inverse function is!</strong></p>
+<p>The <code>Equiv.ofBijective</code> constructor has to create the inverse function for us.</p>
+<p>How does it do that?  It uses the proof of surjectivity.</p>
+<p>A proof of <code>Surjective (encrypt m)</code> says "for every ciphertext <code>c</code>, there <em>exists</em> a key <code>k</code> such that <code>encrypt m k = c</code>."</p>
+<p>To define an inverse function, Lean must <em>choose</em> such a <code>k</code> for each <code>c</code>.</p>
+<p>This act of choosing an object from a proof of its existence requires the <strong>axiom of
+choice</strong> (<code>Classical.choice</code>).</p>
+<p>In Lean's constructive logic, any definition that depends on the axiom of choice is marked as <code>noncomputable</code>.</p>
+<p><strong>In short:</strong></p>
+<ul>
+<li>
+<p><strong><code>xorEquiv</code> is computable</strong> because we did the work of providing the inverse function constructively.</p>
+</li>
+<li>
+<p><strong><code>encrypt_equiv</code> is noncomputable</strong> because we asked Lean to conjure the inverse function out of a classical existence proof, forcing it to use the noncomputable axiom of choice.</p>
+</li>
+</ul>
+<hr />
+<h3 id="explaining-the-otp_perfect_secrecy_lemma-proof">Explaining the <code>otp_perfect_secrecy_lemma</code> Proof<a class="headerlink" href="#explaining-the-otp_perfect_secrecy_lemma-proof" title="Permanent link">#</a></h3>
+<p><strong>Theorem to Prove:</strong></p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kd">theorem</span><span class="w"> </span><span class="n">otp_perfect_secrecy_lemma</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">:</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">    </span><span class="bp">∀</span><span class="w"> </span><span class="o">(</span><span class="n">m</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="o">),</span><span class="w"> </span><span class="n">μC_M</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">PMF.uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span>
+</span></code></pre></div>
+<p><strong>The Proof, Explained:</strong>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kd">theorem</span><span class="w"> </span><span class="n">otp_perfect_secrecy_lemma</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">:</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">    </span><span class="bp">∀</span><span class="w"> </span><span class="o">(</span><span class="n">m</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span><span class="o">),</span><span class="w"> </span><span class="n">μC_M</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">PMF.uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">by</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">  </span><span class="n">intro</span><span class="w"> </span><span class="n">m</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">  </span><span class="k">have</span><span class="w"> </span><span class="n">hμ</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">μC_M</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">PMF.uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">by</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">    </span><span class="n">apply</span><span class="w"> </span><span class="n">map_uniformOfFintype_equiv</span><span class="w"> </span><span class="o">(</span><span class="n">xorEquiv</span><span class="w"> </span><span class="n">m</span><span class="o">)</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">  </span><span class="n">simp</span><span class="w"> </span><span class="o">[</span><span class="n">hμ</span><span class="o">,</span><span class="w"> </span><span class="n">PMF.uniformOfFintype_apply</span><span class="o">]</span>
+</span></code></pre></div></p>
+<ul>
+<li>
+<p><strong>Tactic <code>intro m</code></strong></p>
+<ul>
+<li><strong>What it does:</strong> The proof begins by addressing the "for all <code>m</code>" part of the theorem.</li>
+</ul>
+<p>The <code>intro</code> tactic introduces an arbitrary but fixed message <code>m</code> that we can work with for the rest of the proof.</p>
+<ul>
+<li>
+<p><strong>Goal State:</strong></p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">m</span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="bp">⊢</span><span class="w"> </span><span class="n">μC_M</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">PMF.uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span>
+</span></code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Tactic <code>have hμ : ... := by ...</code></strong></p>
+<ul>
+<li>
+<p><strong>What it does:</strong> This is the main logical step. The <code>have</code> tactic lets us prove a helper fact, or lemma, which we can then use to prove our main goal. Here, we are proving a fact named <code>hμ</code>. Coincidentally, <code>hμ</code> is the exact statement of our main goal.</p>
+</li>
+<li>
+<p><strong>The Sub-Proof:</strong> The proof of <code>hμ</code> is <code>apply map_uniformOfFintype_equiv (xorEquiv m)</code>. This applies the helper lemma you proved earlier, which states that mapping a uniform distribution over an equivalence (<code>xorEquiv m</code>) results in a uniform distribution. This single line brilliantly captures the core mathematical argument.</p>
+</li>
+<li>
+<p><strong>Goal State (after the <code>have</code> block is complete):</strong></p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">m</span><span class="o">:</span><span class="w"> </span><span class="n">Plaintext</span><span class="w"> </span><span class="n">n</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="n">hμ</span><span class="o">:</span><span class="w"> </span><span class="n">μC_M</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">PMF.uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="bp">⊢</span><span class="w"> </span><span class="n">μC_M</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">PMF.uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span>
+</span></code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Tactic <code>simp [hμ, PMF.uniformOfFintype_apply]</code></strong></p>
+<ul>
+<li>
+<p><strong>What it does:</strong> This tactic finishes the proof using the fact <code>hμ</code> we just proved. The <code>simp [hμ]</code> part tells Lean to rewrite the goal using <code>hμ</code>.</p>
+</li>
+<li>
+<p><strong>How it Works:</strong> <code>simp</code> sees <code>μC_M m</code> on the left side of the goal <code>⊢</code> and sees the hypothesis <code>hμ</code> which states <code>μC_M m = ...</code>. It substitutes the left side with the right side of <code>hμ</code>.</p>
+</li>
+<li>
+<p><strong>Goal State (after <code>simp [hμ]</code>):</strong></p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="bp">⊢</span><span class="w"> </span><span class="n">PMF.uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="n">PMF.uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Ciphertext</span><span class="w"> </span><span class="n">n</span><span class="o">)</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>This goal is true by reflexivity, and <code>simp</code> is able to solve it completely. (The extra <code>PMF.uniformOfFintype_apply</code> is not strictly necessary here, as <code>hμ</code> is sufficient, but it doesn't hurt). A more direct way to finish after the <code>have</code> block would simply be <code>exact hμ</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
 <!-- internal links -->
 <!-- external links -->
 
