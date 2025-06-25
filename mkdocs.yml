@@ -76,7 +76,7 @@ nav:
       - OTP Basics: crypto/otp/otp-basics.md
       - Perfect Secrecy: crypto/otp/perfect-secrecy.md
     - One-time Pad in Lean:
-      - Basic Types and Project Setup: crypto/otp/otp-basics-types.md
+      - Basic Types and Project Setup: crypto/otp/otp-basic-types.md
       - Basic Probability in Lean: crypto/otp/basic-probability-in-lean.md
       - Perfect Secrecy in Lean: crypto/otp/perfect-secrecy-in-lean.md
     - Presentation Notes:
