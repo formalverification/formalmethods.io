@@ -72,17 +72,18 @@ nav:
   - Home: index.md
 
   - FM Crypto:
-    - OTP:
-      - Basics: crypto/otp/basics.md
+    - One-time Pad:
+      - OTP Basics: crypto/otp/otp-basics.md
       - Perfect Secrecy: crypto/otp/perfect-secrecy.md
-      - OTP in Lean: crypto/otp/otp-lean.md
-      - Presentation Notes:
-          - 2025 Juneteenth: crypto/otp/2025Jun19-notes.md
-          # - 2025 Jun 18: crypto/otp/2025Jun18-notes.md
-          - Proof objects from tactics: crypto/otp/proof-objects-from-tactics.md
-          - Old Overview/Demo: crypto/otp/interleaved_demo_presentation.md
-          - Older presentation: crypto/otp/slides.md
-        # reveal_slides.html
+    - One-time Pad in Lean:
+      - Basic Types and Project Setup: crypto/otp/otp-basics-types.md
+      - Basic Probability in Lean: crypto/otp/basic-probability-in-lean.md
+      - Perfect Secrecy in Lean: crypto/otp/perfect-secrecy-in-lean.md
+    - Presentation Notes:
+        - 2025 Juneteenth: crypto/otp/talk/2025Jun19-notes.md
+        - Old Overview/Demo: crypto/otp/talk/interleaved_demo_presentation.md
+        - Older presentation: crypto/otp/talk/slides.md
+      # reveal_slides.html
 
     - Mathlib:
       - Vector and List: crypto/Mathlib/vector-and-list.md

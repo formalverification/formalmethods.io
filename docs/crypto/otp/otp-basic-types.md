@@ -1,8 +1,8 @@
-# OTP in L∃∀N
+# OTP: Basic Types and Project Setup
 
 ## Initial Considerations 🤔
 
-+ What types for messages, keys, ciphertexts? 
++ What types for messages, keys, ciphertexts?
 
     `Vector Bool n` is a good candidate (or `Fin n → Bool`).
 
@@ -24,7 +24,7 @@ Using `n : Nat` so definitions are generic for any length.
 
 ---
 
-## XOR Operation ⊕ 
+## XOR Operation ⊕
 
 We need a function like
 
@@ -39,16 +39,16 @@ This can be defined using `Vector.map₂ Bool.xor v₁ v₂`.
 
 ## Mathlib Definitions 📑
 
-!!! note "*Message Distribution* `PMF (Plaintext n)`" 
+!!! note "*Message Distribution* `PMF (Plaintext n)`"
 
     Perfect secrecy definition assumes messages come from *some* probability distribution.
 
     In our theorem statement, we leave this arbitrary: `μ_M : PMF (Plaintext n)`.
 
-!!! note "*Key Distribution* `PMF (Key n)`" 
+!!! note "*Key Distribution* `PMF (Key n)`"
 
     This is uniform on the key space (a finite set of size 2ⁿ).
-    
+
     We need to define what `is_uniform (μ_K : PMF (Key n))` means.
 
     For a finite type `α`, probability mass function `p` is uniform if `p a = 1 / card α` for all `a : α`.
@@ -68,7 +68,7 @@ This can be defined using `Vector.map₂ Bool.xor v₁ v₂`.
 ## **Lean Project Setup** 🏗️️
 
 This section describes the steps we took to set up our Lean project.  The resulting
-source code is maintained in our lean4crypto respository at 
+source code is maintained in our lean4crypto respository at
 
 <https://github.com/formalverification/lean4crypto>
 
@@ -121,7 +121,7 @@ source code is maintained in our lean4crypto respository at
 ---
 
 
-## **Initial Definitions** ✍️
+### **Initial Definitions** ✍️
 
 In `OTP/Basic.lean`,
 
