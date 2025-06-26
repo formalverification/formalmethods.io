@@ -71,23 +71,17 @@ watch:
 nav:
   - Home: index.md
 
-  - FM Crypto:
-    - One-time Pad in Lean:
-      - OTP basics: crypto/otp/otp-basics.md
-      - Perfect secrecy: crypto/otp/perfect-secrecy.md
-      - Lean project setup: crypto/otp/lean-project-setup.md
-      - Basic types: crypto/otp/otp-basic-types.md
-      - Probability in Lean: crypto/otp/basic-probability-in-lean.md
-      - Why [0, ∞]?: crypto/otp/WhyExtendedNNReals.md
-      - Joint distributions: crypto/otp/bind_and_pure.md
-      - A first concrete proof: crypto/otp/a-first-proof.md
-      - Law of Total Probability: crypto/otp/law-of-total-prob.md
-      - Perfect secrecy in Lean: crypto/otp/perfect-secrecy-in-lean.md
-    - Presentation Notes:
-        - 2025 Juneteenth: crypto/otp/talk/2025Jun19-notes.md
-        - Old Overview/Demo: crypto/otp/talk/interleaved_demo_presentation.md
-        - Older presentation: crypto/otp/talk/slides.md
-      # reveal_slides.html
+  - One-time Pad in Lean:
+    - OTP basics: crypto/otp/otp-basics.md
+    - Perfect secrecy: crypto/otp/perfect-secrecy.md
+    - Lean project setup: crypto/otp/lean-project-setup.md
+    - Basic types: crypto/otp/otp-basic-types.md
+    - Probability in Lean: crypto/otp/basic-probability-in-lean.md
+    - Why [0, ∞]?: crypto/otp/WhyExtendedNNReals.md
+    - Joint distributions: crypto/otp/bind_and_pure.md
+    - A first concrete proof: crypto/otp/a-first-proof.md
+    - Law of Total Probability: crypto/otp/law-of-total-prob.md
+    - Perfect secrecy in Lean: crypto/otp/perfect-secrecy-in-lean.md
 
   - Miscellany:
     - MkDocs doc:
@@ -96,6 +90,11 @@ nav:
       - Diagrams: mkdocs/diagrams.md
       - Code blocks: mkdocs/code-blocks.md
       - Content tabs: mkdocs/content-tabs.md
+    - Presentation Notes:
+      - 2025 Juneteenth: crypto/otp/talk/2025Jun19-notes.md
+      - Old Overview/Demo: crypto/otp/talk/interleaved_demo_presentation.md
+      - Older presentation: crypto/otp/talk/slides.md
+      # reveal_slides.html
 
   - About:
     - Contributors: contributors.md
