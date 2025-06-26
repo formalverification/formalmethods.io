@@ -65,7 +65,7 @@ Lean will complain if we try to apply `encrypt` to a `Ciphertext` message and a
 
 Let's now encode these basic definitions in Lean.
 
-In Section [Lean Project Setup](crypto/otp/lean-project-setup.md), we created and
+In Section [Lean Project Setup](lean-project-setup.md), we created and
 built a Lean project called `OTP`.  This process creates a file called
 `OTP/Basic.lean` containing one line:
 
