@@ -1,4 +1,19 @@
-# OTP: Basic Types and Project Setup
+# Basic Types for the OTP
+
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [Basic Types for the OTP](#basic-types-for-the-otp)
+  - [Initial Considerations 🤔](#initial-considerations-)
+  - [Types Aliases  🕵️](#types-aliases--)
+  - [XOR Operation ⊕](#xor-operation-)
+  - [Initial Definitions ✍️](#initial-definitions-)
+  - [Mathlib Specifics](#mathlib-specifics)
+    - [[`Data/Vector/`][Data/Vector/]](#datavectordatavector)
+    - [[`Data/List/`][Data/List/]](#datalistdatalist)
+
+<!-- markdown-toc end -->
+
 
 ## Initial Considerations 🤔
 
@@ -37,7 +52,7 @@ This can be defined using `Vector.map₂ Bool.xor v₁ v₂`.
 ---
 
 
-## Mathlib Definitions 📑
+## Initial Definitions ✍️
 
 !!! note "*Message Distribution* `PMF (Plaintext n)`"
 
@@ -62,66 +77,6 @@ This can be defined using `Vector.map₂ Bool.xor v₁ v₂`.
 !!! note "*Conditional Probability* $ℙ(M=m \;| \;C=c)$"
 
     defined using `PMF.cond`
-
----
-
-## **Lean Project Setup** 🏗️️
-
-This section describes the steps we took to set up our Lean project.  The resulting
-source code is maintained in our lean4crypto respository at
-
-<https://github.com/formalverification/lean4crypto>
-
-1.  **Create the Project**.
-
-    In a terminal,
-    ```bash
-    lake new OTP math
-    cd OTP
-    ```
-
-2.  **Verfiy Mathlib Dependency**.
-
-    The `lakefile.toml` should look something like this:
-
-    ```toml
-    name = "OTP"
-    version = "0.1.0"
-    keywords = ["math"]
-    defaultTargets = ["OTP"]
-
-    [leanOptions]
-    pp.unicode.fun = true # pretty-prints `fun a ↦ b`
-    autoImplicit = false
-
-    [[require]]
-    name = "mathlib"
-    scope = "leanprover-community"
-
-    [[lean_lib]]
-    name = "OTP"
-    ```
-
-3.  **Fetch Mathlib:**
-    In your terminal (in the `otp_formalization` directory):
-    ```bash
-    lake update
-    ```
-    This might take a few minutes the first time. Then build to ensure it's working:
-    ```bash
-    lake build
-    ```
-
-4.  **Create Main File**.
-
-    * The `lake new` command creates `OTP.lean` and `OTP/Basic.lean`.
-    * We'll start the formalization in `OTP/Basic.lean` which is imported into `OTP.lean`.
-
-
----
-
-
-### **Initial Definitions** ✍️
 
 In `OTP/Basic.lean`,
 
@@ -164,3 +119,53 @@ namespace OTP
 
 end OTP
 ```
+
+---
+
+## Mathlib Specifics
+
+!!! note "**Tip**"
+
+    Use the [Mathlib documentation website](https://leanprover-community.github.io/mathlib4_docs/index.html) for easy browsing of module contents and definitions.
+
+    <center><https://leanprover-community.github.io/mathlib4_docs/index.html></center>
+
+
+### [`Data/Vector/`][Data/Vector/]
+
+📁 [`Mathlib/Data/Vector/Basic.lean`][Data/Vector/Basic.lean].
+
++  **`Vector α n`** represents a list of elements of type `α` that is known to have
+length `n`.
+   Well suited to plaintexts, keys, and ciphertexts where length is fixed and equal.
+
+
+🧰 **Useful functions**
+
++  `Vector.map (f : α → β) : Vector α n → Vector β n`
++  `Vector.map₂ (f : α → β → γ) : Vector α n → Vector β n → Vector γ n`,
+   perfect for XORing two vectors.
++  `Vector.get : Vector α n → Fin n → α` to get an element at an index.
++  `Vector.ofFn : ((i : Fin n) → α) → Vector α n` to construct a vector from a function.
++  Literals like `![a, b, c]` can often be coerced to `Vector α 3` if the type is known.
+
+---
+
+### [`Data/List/`][Data/List/]
+
++  In [`Mathlib/Data/List/Basic.lean`][Data/List/Basic.lean] and other files in [`Mathlib/Data/List/`][Data/List/].
+
++  While `Vector` is likely better for fixed-length crypto primitives, `List α` is
+   the standard list type.
+
++  Good to know its API (e.g., `map`, `zipWith`, `length`) as `Vector` often mirrors
+   or builds upon `List` concepts.
+
+---
+
+
+[Data/List/Basic.lean]: https://github.com/leanprover-community/mathlib4/blob/master/Mathlib/Data/List/Basic.lean
+[Data/List/Basic.html]: https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/List/Basic.html
+[Data/List/]: https://github.com/leanprover-community/mathlib4/tree/master/Mathlib/Data/List
+[Data/Vector/]: https://github.com/leanprover-community/mathlib4/tree/master/Mathlib/Data/Vector
+[Data/Vector/Basic.lean]: https://github.com/leanprover-community/mathlib4/blob/master/Mathlib/Data/Vector/Basic.lean
