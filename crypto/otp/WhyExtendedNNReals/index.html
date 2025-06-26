@@ -8,9 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://formalmethods.io/crypto/otp/DistributionsInLean/">
+        <link rel="canonical" href="https://formalmethods.io/crypto/otp/WhyExtendedNNReals/">
       
       
+        <link rel="prev" href="../basic-probability-in-lean/">
+      
+      
+        <link rel="next" href="../bind_and_pure/">
       
       
       <link rel="icon" href="../../../img/formal_methods_favicon.svg">
@@ -18,7 +22,7 @@
     
     
       
-        <title>Deep Dive: How Lean Represents Probability Distributions - Formal Methods</title>
+        <title>Why [0, ∞]? - Formal Methods</title>
       
     
     
@@ -70,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#deep-dive-how-lean-represents-probability-distributions" class="md-skip">
+        <a href="#deep-dive-why-use-0-for-the-codomain-of-a-distribution" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Deep Dive: How Lean Represents Probability Distributions
+              Why [0, ∞]?
             
           </span>
         </div>
@@ -241,17 +245,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -266,7 +272,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             FM Crypto
@@ -277,24 +283,26 @@
                 
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    OTP
+    One-time Pad in Lean
     
   </span>
   
@@ -302,10 +310,10 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
-            OTP
+            One-time Pad in Lean
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -316,11 +324,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../basics/" class="md-nav__link">
+      <a href="../otp-basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Basics
+    OTP basics
     
   </span>
   
@@ -342,7 +350,7 @@
         
   
   <span class="md-ellipsis">
-    Perfect Secrecy
+    Perfect secrecy
     
   </span>
   
@@ -360,11 +368,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../otp-lean/" class="md-nav__link">
+      <a href="../lean-project-setup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    OTP in Lean
+    Lean project setup
     
   </span>
   
@@ -381,127 +389,241 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../otp-basic-types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic types
     
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basic-probability-in-lean/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Probability in Lean
     
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_4" >
-        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
           
-          <label class="md-nav__link" for="__nav_2_1_4" id="__nav_2_1_4_label" tabindex="0">
-            
   
   <span class="md-ellipsis">
-    Presentation Notes
+    Why [0, ∞]?
     
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_1_4">
-            <span class="md-nav__icon md-icon"></span>
-            Presentation Notes
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2025Jun19-notes/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    2025 Juneteenth
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../proof-objects-from-tactics/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Proof objects from tactics
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../interleaved_demo_presentation/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Old Overview/Demo
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../slides/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Older presentation
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Why [0, ∞]?
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-integration-with-measure-theory" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Integration with Measure Theory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-division-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Division Conventions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-pragmatic-compromise" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Pragmatic Compromise
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#honest-bottom-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      Honest Bottom Line
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bind_and_pure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Joint distributions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../a-first-proof/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    A first concrete proof
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../law-of-total-prob/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Law of Total Probability
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../perfect-secrecy-in-lean/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Perfect secrecy in Lean
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -536,7 +658,7 @@
             
   
   <span class="md-ellipsis">
-    Mathlib
+    Presentation Notes
     
   </span>
   
@@ -547,7 +669,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
-            Mathlib
+            Presentation Notes
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -558,11 +680,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Mathlib/vector-and-list/" class="md-nav__link">
+      <a href="../talk/2025Jun19-notes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Vector and List
+    2025 Juneteenth
     
   </span>
   
@@ -580,69 +702,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Mathlib/prob/" class="md-nav__link">
+      <a href="../talk/interleaved_demo_presentation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Probability
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Deep Dive
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2_3">
-            <span class="md-nav__icon md-icon"></span>
-            Deep Dive
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Mathlib/DistributionsInLean/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Distributions in Lean
+    Old Overview/Demo
     
   </span>
   
@@ -660,46 +724,16 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Mathlib/WhyExtendedNNReals/" class="md-nav__link">
+      <a href="../talk/slides/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Why [0, ∞] for Distributions?
+    Older presentation
     
   </span>
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Mathlib/bind_and_pure/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Joint Distributions with bind
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1031,172 +1065,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-a-pmf-really" class="md-nav__link">
+  <a href="#1-integration-with-measure-theory" class="md-nav__link">
     <span class="md-ellipsis">
-      What is a PMF Really?
+      1. Integration with Measure Theory
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#our-distributions-as-mathematical-objects" class="md-nav__link">
+  <a href="#2-division-conventions" class="md-nav__link">
     <span class="md-ellipsis">
-      Our Distributions as Mathematical Objects
+      2. Division Conventions
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Our Distributions as Mathematical Objects">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#m-pmf-plaintext-n" class="md-nav__link">
-    <span class="md-ellipsis">
-      μM : PMF (Plaintext n)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#k-pmf-key-n" class="md-nav__link">
-    <span class="md-ellipsis">
-      μK : PMF (Key n)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mk-pmf-plaintext-n-key-n" class="md-nav__link">
-    <span class="md-ellipsis">
-      μMK : PMF (Plaintext n × Key n)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c-pmf-ciphertext-n" class="md-nav__link">
-    <span class="md-ellipsis">
-      μC : PMF (Ciphertext n)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c_m-plaintext-n-pmf-ciphertext-n" class="md-nav__link">
-    <span class="md-ellipsis">
-      μC_M : Plaintext n → PMF (Ciphertext n)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-noncomputable" class="md-nav__link">
+  <a href="#the-pragmatic-compromise" class="md-nav__link">
     <span class="md-ellipsis">
-      Why noncomputable?
+      The Pragmatic Compromise
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Why noncomputable?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-real-number-arithmetic" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Real Number Arithmetic
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-infinite-summations" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Infinite Summations
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-classical-logic" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Classical Logic
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-can-we-still-prove-18" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why Can We Still Prove = 1/8?
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Why Can We Still Prove = 1/8?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#proofs-vs-computation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Proofs vs Computation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#whats-happening" class="md-nav__link">
-    <span class="md-ellipsis">
-      What's Happening?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-philosophical-point" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Philosophical Point
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="The Philosophical Point">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
       Summary
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Summary">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#a-practical-analogy" class="md-nav__link">
+  <a href="#honest-bottom-line" class="md-nav__link">
     <span class="md-ellipsis">
-      A Practical Analogy
+      Honest Bottom Line
     </span>
   </a>
   
@@ -1223,127 +1131,92 @@
 
 
 
-<h1 id="deep-dive-how-lean-represents-probability-distributions">Deep Dive: How Lean Represents Probability Distributions<a class="headerlink" href="#deep-dive-how-lean-represents-probability-distributions" title="Permanent link">#</a></h1>
-<h2 id="what-is-a-pmf-really">What is a PMF Really?<a class="headerlink" href="#what-is-a-pmf-really" title="Permanent link">#</a></h2>
-<p>In Lean/Mathlib, a <code>PMF α</code> (Probability Mass Function) is fundamentally:</p>
-<div class="language-lean highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">structure</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="o">(</span><span class="n">α</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">Type</span><span class="bp">*</span><span class="o">)</span><span class="w"> </span><span class="n">where</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="n">val</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">α</span><span class="w"> </span><span class="bp">→</span><span class="w"> </span><span class="n">ℝ</span><span class="bp">≥</span><span class="mi">0</span><span class="bp">∞</span><span class="w">                 </span><span class="c1">-- Function from α to extended non-negative reals</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="n">has_sum_one</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="bp">∑&#39;</span><span class="w"> </span><span class="n">a</span><span class="o">,</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="c1">-- Proof that probabilities sum to 1</span>
+<h1 id="deep-dive-why-use-0-for-the-codomain-of-a-distribution">Deep Dive: Why use [0, ∞] for the codomain of a distribution?<a class="headerlink" href="#deep-dive-why-use-0-for-the-codomain-of-a-distribution" title="Permanent link">#</a></h1>
+<ul>
+<li>Probabilities should be in [0, 1] by definition.</li>
+<li>If p + q &gt; 1, then p + q isn't a probability of anything.</li>
+<li>A rich type system should enforce this constraint.</li>
+<li>Having to prove preservation of [0, 1] keeps us mathematically honest.</li>
+</ul>
+<p>So why did Mathlib choose <code>ENNReal</code>? The reasons are probably subtle, but we can speculate.</p>
+<hr />
+<h2 id="1-integration-with-measure-theory">1. <strong>Integration with Measure Theory</strong><a class="headerlink" href="#1-integration-with-measure-theory" title="Permanent link">#</a></h2>
+<p>This is probably the biggest reason:</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="sd">/-- In measure theory, measures assign values in [0,∞] to sets.</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="sd">A measure is defined to be an outer measure that is countably additive on</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="sd">measurable sets, with the assumption that the outer measure is the canonical</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="sd">extension of the restricted measure.</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="sd">The measure of a set `s`, denoted `μ s`, is an extended nonnegative real.</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="sd">The real-valued version is written `μ.real s`.</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="sd">-/</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="kd">structure</span><span class="w"> </span><span class="n">Measure</span><span class="w"> </span><span class="o">(</span><span class="n">α</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">Type</span><span class="bp">*</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="n">MeasurableSpace</span><span class="w"> </span><span class="n">α</span><span class="o">]</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">OuterMeasure</span><span class="w"> </span><span class="n">α</span><span class="w"> </span><span class="n">where</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="n">m_iUnion</span><span class="w"> </span><span class="o">⦃</span><span class="n">f</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="w"> </span><span class="bp">→</span><span class="w"> </span><span class="n">Set</span><span class="w"> </span><span class="n">α</span><span class="o">⦄</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="o">(</span><span class="bp">∀</span><span class="w"> </span><span class="n">i</span><span class="o">,</span><span class="w"> </span><span class="n">MeasurableSet</span><span class="w"> </span><span class="o">(</span><span class="n">f</span><span class="w"> </span><span class="n">i</span><span class="o">))</span><span class="w"> </span><span class="bp">→</span><span class="w"> </span><span class="n">Pairwise</span><span class="w"> </span><span class="o">(</span><span class="n">Disjoint</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">f</span><span class="o">)</span><span class="w"> </span><span class="bp">→</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="n">toOuterMeasure</span><span class="w"> </span><span class="o">(</span><span class="bp">⋃</span><span class="w"> </span><span class="n">i</span><span class="o">,</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="n">i</span><span class="o">)</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="bp">∑&#39;</span><span class="w"> </span><span class="n">i</span><span class="o">,</span><span class="w"> </span><span class="n">toOuterMeasure</span><span class="w"> </span><span class="o">(</span><span class="n">f</span><span class="w"> </span><span class="n">i</span><span class="o">)</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="n">trim_le</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">toOuterMeasure.trim</span><span class="w"> </span><span class="bp">≤</span><span class="w"> </span><span class="n">toOuterMeasure</span>
 </span></code></pre></div>
-<p>So a PMF is a <strong>pair</strong></p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="sd">/-- A measure `μ` is called a probability measure if `μ univ = 1`. -/</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">class</span><span class="w"> </span><span class="n">IsProbabilityMeasure</span><span class="w"> </span><span class="o">(</span><span class="n">μ</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Measure</span><span class="w"> </span><span class="n">α</span><span class="o">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">Prop</span><span class="w"> </span><span class="n">where</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="n">measure_univ</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">μ</span><span class="w"> </span><span class="n">univ</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="mi">1</span>
+</span></code></pre></div>
+<p>PMFs are designed to integrate seamlessly with measure theory, where <code>ENNReal</code> is standard.</p>
+<hr />
+<h2 id="2-division-conventions">2. <strong>Division Conventions</strong><a class="headerlink" href="#2-division-conventions" title="Permanent link">#</a></h2>
+<p><code>ENNReal</code> has specific conventions that make probability formulas work:</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">-- In ENNReal:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="mi">0</span><span class="w"> </span><span class="bp">/</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="mi">0</span><span class="w">    </span><span class="c1">-- Makes conditional probability P(A|B) work when P(B) = 0</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">x</span><span class="w"> </span><span class="bp">/</span><span class="w"> </span><span class="bp">∞</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="mi">0</span><span class="w">    </span><span class="c1">-- Handles certain limit cases</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">x</span><span class="w"> </span><span class="bp">/</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="bp">∞</span><span class="w">    </span><span class="c1">-- for x &gt; 0</span>
+</span></code></pre></div>
+<p>These would be messier and require more special case analysis with a [0, 1] type.</p>
+<hr />
+<h2 id="the-pragmatic-compromise">The Pragmatic Compromise<a class="headerlink" href="#the-pragmatic-compromise" title="Permanent link">#</a></h2>
+<p>Philosophically, a <code>Probability</code> type should be:</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">def</span><span class="w"> </span><span class="n">Probability</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">{</span><span class="n">x</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℝ</span><span class="w"> </span><span class="bp">//</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="bp">≤</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="bp">∧</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="bp">≤</span><span class="w"> </span><span class="mi">1</span><span class="o">}</span>
+</span></code></pre></div>
+<p>And operations should return proofs:</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">def</span><span class="w"> </span><span class="n">prob_or</span><span class="w"> </span><span class="o">(</span><span class="n">p</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Probability</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="n">h</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">disjoint</span><span class="o">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Probability</span><span class="w"> </span><span class="o">:=</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="o">⟨</span><span class="n">p.val</span><span class="w"> </span><span class="bp">+</span><span class="w"> </span><span class="n">q.val</span><span class="o">,</span><span class="w"> </span><span class="kd">by</span><span class="w"> </span><span class="n">proof_that_sum_le_1</span><span class="o">⟩</span>
+</span></code></pre></div>
+<p>Mathlib probably chose <code>ENNReal</code> for pragmatic reasons:</p>
 <ol>
-<li>
-<p>A function assigning probabilities to outcomes</p>
-</li>
-<li>
-<p>A proof that these probabilities form a valid distribution</p>
-</li>
+<li><strong>Compatibility</strong> with measure theory (the bigger framework)</li>
+<li><strong>Computational</strong> convenience (limits and sums "just work")</li>
+<li><strong>Mathematical</strong> practice (probabilists often work with unnormalized measures)</li>
 </ol>
+<p>But this loses "type safety." A more principled approach might have:</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">-- The &quot;right&quot; design?</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kd">structure</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="o">(</span><span class="n">α</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">Type</span><span class="bp">*</span><span class="o">)</span><span class="w"> </span><span class="n">where</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="n">val</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">α</span><span class="w"> </span><span class="bp">→</span><span class="w"> </span><span class="n">Probability</span><span class="w">  </span><span class="c1">-- Each value is certified in [0,1]</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="n">has_sum_one</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="bp">∑</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="mi">1</span>
+</span></code></pre></div>
 <hr />
-<h2 id="our-distributions-as-mathematical-objects">Our Distributions as Mathematical Objects<a class="headerlink" href="#our-distributions-as-mathematical-objects" title="Permanent link">#</a></h2>
-<h3 id="m-pmf-plaintext-n">μM : PMF (Plaintext n)<a class="headerlink" href="#m-pmf-plaintext-n" title="Permanent link">#</a></h3>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>Type</strong>: A function <code>Plaintext n → ℝ≥0∞</code> (plus a proof)</li>
-<li><strong>Meaning</strong>: For any n-bit message m, <code>μM m</code> is the probability that message m is sent</li>
-<li><strong>Example</strong>: If all messages equally likely, <code>μM m = 1/2^n</code> for all m</li>
-</ul>
-<h3 id="k-pmf-key-n">μK : PMF (Key n)<a class="headerlink" href="#k-pmf-key-n" title="Permanent link">#</a></h3>
-<ul>
-<li><strong>Type</strong>: A function <code>Key n → ℝ≥0∞</code></li>
-<li><strong>Meaning</strong>: For any n-bit key k, <code>μK k</code> is its probability</li>
-<li><strong>Definition</strong>: <code>uniformOfFintype</code> makes <code>μK k = 1/2^n</code> for all k</li>
-</ul>
-<h3 id="mk-pmf-plaintext-n-key-n">μMK : PMF (Plaintext n × Key n)<a class="headerlink" href="#mk-pmf-plaintext-n-key-n" title="Permanent link">#</a></h3>
-<ul>
-<li><strong>Type</strong>: A function <code>(Plaintext n × Key n) → ℝ≥0∞</code></li>
-<li><strong>Meaning</strong>: Joint probability P(M = m ∧ K = k)</li>
-<li><strong>Value</strong>: <code>μMK (m,k) = μM m * μK k</code> (independence!)</li>
-</ul>
-<h3 id="c-pmf-ciphertext-n">μC : PMF (Ciphertext n)<a class="headerlink" href="#c-pmf-ciphertext-n" title="Permanent link">#</a></h3>
-<ul>
-<li><strong>Type</strong>: A function <code>Ciphertext n → ℝ≥0∞</code>  </li>
-<li><strong>Meaning</strong>: For any n-bit ciphertext c, <code>μC c</code> is probability of observing c</li>
-<li><strong>Computed</strong>: By summing over all (m,k) pairs that produce c</li>
-</ul>
-<h3 id="c_m-plaintext-n-pmf-ciphertext-n">μC_M : Plaintext n → PMF (Ciphertext n)<a class="headerlink" href="#c_m-plaintext-n-pmf-ciphertext-n" title="Permanent link">#</a></h3>
-<ul>
-<li><strong>Type</strong>: A function that takes a message and returns a distribution</li>
-<li><strong>Meaning</strong>: For fixed m, <code>μC_M m</code> is the conditional distribution P(C | M = m)</li>
-<li><strong>Value</strong>: <code>(μC_M m) c = if ∃k. encrypt m k = c then 1/2^n else 0</code></li>
-</ul>
-<hr />
-<h2 id="why-noncomputable">Why <code>noncomputable</code>?<a class="headerlink" href="#why-noncomputable" title="Permanent link">#</a></h2>
-<p>This is subtle! Even though we're dealing with finite types, these definitions are <code>noncomputable</code> because:</p>
-<h3 id="1-real-number-arithmetic">1. Real Number Arithmetic<a class="headerlink" href="#1-real-number-arithmetic" title="Permanent link">#</a></h3>
-<div class="language-lean highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">noncomputable</span><span class="w"> </span><span class="kd">def</span><span class="w"> </span><span class="n">μK</span><span class="w"> </span><span class="o">{</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="o">}</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="o">(</span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="o">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">uniformOfFintype</span><span class="w"> </span><span class="o">(</span><span class="n">Key</span><span class="w"> </span><span class="n">n</span><span class="o">)</span>
-</span></code></pre></div>
-<p>The probability values are in <code>ℝ≥0∞</code> (extended non-negative reals), not rationals:</p>
-<ul>
-<li><code>1/2ⁿ</code> is computed as real division, not rational division</li>
-<li>Real arithmetic is inherently noncomputable in constructive mathematics</li>
-<li>Even though we "know" the answer is rational, the type system uses reals</li>
-</ul>
-<h3 id="2-infinite-summations">2. Infinite Summations<a class="headerlink" href="#2-infinite-summations" title="Permanent link">#</a></h3>
-<p>Even for finite types, PMF uses infinite summation machinery:</p>
-<div class="language-lean highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="bp">∑&#39;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">α</span><span class="o">,</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="n">a</span><span class="w">  </span><span class="c1">-- This is an infinite sum operator</span>
-</span></code></pre></div>
-<ul>
-<li>The <code>∑'</code> notation works for both finite and infinite types.</li>
-<li>It's defined using limits and topology.</li>
-<li>Even when <code>α</code> is finite, we use the general machinery.</li>
-</ul>
-<h3 id="3-classical-logic">3. Classical Logic<a class="headerlink" href="#3-classical-logic" title="Permanent link">#</a></h3>
-<p>PMF operations often use classical logic (excluded middle):</p>
-<div class="language-lean highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">open</span><span class="w"> </span><span class="n">Classical</span><span class="w">  </span><span class="c1">-- Needed for many probability operations</span>
-</span></code></pre></div>
-<p>This makes things noncomputable in Lean's constructive logic.</p>
-<hr />
-<h2 id="why-can-we-still-prove-18">Why Can We Still Prove <code>= 1/8</code>?<a class="headerlink" href="#why-can-we-still-prove-18" title="Permanent link">#</a></h2>
-<p>Here's the beautiful part: <strong>noncomputable doesn't mean we can't reason about values</strong>!</p>
-<h3 id="proofs-vs-computation">Proofs vs Computation<a class="headerlink" href="#proofs-vs-computation" title="Permanent link">#</a></h3>
-<div class="language-lean highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">-- We can&#39;t compute this:</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">#eval</span><span class="w"> </span><span class="n">μK</span><span class="w"> </span><span class="o">⟨[</span><span class="n">true</span><span class="o">,</span><span class="w"> </span><span class="n">false</span><span class="o">,</span><span class="w"> </span><span class="n">true</span><span class="o">],</span><span class="w"> </span><span class="kd">by</span><span class="w"> </span><span class="n">decide</span><span class="o">⟩</span><span class="w">  </span><span class="c1">-- Error: noncomputable</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1">-- But we CAN prove this:</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="kd">example</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">μK</span><span class="w"> </span><span class="o">⟨[</span><span class="n">true</span><span class="o">,</span><span class="w"> </span><span class="n">false</span><span class="o">,</span><span class="w"> </span><span class="n">true</span><span class="o">],</span><span class="w"> </span><span class="kd">by</span><span class="w"> </span><span class="n">decide</span><span class="o">⟩</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="mi">1</span><span class="bp">/</span><span class="mi">8</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">by</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="n">simp</span><span class="w"> </span><span class="o">[</span><span class="n">μK</span><span class="o">,</span><span class="w"> </span><span class="n">uniformOfFintype_apply</span><span class="o">]</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="c1">-- Proves that (card (Key 3))⁻¹ = 8⁻¹ = 1/8</span>
-</span></code></pre></div>
-<h3 id="whats-happening">What's Happening?<a class="headerlink" href="#whats-happening" title="Permanent link">#</a></h3>
-<ol>
 <li>
-<p><strong>Definitional unfolding</strong>: Even though <code>μK</code> is noncomputable, we can unfold its definition in proofs.</p>
+<p>Mathlib uses [0, ∞] for probability values, which might seem wrong---probabilities
+   should be in [0,1]!</p>
 </li>
 <li>
-<p><strong>Symbolic reasoning</strong>: We prove <code>1/card(Key 3) = 1/8</code> symbolically, not by computation.</p>
+<p>A pragmatic choice for integration with measure theory and handling limits.</p>
 </li>
 <li>
-<p><strong>Type class inference</strong>: Lean knows <code>Fintype (Key 3)</code> and can reason about cardinalities.</p>
+<p>In a perfect world, we might use a <code>Probability</code> type that restricts inhabitants
+   to [0, 1].</p>
 </li>
 <li>
-<p><strong>Real number lemmas</strong>: Mathlib has lemmas about real arithmetic that we use in proofs.</p>
+<p>Mathlib prioritizes compatibility with the broader mathematical ecosystem over type safety here.</p>
 </li>
-</ol>
-<hr />
-<h2 id="the-philosophical-point">The Philosophical Point<a class="headerlink" href="#the-philosophical-point" title="Permanent link">#</a></h2>
-<p>This separation between computation and reasoning is fundamental:</p>
-<ul>
-<li><strong>Computation</strong>: Running an algorithm to get a concrete answer.</li>
-<li><strong>Reasoning</strong>: Proving properties about mathematical objects.</li>
 </ul>
-<p>In formal mathematics, we often work with noncomputable objects (like real numbers, infinite sets, choice functions) but can still prove precise theorems about them.</p>
-<h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h3>
-<p>In Lean, probability distributions are functions from outcomes to probabilities,
-bundled with a proof that probabilities sum to 1.</p>
-<p>Even though we work with finite spaces, these are marked <code>noncomputable</code> because they use real number arithmetic and infinite summation machinery. </p>
-<p>This doesn't limit our reasoning---we can still prove exact results like "each key has probability 1/8."</p>
-<p>The distinction between computation and proof is fundamental: we reason symbolically about these mathematical objects without needing to compute their values."</p>
-<h3 id="a-practical-analogy">A Practical Analogy<a class="headerlink" href="#a-practical-analogy" title="Permanent link">#</a></h3>
+<h3 id="honest-bottom-line">Honest Bottom Line<a class="headerlink" href="#honest-bottom-line" title="Permanent link">#</a></h3>
+<p>A real tension in library design:</p>
 <ul>
-<li><strong>Computable</strong>: a calculator gives you 0.125 when you type 1 ÷ 8.</li>
-<li><strong>Noncomputable with proofs</strong>: we can show algebraically that 1/8 = 0.125 without calculating</li>
+<li><strong>Type safety</strong> says: enforce invariants in types</li>
+<li><strong>Pragmatism</strong> says: make it compatible with existing math</li>
+<li><strong>Mathlib chose</strong> pragmatism over purity here</li>
 </ul>
-<p>PMFs in Lean are the second kind---we work with them symbolically and prove properties, rather than computing decimal expansions.</p>
 <!-- internal links -->
 <!-- external links -->
 
@@ -1370,6 +1243,44 @@ bundled with a proof that probabilities sum to 1.</p>
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../basic-probability-in-lean/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Probability in Lean">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Probability in Lean
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../bind_and_pure/" class="md-footer__link md-footer__link--next" aria-label="Next: Joint distributions">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Joint distributions
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
