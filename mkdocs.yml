@@ -72,27 +72,22 @@ nav:
   - Home: index.md
 
   - FM Crypto:
-    - One-time Pad:
-      - OTP Basics: crypto/otp/otp-basics.md
-      - Perfect Secrecy: crypto/otp/perfect-secrecy.md
     - One-time Pad in Lean:
-      - Lean Project Setup: crypto/otp/lean-project-setup.md
-      - Basic Types: crypto/otp/otp-basic-types.md
-      - Basic Probability in Lean: crypto/otp/basic-probability-in-lean.md
-      - Perfect Secrecy in Lean: crypto/otp/perfect-secrecy-in-lean.md
+      - OTP basics: crypto/otp/otp-basics.md
+      - Perfect secrecy: crypto/otp/perfect-secrecy.md
+      - Lean project setup: crypto/otp/lean-project-setup.md
+      - Basic types: crypto/otp/otp-basic-types.md
+      - Probability in Lean: crypto/otp/basic-probability-in-lean.md
+      - Why [0, ∞]?: crypto/otp/WhyExtendedNNReals.md
+      - Joint distributions: crypto/otp/bind_and_pure.md
+      - A first concrete proof: crypto/otp/a-first-proof.md
+      - Law of Total Probability: crypto/otp/law-of-total-prob.md
+      - Perfect secrecy in Lean: crypto/otp/perfect-secrecy-in-lean.md
     - Presentation Notes:
         - 2025 Juneteenth: crypto/otp/talk/2025Jun19-notes.md
         - Old Overview/Demo: crypto/otp/talk/interleaved_demo_presentation.md
         - Older presentation: crypto/otp/talk/slides.md
       # reveal_slides.html
-
-    - Mathlib:
-      - Vector and List: crypto/Mathlib/vector-and-list.md
-      - Probability: crypto/Mathlib/prob.md
-      - Deep Dive:
-          - Distributions in Lean: crypto/Mathlib/DistributionsInLean.md
-          - Why [0, ∞] for Distributions?: crypto/Mathlib/WhyExtendedNNReals.md
-          - Joint Distributions with bind: crypto/Mathlib/bind_and_pure.md
 
   - Miscellany:
     - MkDocs doc:

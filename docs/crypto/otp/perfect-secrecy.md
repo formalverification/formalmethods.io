@@ -39,12 +39,16 @@ Assume $ℳ$, $𝒦$, $𝒞$ all equal $\{0, 1\}^n$.
 
     The one-time pad encryption scheme is perfectly secret.
 
+    That is, if $m ∈ ℳ$, $c ∈ 𝒞$ and $ℙ(C = c) > 0$, then
+
+    $$ℙ (M = m \; | \; C = c) = ℙ(M = m).$$
+
 ??? note "Proof of Theorem 2.9 ✍️"
 
     + Let $C$ and $M$ be r.v.s from arbitrary, fixed distributions over $ℳ$ and $𝒞$, resp.
     + Let $K$ be a r.v. from the uniform distribution over $𝒦$.
 
-    !!! note "**Goal** 🥅"
+    !!! note "🥅 **Goal** 🥅"
 
         If $m ∈ ℳ$, $c ∈ 𝒞$ and $ℙ(C = c) > 0$, then $ℙ (M = m \; | \; C = c) = ℙ(M = m)$.
 
@@ -59,7 +63,7 @@ Assume $ℳ$, $𝒦$, $𝒞$ all equal $\{0, 1\}^n$.
 
     \\[ℙ (C = c) = ∑\_{m ∈ ℳ} ℙ (C = c \; | \; M = m) · ℙ(M = m) = 2^{-n} ∑\_{m ∈ ℳ} ℙ(M = m) = 2^{-n}.\\]
 
-    Finally, by Bayes' Theorem,
+    Therefore, by Bayes' Theorem,
 
     \begin{align*}
     ℙ(M = m \; | \; C = c) &= \frac{ℙ(C = c \; | \; M = m) · ℙ(M = m)}{ℙ(C = c)}\\

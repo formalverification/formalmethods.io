@@ -1,20 +1,5 @@
 # Basic Types for the OTP
 
-<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
-**Table of Contents**
-
-- [Basic Types for the OTP](#basic-types-for-the-otp)
-  - [Initial Considerations 🤔](#initial-considerations-)
-  - [Types Aliases  🕵️](#types-aliases--)
-  - [XOR Operation ⊕](#xor-operation-)
-  - [Initial Definitions ✍️](#initial-definitions-)
-  - [Mathlib Specifics](#mathlib-specifics)
-    - [[`Data/Vector/`][Data/Vector/]](#datavectordatavector)
-    - [[`Data/List/`][Data/List/]](#datalistdatalist)
-
-<!-- markdown-toc end -->
-
-
 ## Initial Considerations 🤔
 
 + What types for messages, keys, ciphertexts?
@@ -27,7 +12,9 @@
 
 ---
 
-## Types Aliases  🕵️
+## Initial Definitions ✍️
+
+### Types Aliases
 
 ```lean
 def Plaintext (n : Nat) := Vector Bool n
@@ -37,48 +24,62 @@ def Ciphertext (n : Nat) := Vector Bool n
 
 Using `n : Nat` so definitions are generic for any length.
 
----
 
-## XOR Operation ⊕
+### The XOR Operation ⊕
 
-We need a function like
+To encrypt plain text messages, and decrypt ciphertext messages, we will use the "exclusive or" function, `xor`,
+applied pointwise to the message and key vectors.
 
 ```lean
 xor_vector {n : Nat} (v₁ v₂ : Vector Bool n) : Vector Bool n
 ```
 
-This can be defined using `Vector.map₂ Bool.xor v₁ v₂`.
+As we'll see below, this operation can be defined in a number of ways---for example,
+as `Vector.zipWith Bool.xor v₁ v₂` or `Vector.ofFn (λ i => Bool.xor (v₁.get i)
+(v₂.get i))`, which are merely different ways of applying Boolean xor pointwise on
+the input vectors.
+
+The `encrypt` and `decrypt` functions are essentially aliases for the `xor_vector`
+function:
+
+```lean
+def encrypt {n : Nat} (p : Plaintext n) (k : Key n) : Ciphertext n :=
+  xor_vector p k
+
+def decrypt {n : Nat} (c : Ciphertext n) (k : Key n) : Ciphertext n :=
+  xor_vector c k
+```
+
+Notice, however, that unlike `xor_vec` which takes a pair of generic binary vectors
+and returns a binary vector, `encrypt` takes a `Plaintext` message and a `Key` and
+returns `Ciphertext` message, while `decrypt` takes a `Ciphertext` message and a
+`Key` and returns `Plaintext` message.
+
+Lean will complain if we try to apply `encrypt` to a `Ciphertext` message and a
+`Key` or to two generic binary vectors.
+
 
 ---
 
+## Initial Definitions in Lean
 
-## Initial Definitions ✍️
+Let's now encode these basic definitions in Lean.
 
-!!! note "*Message Distribution* `PMF (Plaintext n)`"
+In Section [Lean Project Setup](crypto/otp/lean-project-setup.md), we created and
+built a Lean project called `OTP`.  This process creates a file called
+`OTP/Basic.lean` containing one line:
 
-    Perfect secrecy definition assumes messages come from *some* probability distribution.
+```lean
+def hello := "world"
+```
 
-    In our theorem statement, we leave this arbitrary: `μ_M : PMF (Plaintext n)`.
+In your terminal, navigate to the `OTP` project directory and enter `code .`, which
+will launch VSCode with the `OTP` project open.
 
-!!! note "*Key Distribution* `PMF (Key n)`"
+In the project Explorer window on the left, click on the `OTP` directory and double
+click on the `Basic.lean` file to open it.
 
-    This is uniform on the key space (a finite set of size 2ⁿ).
-
-    We need to define what `is_uniform (μ_K : PMF (Key n))` means.
-
-    For a finite type `α`, probability mass function `p` is uniform if `p a = 1 / card α` for all `a : α`.
-
-    Mathlib has utilities for this, e.g. `PMF.uniformOfFintype`.
-
-!!! note "*Ciphertext Distribution* `PMF (Ciphertext n)`"
-
-    This is derived from message and key distributions using `PMF.bind` to represent the encryption process.
-
-!!! note "*Conditional Probability* $ℙ(M=m \;| \;C=c)$"
-
-    defined using `PMF.cond`
-
-In `OTP/Basic.lean`,
+Replace its contents (`def hello := "world"`) with the following:
 
 ```lean
 import Mathlib.Data.Vector.Basic
@@ -104,10 +105,16 @@ namespace OTP
   -- Let's test with a simple example if we can construct vectors
   -- To make this evaluable, we need a concrete n and ways to make vectors.
   -- For example:
-  def ex_plaintext : Plaintext 3 := ⟨#[true, false, true], by decide⟩ -- Using constructor for clarity
+  def ex_plaintext : Plaintext 3 := ⟨#[true, false, true], by decide⟩
 
-  -- Or using the direct constructor...
-  def ex_plaintext' : Plaintext 3 := ⟨#[true, false, true], by rfl⟩ -- by rfl or by decide usually works for length proofs
+  def ex_plaintext'' : Plaintext 3 := ⟨#[true, false, true], rfl⟩
+  -- `rfl` is the unique constructor for the equality type
+
+  def ex_plaintext' : Plaintext 3 := ⟨#[true, false, true], by rfl⟩
+  -- `by rfl` uses the rfl tactic, which is more generic than the `rfl` above.
+  -- It works for any relation that has a reflexivity lemma tagged with
+  -- the attribute `@[refl]`.
+
   def ex_key : Key 3 := ⟨#[false, true, true], by decide⟩
 
   #eval encrypt ex_plaintext ex_key
@@ -115,10 +122,16 @@ namespace OTP
 
   def ex_ciphertext : Ciphertext 3 := encrypt ex_plaintext ex_key
   #eval decrypt ex_ciphertext ex_key
-  -- Expected output: vector of ![true, false, true]
+  -- Output: #[true, false, true]
 
 end OTP
 ```
+
+!!! note "Exercise"
+
+    Can the `encrypt` function take a `Ciphertext` and a `Key` (or a `Plaintext` message and a `Ciphertext` message, or even two keys) as arguments?  (Use `#eval` to check.)
+
+    Would you say that `encrypt` is a function from `Plaintext n` × `Key n` to `Ciphertext n`?  Or is it a binary operation on `Vector Bool n`?
 
 ---
 

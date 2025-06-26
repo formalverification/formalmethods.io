@@ -1,4 +1,4 @@
-# **Lean Project Setup** 🏗️️
+# Lean Project Setup 🏗️️
 
 This section describes the steps we took to set up our Lean project.  The resulting
 source code is maintained in our lean4crypto respository at
@@ -35,12 +35,13 @@ source code is maintained in our lean4crypto respository at
     name = "OTP"
     ```
 
-3.  **Fetch Mathlib:**
-    In your terminal (in the `otp_formalization` directory):
+3.  **Fetch Mathlib**.
+
+    In your terminal (in the `OTP` directory), enter the following:
     ```bash
     lake update
     ```
-    This might take a few minutes the first time. Then build to ensure it's working:
+    This might take a few minutes the first time. Then run `lake build` to ensure it's working.
     ```bash
     lake build
     ```
@@ -48,7 +49,7 @@ source code is maintained in our lean4crypto respository at
 4.  **Create Main File**.
 
     * The `lake new` command creates `OTP.lean` and `OTP/Basic.lean`.
-    * We'll start the formalization in `OTP/Basic.lean` which is imported into `OTP.lean`.
+    * We'll start the formalization in `OTP/Basic.lean` (which is imported into `OTP.lean`).
 
 
 
