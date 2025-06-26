@@ -22,7 +22,7 @@
     
     
       
-        <title>Why [0, ∞]? - Formal Methods</title>
+        <title>Deep dive. Why [0, ∞]? - Formal Methods</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#deep-dive-why-use-0-for-the-codomain-of-a-distribution" class="md-skip">
+        <a href="#deep-dive" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Why [0, ∞]?
+              Deep dive. Why [0, ∞]?
             
           </span>
         </div>
@@ -371,6 +371,44 @@
                 
   
   
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Probability in Lean
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Probability in Lean
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
   
   
     <li class="md-nav__item">
@@ -378,7 +416,7 @@
         
   
   <span class="md-ellipsis">
-    Probability in Lean
+    Distributions
     
   </span>
   
@@ -409,7 +447,7 @@
           
   
   <span class="md-ellipsis">
-    Why [0, ∞]?
+    Deep dive. Why [0, ∞]?
     
   </span>
   
@@ -421,7 +459,7 @@
         
   
   <span class="md-ellipsis">
-    Why [0, ∞]?
+    Deep dive. Why [0, ∞]?
     
   </span>
   
@@ -444,18 +482,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-integration-with-measure-theory" class="md-nav__link">
+  <a href="#why-use-0-for-the-codomain-of-a-distribution" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Integration with Measure Theory
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-division-conventions" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Division Conventions
+      Why use [0, ∞] for the codomain of a distribution?
     </span>
   </a>
   
@@ -471,19 +500,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#final-thoughts" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      Final Thoughts
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Summary">
+    <nav class="md-nav" aria-label="Final Thoughts">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#honest-bottom-line" class="md-nav__link">
     <span class="md-ellipsis">
       Honest Bottom Line
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
     </span>
   </a>
   
@@ -497,6 +535,14 @@
     </ul>
   
 </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -1019,18 +1065,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-integration-with-measure-theory" class="md-nav__link">
+  <a href="#why-use-0-for-the-codomain-of-a-distribution" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Integration with Measure Theory
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-division-conventions" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Division Conventions
+      Why use [0, ∞] for the codomain of a distribution?
     </span>
   </a>
   
@@ -1046,19 +1083,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#final-thoughts" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      Final Thoughts
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Summary">
+    <nav class="md-nav" aria-label="Final Thoughts">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#honest-bottom-line" class="md-nav__link">
     <span class="md-ellipsis">
       Honest Bottom Line
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
     </span>
   </a>
   
@@ -1085,54 +1131,70 @@
 
 
 
-<h1 id="deep-dive-why-use-0-for-the-codomain-of-a-distribution">Deep Dive: Why use [0, ∞] for the codomain of a distribution?<a class="headerlink" href="#deep-dive-why-use-0-for-the-codomain-of-a-distribution" title="Permanent link">#</a></h1>
+<h1 id="deep-dive">Deep Dive<a class="headerlink" href="#deep-dive" title="Permanent link">#</a></h1>
+<h2 id="why-use-0-for-the-codomain-of-a-distribution">Why use [0, ∞] for the codomain of a distribution?<a class="headerlink" href="#why-use-0-for-the-codomain-of-a-distribution" title="Permanent link">#</a></h2>
 <ul>
 <li>Probabilities should be in [0, 1] by definition.</li>
 <li>If p + q &gt; 1, then p + q isn't a probability of anything.</li>
 <li>A rich type system should enforce this constraint.</li>
 <li>Having to prove preservation of [0, 1] keeps us mathematically honest.</li>
 </ul>
-<p>So why did Mathlib choose <code>ENNReal</code>? The reasons are probably subtle, but we can speculate.</p>
-<hr />
-<h2 id="1-integration-with-measure-theory">1. <strong>Integration with Measure Theory</strong><a class="headerlink" href="#1-integration-with-measure-theory" title="Permanent link">#</a></h2>
-<p>This is probably the biggest reason:</p>
-<div class="language-lean highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="sd">/-- In measure theory, measures assign values in [0,∞] to sets.</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="sd">A measure is defined to be an outer measure that is countably additive on</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="sd">measurable sets, with the assumption that the outer measure is the canonical</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="sd">extension of the restricted measure.</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="sd">The measure of a set `s`, denoted `μ s`, is an extended nonnegative real.</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="sd">The real-valued version is written `μ.real s`.</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="sd">-/</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="kd">structure</span><span class="w"> </span><span class="n">Measure</span><span class="w"> </span><span class="o">(</span><span class="n">α</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">Type</span><span class="bp">*</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="n">MeasurableSpace</span><span class="w"> </span><span class="n">α</span><span class="o">]</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">OuterMeasure</span><span class="w"> </span><span class="n">α</span><span class="w"> </span><span class="n">where</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="n">m_iUnion</span><span class="w"> </span><span class="o">⦃</span><span class="n">f</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="w"> </span><span class="bp">→</span><span class="w"> </span><span class="n">Set</span><span class="w"> </span><span class="n">α</span><span class="o">⦄</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="o">(</span><span class="bp">∀</span><span class="w"> </span><span class="n">i</span><span class="o">,</span><span class="w"> </span><span class="n">MeasurableSet</span><span class="w"> </span><span class="o">(</span><span class="n">f</span><span class="w"> </span><span class="n">i</span><span class="o">))</span><span class="w"> </span><span class="bp">→</span><span class="w"> </span><span class="n">Pairwise</span><span class="w"> </span><span class="o">(</span><span class="n">Disjoint</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">f</span><span class="o">)</span><span class="w"> </span><span class="bp">→</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="n">toOuterMeasure</span><span class="w"> </span><span class="o">(</span><span class="bp">⋃</span><span class="w"> </span><span class="n">i</span><span class="o">,</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="n">i</span><span class="o">)</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="bp">∑&#39;</span><span class="w"> </span><span class="n">i</span><span class="o">,</span><span class="w"> </span><span class="n">toOuterMeasure</span><span class="w"> </span><span class="o">(</span><span class="n">f</span><span class="w"> </span><span class="n">i</span><span class="o">)</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="n">trim_le</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">toOuterMeasure.trim</span><span class="w"> </span><span class="bp">≤</span><span class="w"> </span><span class="n">toOuterMeasure</span>
+<p>So why did Mathlib choose <code>ENNReal</code>?  The reasons are probably subtle, but we can
+at least speculate and provide some food for thought and further discussion.</p>
+<ol>
+<li>
+<p><strong>Integration with Measure Theory</strong>. (pardon the pun)</p>
+<p>In measure theory, measures assign values in [0,∞] to sets.</p>
+<p>The measure of a set <code>S</code>, denoted <code>μ S</code>, is an extended nonnegative real.</p>
+<p>A measure <code>μ</code> is called a probability measure if <code>μ univ = 1</code>.</p>
+<p>The designers of Mathlib likely wanted PMFs that integrate seamlessly with the
+measure theory library, where <code>ENNReal</code> is standard.</p>
+<div class="admonition info">
+<p class="admonition-title">Measures and outer measures in Mathlib</p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="sd">/-- An outer measure is a countably subadditive monotone function that sends `∅` to `0`.</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="sd">-/</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kd">structure</span><span class="w"> </span><span class="n">OuterMeasure</span><span class="w"> </span><span class="o">(</span><span class="n">α</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">Type</span><span class="bp">*</span><span class="o">)</span><span class="w"> </span><span class="n">where</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="kn">protected</span><span class="w"> </span><span class="n">measureOf</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Set</span><span class="w"> </span><span class="n">α</span><span class="w"> </span><span class="bp">→</span><span class="w"> </span><span class="n">ℝ</span><span class="bp">≥</span><span class="mi">0</span><span class="bp">∞</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="kn">protected</span><span class="w"> </span><span class="n">empty</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">measureOf</span><span class="w"> </span><span class="bp">∅</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="mi">0</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="kn">protected</span><span class="w"> </span><span class="n">mono</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="bp">∀</span><span class="w"> </span><span class="o">{</span><span class="n">s₁</span><span class="w"> </span><span class="n">s₂</span><span class="o">},</span><span class="w"> </span><span class="n">s₁</span><span class="w"> </span><span class="bp">⊆</span><span class="w"> </span><span class="n">s₂</span><span class="w"> </span><span class="bp">→</span><span class="w"> </span><span class="n">measureOf</span><span class="w"> </span><span class="n">s₁</span><span class="w"> </span><span class="bp">≤</span><span class="w"> </span><span class="n">measureOf</span><span class="w"> </span><span class="n">s₂</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="kn">protected</span><span class="w"> </span><span class="n">iUnion_nat</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="bp">∀</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="w"> </span><span class="bp">→</span><span class="w"> </span><span class="n">Set</span><span class="w"> </span><span class="n">α</span><span class="o">,</span><span class="w"> </span><span class="n">Pairwise</span><span class="w"> </span><span class="o">(</span><span class="n">Disjoint</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">s</span><span class="o">)</span><span class="w"> </span><span class="bp">→</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="n">measureOf</span><span class="w"> </span><span class="o">(</span><span class="bp">⋃</span><span class="w"> </span><span class="n">i</span><span class="o">,</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="n">i</span><span class="o">)</span><span class="w"> </span><span class="bp">≤</span><span class="w"> </span><span class="bp">∑&#39;</span><span class="w"> </span><span class="n">i</span><span class="o">,</span><span class="w"> </span><span class="n">measureOf</span><span class="w"> </span><span class="o">(</span><span class="n">s</span><span class="w"> </span><span class="n">i</span><span class="o">)</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="sd">/-- A measure is defined to be an outer measure that is countably additive on</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="sd">measurable sets, with the assumption that the outer measure is the canonical</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="sd">extension of the restricted measure.</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="sd">-/</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="kd">structure</span><span class="w"> </span><span class="n">Measure</span><span class="w"> </span><span class="o">(</span><span class="n">α</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">Type</span><span class="bp">*</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="n">MeasurableSpace</span><span class="w"> </span><span class="n">α</span><span class="o">]</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">OuterMeasure</span><span class="w"> </span><span class="n">α</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="n">where</span><span class="w"> </span><span class="n">m_iUnion</span><span class="w"> </span><span class="o">⦃</span><span class="n">f</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℕ</span><span class="w"> </span><span class="bp">→</span><span class="w"> </span><span class="n">Set</span><span class="w"> </span><span class="n">α</span><span class="o">⦄</span><span class="w"> </span><span class="o">:</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="o">(</span><span class="bp">∀</span><span class="w"> </span><span class="n">i</span><span class="o">,</span><span class="w"> </span><span class="n">MeasurableSet</span><span class="w"> </span><span class="o">(</span><span class="n">f</span><span class="w"> </span><span class="n">i</span><span class="o">))</span><span class="w"> </span><span class="bp">→</span><span class="w"> </span><span class="n">Pairwise</span><span class="w"> </span><span class="o">(</span><span class="n">Disjoint</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">f</span><span class="o">)</span><span class="w"> </span><span class="bp">→</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="n">toOuterMeasure</span><span class="w"> </span><span class="o">(</span><span class="bp">⋃</span><span class="w"> </span><span class="n">i</span><span class="o">,</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="n">i</span><span class="o">)</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="bp">∑&#39;</span><span class="w"> </span><span class="n">i</span><span class="o">,</span><span class="w"> </span><span class="n">toOuterMeasure</span><span class="w"> </span><span class="o">(</span><span class="n">f</span><span class="w"> </span><span class="n">i</span><span class="o">)</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="kd">class</span><span class="w"> </span><span class="n">IsProbabilityMeasure</span><span class="w"> </span><span class="o">(</span><span class="n">μ</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Measure</span><span class="w"> </span><span class="n">α</span><span class="o">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">Prop</span><span class="w"> </span><span class="n">where</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">  </span><span class="n">measure_univ</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">μ</span><span class="w"> </span><span class="n">univ</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="mi">1</span>
 </span></code></pre></div>
-<div class="language-lean highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="sd">/-- A measure `μ` is called a probability measure if `μ univ = 1`. -/</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">class</span><span class="w"> </span><span class="n">IsProbabilityMeasure</span><span class="w"> </span><span class="o">(</span><span class="n">μ</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Measure</span><span class="w"> </span><span class="n">α</span><span class="o">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">Prop</span><span class="w"> </span><span class="n">where</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="n">measure_univ</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">μ</span><span class="w"> </span><span class="n">univ</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="mi">1</span>
+</div>
+</li>
+<li>
+<p><strong>Division Conventions</strong></p>
+<p><code>ENNReal</code> has specific conventions that make probability formulas work. These would be messier and require more special case analysis with a [0, 1] type.</p>
+<div class="admonition info">
+<p class="admonition-title">Division in <code>EENReal</code></p>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">-- In ENNReal:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="mi">0</span><span class="w"> </span><span class="bp">/</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="mi">0</span><span class="w">    </span><span class="c1">-- Makes conditional probability P(A|B) work when P(B) = 0</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">x</span><span class="w"> </span><span class="bp">/</span><span class="w"> </span><span class="bp">∞</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="mi">0</span><span class="w">    </span><span class="c1">-- Handles certain limit cases</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">x</span><span class="w"> </span><span class="bp">/</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="bp">∞</span><span class="w">    </span><span class="c1">-- for x &gt; 0</span>
 </span></code></pre></div>
-<p>PMFs are designed to integrate seamlessly with measure theory, where <code>ENNReal</code> is standard.</p>
-<hr />
-<h2 id="2-division-conventions">2. <strong>Division Conventions</strong><a class="headerlink" href="#2-division-conventions" title="Permanent link">#</a></h2>
-<p><code>ENNReal</code> has specific conventions that make probability formulas work:</p>
-<div class="language-lean highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">-- In ENNReal:</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="mi">0</span><span class="w"> </span><span class="bp">/</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="mi">0</span><span class="w">    </span><span class="c1">-- Makes conditional probability P(A|B) work when P(B) = 0</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">x</span><span class="w"> </span><span class="bp">/</span><span class="w"> </span><span class="bp">∞</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="mi">0</span><span class="w">    </span><span class="c1">-- Handles certain limit cases</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">x</span><span class="w"> </span><span class="bp">/</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="bp">∞</span><span class="w">    </span><span class="c1">-- for x &gt; 0</span>
-</span></code></pre></div>
-<p>These would be messier and require more special case analysis with a [0, 1] type.</p>
+</div>
+</li>
+</ol>
 <hr />
 <h2 id="the-pragmatic-compromise">The Pragmatic Compromise<a class="headerlink" href="#the-pragmatic-compromise" title="Permanent link">#</a></h2>
 <p>Philosophically, a <code>Probability</code> type should be:</p>
-<div class="language-lean highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">def</span><span class="w"> </span><span class="n">Probability</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">{</span><span class="n">x</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℝ</span><span class="w"> </span><span class="bp">//</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="bp">≤</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="bp">∧</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="bp">≤</span><span class="w"> </span><span class="mi">1</span><span class="o">}</span>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">def</span><span class="w"> </span><span class="n">Probability</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">{</span><span class="n">x</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ℝ</span><span class="w"> </span><span class="bp">//</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="bp">≤</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="bp">∧</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="bp">≤</span><span class="w"> </span><span class="mi">1</span><span class="o">}</span>
 </span></code></pre></div>
 <p>And operations should return proofs:</p>
-<div class="language-lean highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">def</span><span class="w"> </span><span class="n">prob_or</span><span class="w"> </span><span class="o">(</span><span class="n">p</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Probability</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="n">h</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">disjoint</span><span class="o">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Probability</span><span class="w"> </span><span class="o">:=</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="o">⟨</span><span class="n">p.val</span><span class="w"> </span><span class="bp">+</span><span class="w"> </span><span class="n">q.val</span><span class="o">,</span><span class="w"> </span><span class="kd">by</span><span class="w"> </span><span class="n">proof_that_sum_le_1</span><span class="o">⟩</span>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">def</span><span class="w"> </span><span class="n">prob_or</span><span class="w"> </span><span class="o">(</span><span class="n">p</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Probability</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="n">h</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">disjoint</span><span class="o">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Probability</span><span class="w"> </span><span class="o">:=</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="o">⟨</span><span class="n">p.val</span><span class="w"> </span><span class="bp">+</span><span class="w"> </span><span class="n">q.val</span><span class="o">,</span><span class="w"> </span><span class="kd">by</span><span class="w"> </span><span class="n">proof_that_sum_le_1</span><span class="o">⟩</span>
 </span></code></pre></div>
 <p>Mathlib probably chose <code>ENNReal</code> for pragmatic reasons:</p>
 <ol>
@@ -1141,13 +1203,20 @@
 <li><strong>Mathematical</strong> practice (probabilists often work with unnormalized measures)</li>
 </ol>
 <p>But this loses "type safety." A more principled approach might have:</p>
-<div class="language-lean highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">-- The &quot;right&quot; design?</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kd">structure</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="o">(</span><span class="n">α</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">Type</span><span class="bp">*</span><span class="o">)</span><span class="w"> </span><span class="n">where</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="n">val</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">α</span><span class="w"> </span><span class="bp">→</span><span class="w"> </span><span class="n">Probability</span><span class="w">  </span><span class="c1">-- Each value is certified in [0,1]</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="n">has_sum_one</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="bp">∑</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="mi">1</span>
+<div class="language-lean highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">-- The &quot;right&quot; design?</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kd">structure</span><span class="w"> </span><span class="n">PMF</span><span class="w"> </span><span class="o">(</span><span class="n">α</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">Type</span><span class="bp">*</span><span class="o">)</span><span class="w"> </span><span class="n">where</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="n">val</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">α</span><span class="w"> </span><span class="bp">→</span><span class="w"> </span><span class="n">Probability</span><span class="w">  </span><span class="c1">-- Each value is certified in [0,1]</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="n">has_sum_one</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="bp">∑</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="bp">=</span><span class="w"> </span><span class="mi">1</span>
 </span></code></pre></div>
-<hr />
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
+<h2 id="final-thoughts">Final Thoughts<a class="headerlink" href="#final-thoughts" title="Permanent link">#</a></h2>
+<h3 id="honest-bottom-line">Honest Bottom Line<a class="headerlink" href="#honest-bottom-line" title="Permanent link">#</a></h3>
+<p>A real tension in library design:</p>
+<ul>
+<li><strong>Type safety</strong> says: enforce invariants in types</li>
+<li><strong>Pragmatism</strong> says: make it compatible with existing math</li>
+<li><strong>Mathlib chose</strong> pragmatism over purity here</li>
+</ul>
+<h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h3>
 <ul>
 <li>
 <p>Mathlib uses [0, ∞] for probability values, which might seem wrong---probabilities
@@ -1163,13 +1232,6 @@
 <li>
 <p>Mathlib prioritizes compatibility with the broader mathematical ecosystem over type safety here.</p>
 </li>
-</ul>
-<h3 id="honest-bottom-line">Honest Bottom Line<a class="headerlink" href="#honest-bottom-line" title="Permanent link">#</a></h3>
-<p>A real tension in library design:</p>
-<ul>
-<li><strong>Type safety</strong> says: enforce invariants in types</li>
-<li><strong>Pragmatism</strong> says: make it compatible with existing math</li>
-<li><strong>Mathlib chose</strong> pragmatism over purity here</li>
 </ul>
 <!-- internal links -->
 <!-- external links -->
@@ -1202,7 +1264,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../basic-probability-in-lean/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Probability in Lean">
+          <a href="../basic-probability-in-lean/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Distributions">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1212,7 +1274,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Probability in Lean
+                Distributions
               </div>
             </div>
           </a>
