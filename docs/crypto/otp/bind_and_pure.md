@@ -22,7 +22,7 @@ def always_true : PMF Bool := pure true
 pure (encrypt m k)
 ```
 
-would creates a distribution that always returns the specific ciphertext `encrypt m k` with probability 1.
+creates a distribution that always returns the specific ciphertext `encrypt m k` with probability 1.
 
 ---
 
@@ -50,7 +50,7 @@ Think of `bind p f` as a two-step random process:
 ```lean
 -- Roll a die, then flip that many coins and count heads
 def roll_then_flip : PMF Nat :=
-  bind die_roll (fun n => flip_n_coins n)
+  bind die_roll (λ n => flip_n_coins n)
 ```
 
 ---
@@ -58,7 +58,7 @@ def roll_then_flip : PMF Nat :=
 ## Breaking Down Our Expression
 
 ```lean
-μC = bind μMK (fun mk => pure (encrypt mk.1 mk.2))
+μC = bind μMK (λ (m, k) => pure (encrypt m k))
 ```
 
 This means:
@@ -78,10 +78,10 @@ To build complex probability distributions from simple ones:
 
 ```lean
 -- Without bind/pure (conceptually):
-μC c = Σ {P(M=m, K=k) : (m, k) is such that (encrypt m k = c)}
+μC c = Σ {P(M=m, K=k) : (m, k) is such that c = encrypt m k}
 
 -- With bind/pure:
-μC = bind μMK (fun mk => pure (encrypt mk.1 mk.2))
+μC = bind μMK (λ (m, k) => pure (encrypt m k))
 ```
 
 The `bind`/`pure` formulation is cleaner and more compositional.
@@ -89,14 +89,14 @@ The `bind`/`pure` formulation is cleaner and more compositional.
 ## The General Pattern
 
 ```lean
-bind p (fun x => pure (f x)) = map f p
+bind p (λ x => pure (f x)) = map f p
 ```
 
 When the second step is deterministic (using `pure`), `bind` reduces to `map`.
 
 So we could also write:
 ```lean
-μC = map (fun mk => encrypt mk.1 mk.2) μMK
+μC = map (λ (m, k) => encrypt m k) μMK
 ```
 
 ## In Probability Terms
@@ -107,14 +107,16 @@ So we could also write:
   P(Y = y) = Σ_x P(X = x) · P(Y = y | X = x)
   ```
   where `bind p f` represents the distribution of Y when:
-  - X has distribution p
-  - Y | X=x has distribution f(x)
+
+    - X has distribution p
+    - Y | X=x has distribution f(x)
 
 ## Summary
 
-In `μC = bind μMK (fun mk => pure (encrypt mk.1 mk.2))`:
-- `μMK` is the joint distribution of (message, key) pairs
-- `bind` says "sample from this distribution"
-- `fun mk => pure (encrypt mk.1 mk.2)` says "then apply encryption deterministically"
-- Result: `μC` is the distribution of ciphertexts
+In `μC = bind μMK (λ (m, k) => pure (encrypt m k))`:
+
+- `μMK` is the joint distribution of (message, key) pairs.
+- `bind` says "sample from this distribution."
+- `λ (m, k) => pure (encrypt m k)` says "then apply encryption deterministically."
+- Result: `μC` is the ciphertexts distribution.
 

@@ -78,8 +78,8 @@ nav:
     - Basic types: crypto/otp/otp-basic-types.md
     - Probability in Lean: crypto/otp/basic-probability-in-lean.md
     - Why [0, ∞]?: crypto/otp/WhyExtendedNNReals.md
-    - Joint distributions: crypto/otp/bind_and_pure.md
     - A first concrete proof: crypto/otp/a-first-proof.md
+    - Joint distributions: crypto/otp/bind_and_pure.md
     - Law of Total Probability: crypto/otp/law-of-total-prob.md
     - Perfect secrecy in Lean: crypto/otp/perfect-secrecy-in-lean.md
 

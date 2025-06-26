@@ -10,10 +10,10 @@
 
 +  A **probability mass function** (pmf), or **probability measure**, on an outcome space is
    a function ℙ : Ω → ℝ such that, for all events 𝐸₀, 𝐸₁, …
-   + ℙ ∅ = 0 and ℙ Ω = 1
-   + 0 ≤ ℙ 𝐸ᵢ ≤ 1
-   + 𝐸ᵢ ⊆ 𝐸ⱼ → ℙ 𝐸ᵢ ≤ ℙ 𝐸ⱼ (monotone)
-   + ℙ(⋃ 𝐸ᵢ) ≤ ∑ ℙ 𝐸ᵢ (subadditive)
+    + ℙ ∅ = 0 and ℙ Ω = 1
+    + 0 ≤ ℙ 𝐸ᵢ ≤ 1
+    + 𝐸ᵢ ⊆ 𝐸ⱼ → ℙ 𝐸ᵢ ≤ ℙ 𝐸ⱼ (monotone)
+    + ℙ(⋃ 𝐸ᵢ) ≤ ∑ ℙ 𝐸ᵢ (subadditive)
 
 !!! note "Mathlib's definition"
 
@@ -27,9 +27,9 @@
 
 ## Distributions
 
-### What is a PMF Really?
+### What is a PMF?
 
-In Lean/Mathlib, a `PMF α` (Probability Mass Function) is fundamentally:
+In Lean/Mathlib, a `PMF α` (Probability Mass Function) is defined as follows:
 
 ```lean
 /-- A probability mass function, or discrete probability measures is
@@ -45,40 +45,46 @@ So a PMF is a **pair**
 
 2. A proof that these probabilities form a valid distribution.
 
+!!! info "Syntax: `{ _ // _ }`"
+
+    In Lean the mathematical expression `{x : P x}` is written `{ x // P x }`.
+
+    Example: `{n : Nat // n % 2 = 0}` is the type of even natural numbers.
+
 ---
 
 
-### Our Distributions as Mathematical Objects
+### Crypto Distributions
 
-#### μM : PMF (Plaintext n)
++  `μM : PMF (Plaintext n)`
 
-- **Type**: A function `Plaintext n → ℝ≥0∞` (plus a proof).
-- **Meaning**: For any n-bit message m, `μM m` is the probability that message m is sent.
-- **Example**: If all messages equally likely, `μM m = 1/2^n` for all m.
+    - **Type**: A function `μM : Plaintext n → ℝ≥0∞`, along with proof of `HasSum μM 1`.
+    - **Meaning**: For any n-bit message `m`, `μM m = P(M = m)`, the prob message `m` is sent.
+    - **Example**: If all messages equally likely, `μM m = 1/2^n` for all `m`.
 
-#### μK : PMF (Key n)
++  `μK : PMF (Key n)`
 
-- **Type**: A function `Key n → ℝ≥0∞`
-- **Meaning**: For any n-bit key k, `μK k` is its probability
-- **Definition**: `uniformOfFintype` makes `μK k = 1/2^n` for all k
+    - **Type**: A function `μK : Key n → ℝ≥0∞`, along with proof of `HasSum μK 1`.
+    - **Meaning**: For any n-bit key `k`, `μK k` is its probability, `P(K = k)`.
+    - **Definition**: `uniformOfFintype` makes `μK k = 1/2^n` for all `k`
 
-#### μMK : PMF (Plaintext n × Key n)
++  `μMK : PMF (Plaintext n × Key n)`
 
-- **Type**: A function `(Plaintext n × Key n) → ℝ≥0∞`
-- **Meaning**: Joint probability P(M = m ∧ K = k)
-- **Value**: `μMK (m,k) = μM m * μK k` (independence!)
+    - **Type**: A function `μMK : Plaintext n × Key n → ℝ≥0∞`, with proof of `HasSum μMK 1`.
+    - **Meaning**: For message `m` and key `k`, `μMK (m, k)` = the joint prob `P(M = m, K = k)`.
+    - **Value**: `μMK (m, k) = μM m * μK k` (independence!)
 
-#### μC : PMF (Ciphertext n)
++  `μC : PMF (Ciphertext n)`
 
-- **Type**: A function `Ciphertext n → ℝ≥0∞`
-- **Meaning**: For any n-bit ciphertext c, `μC c` is probability of observing c
-- **Computed**: By summing over all (m,k) pairs that produce c
+    - **Type**: A function `μC : Ciphertext n → ℝ≥0∞`,  along with proof of `HasSum μC 1`.
+    - **Meaning**: For any n-bit ciphertext `c`, `μC c` is probability of observing `c`.
+    - **Computed**: By summing over all `(m, k)` pairs that produce `c`
 
-#### μC_M : Plaintext n → PMF (Ciphertext n)
++  `μC_M : Plaintext n → PMF (Ciphertext n)`
 
-- **Type**: A function that takes a message and returns a distribution
-- **Meaning**: For fixed m, `μC_M m` is the conditional distribution P(C | M = m)
-- **Value**: `(μC_M m) c = if ∃k. encrypt m k = c then 1/2^n else 0`
+    - **Type**: A function that takes a message and returns a distribution on `Ciphertext n`.
+    - **Meaning**: For fixed message `m`, `μC_M m = P(C | M = m)`.
+    - **Value**: `(μC_M m) c = if ∃k. encrypt m k = c then 1/2^n else 0`
 
 ---
 

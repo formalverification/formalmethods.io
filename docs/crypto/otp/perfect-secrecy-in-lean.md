@@ -3,7 +3,7 @@
 The standard way to prove the perfect secrecy of OTP is to show that for any fixed
 plaintext `m`, the conditional distribution of ciphertexts is uniform.
 
-## Step 0: Setup for the Proof
+## Proof Setup
 
 We define the conditional distribution `μC_M m` by mapping the encryption function
 over the uniform key distribution.

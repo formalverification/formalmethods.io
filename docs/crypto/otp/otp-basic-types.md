@@ -85,44 +85,50 @@ Replace its contents (`def hello := "world"`) with the following:
 import Mathlib.Data.Vector.Basic
 
 namespace OTP
+  open List.Vector
+  -- Define types using List.Vector
+  def Plaintext  (n : Nat) := List.Vector Bool n
+  def Key        (n : Nat) := List.Vector Bool n
+  def Ciphertext (n : Nat) := List.Vector Bool n
 
-  def Plaintext (n : Nat) := Vector Bool n
-  def Key (n : Nat) := Vector Bool n
-  def Ciphertext (n : Nat) := Vector Bool n
+  -- Element-wise XOR for List.Vector
+  def vec_xor {n : Nat} (v₁ v₂ : List.Vector Bool n) := map₂ xor v₁ v₂
 
-  -- Element-wise XOR for Vectors
-  def xor_vector {n : Nat} (v₁ v₂ : Vector Bool n) : Vector Bool n :=
-    Vector.zipWith Bool.xor v₁ v₂
-    -- Or more explicitly:
-    -- Vector.ofFn (fun i => Bool.xor (v₁.get i) (v₂.get i))
+  def encrypt {n : Nat} (m : Plaintext n) (k : Key n) : Ciphertext n :=
+    vec_xor m k
 
-  def encrypt {n : Nat} (p : Plaintext n) (k : Key n) : Ciphertext n :=
-    xor_vector p k
+  def decrypt {n : Nat} (c : Ciphertext n) (k : Key n) : Plaintext n :=
+    vec_xor c k
 
-  def decrypt {n : Nat} (c : Ciphertext n) (k : Key n) : Ciphertext n :=
-    xor_vector c k
 
-  -- Let's test with a simple example if we can construct vectors
-  -- To make this evaluable, we need a concrete n and ways to make vectors.
-  -- For example:
-  def ex_plaintext : Plaintext 3 := ⟨#[true, false, true], by decide⟩
-
-  def ex_plaintext'' : Plaintext 3 := ⟨#[true, false, true], rfl⟩
+-- Demo 1: Basic OTP Operations ----------------------------------
+-- Examples using List literals for the List.Vector constructor
+section Demo1
+  -- Create a 4-bit message
+  def msg : Plaintext 4 := ⟨[true, false, true, true], rfl⟩
   -- `rfl` is the unique constructor for the equality type
 
-  def ex_plaintext' : Plaintext 3 := ⟨#[true, false, true], by rfl⟩
+
+  -- Create a 4-bit key
+  def key : Key 4 := ⟨[false, true, false, true], by rfl⟩
   -- `by rfl` uses the rfl tactic, which is more generic than the `rfl` above.
   -- It works for any relation that has a reflexivity lemma tagged with
   -- the attribute `@[refl]`.
 
-  def ex_key : Key 3 := ⟨#[false, true, true], by decide⟩
+  -- Show encryption
+  #eval encrypt msg key
+  -- Output: [true, true, true, false]
 
-  #eval encrypt ex_plaintext ex_key
-  -- Expected output: vector of ![true, true, false] (or similar representation)
+  -- Show decryption recovers the message
+  #eval decrypt (encrypt msg key) key
+  -- Output: [true, false, true, true]
 
-  def ex_ciphertext : Ciphertext 3 := encrypt ex_plaintext ex_key
-  #eval decrypt ex_ciphertext ex_key
-  -- Output: #[true, false, true]
+  -- Show that different keys give different ciphertexts
+  def key2 : Key 4 := ⟨[true, true, false, false], by decide⟩
+  -- `by decide` is yet another way to fill in the required proof
+
+  #eval encrypt msg key2
+  -- Output: [false, true, true, true]
 
 end OTP
 ```
