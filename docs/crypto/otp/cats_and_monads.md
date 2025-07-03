@@ -149,33 +149,36 @@ But this can be defined directly from the monadic operations, bind and pure!
 
 This composition has a clear probabilistic meaning:
 
-1.  **`bind p ...`**: Sample a value `x` from the distribution `p`.
-2.  **`... (λ x => ...)`**: Take that sampled value `x`.
-3.  **`pure (f x)`**: Apply the function `f` to `x` and create a new, deterministic distribution that always returns the result `f x`.
+1.  **`bind p ...`**: sample a value `x` from the distribution `p`.
+2.  **`... λ x => pure (f x)`**: take the sampled value `x`, apply the function `f`,
+    and produce a deterministic distribution that always returns the result `f x`.
 
 The overall effect is a new probability distribution over the type `β`, which is precisely what mapping a function over `p` should produce.
 
 ### The Functor Laws
 
-This definition of `map` also satisfies the two functor laws, which follow directly from the monad laws:
+This definition of `fmap` also satisfies the two functor laws, which follow directly from the monad laws:
 
-1.  **Identity**: `map id = id`
+1.  **Identity**: `fmap id = id`
     * Mapping the identity function over a distribution doesn't change it.
 
-2.  **Composition**: `map (g ∘ f) = (map g) ∘ (map f)`
+2.  **Composition**: `fmap (g ∘ f) = (fmap g) ∘ (fmap f)`
     * Mapping the composition of two functions is the same as mapping the first function and then mapping the second.
 
-So, while `bind` is about sequencing probabilistic computations, `map` is about applying a deterministic transformation to the *outcome* of a probabilistic computation. The fact that every monad (like `PMF`) is also a functor is a fundamental concept in category theory that provides this useful `map` operation for "free".
++  So, while `bind` is about sequencing probabilistic computations, `fmap` is about applying a deterministic transformation to the *outcome* of a probabilistic computation.
 
-## Summary
++  The fact that every monad (like `PMF`) is also a functor is a fundamental concept in category theory that provides this useful `fmap` operation for "free".
 
-In `μC = bind μMK (λ (m, k) => pure (encrypt m k))`:
 
-- `μMK` is the joint distribution of (message, key) pairs.
-- `bind` says "sample from this distribution."
-- `λ (m, k) => pure (encrypt m k)` says "then apply encryption deterministically."
-- Result: `μC` is the ciphertexts distribution.
+## Application
 
+Recall how we defined the ciphertext distribution,
+
+`μC = bind μMK (λ (m, k) => pure (encrypt m k))`.
+
++ `μMK` is the joint distribution of (message, key) pairs.
++ `bind μMK` says "sample from this distribution."
++ `λ (m, k) => pure (encrypt m k)` says "apply encryption deterministically."
 
 
 

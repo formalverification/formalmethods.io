@@ -71,7 +71,7 @@ def roll_then_flip : PMF Nat :=
 This means:
 
 1. **First step**: sample a pair `(m, k)` from the joint distribution `μMK`
-2. **Second step**: Return `encrypt m k` with probability 1
+2. **Second step**: return `encrypt m k` with probability 1
 
 Since the second step is deterministic (`pure`), this simplifies to:
 
