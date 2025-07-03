@@ -1,6 +1,6 @@
-# `bind` and `pure` for Probability Distributions
+# Joint Distributions with `bind` and `pure`
 
-## `pure`: Creating a Deterministic Distribution
+## Constructing deterministic distributions with `pure`
 
 `pure a` creates a probability distribution that always returns `a` with probability 1.
 
@@ -8,6 +8,13 @@
 pure : α → PMF α
 pure a = the distribution where P(X = a) = 1 and P(X = b) = 0 for all b ≠ a
 ```
+
+!!! info "Interpretation"
+
+    If a random variable, `X : Ω → α`, has PMF `pure a`, then it's not random at all!
+
+    It's a constant function: `X(ω) = a` for all `ω ∈ Ω`.
+
 
 ### Example
 
@@ -26,7 +33,7 @@ creates a distribution that always returns the specific ciphertext `encrypt m k`
 
 ---
 
-## `bind`: Chaining Random Processes
+## Composing random processes with `bind`
 
 `bind` chains two random processes together:
 
@@ -37,18 +44,18 @@ creates a distribution that always returns the specific ciphertext `encrypt m k`
 bind : PMF α → (α → PMF β) → PMF β
 ```
 
-### Intuitive Explanation
+!!! info "Interpretation"
 
-Think of `bind p f` as a two-step random process:
+    Think of `bind p f` as a two-step random process:
 
-1. Sample `x` from distribution `p`.
-2. Use `x` to choose a new distribution `f x`.
-3. Sample from `f x` to get the final result.
+    1. Sample `x` from distribution `p`.
+    2. Use `x` to choose a new distribution `f x`.
+    3. Sample from `f x` to get the final result.
 
 ### Example
 
 ```lean
--- Roll a die, then flip that many coins and count heads
+-- Roll a die, then flip that many coins and count heads.
 def roll_then_flip : PMF Nat :=
   bind die_roll (λ n => flip_n_coins n)
 ```
@@ -110,13 +117,4 @@ So we could also write:
 
     - X has distribution p
     - Y | X=x has distribution f(x)
-
-## Summary
-
-In `μC = bind μMK (λ (m, k) => pure (encrypt m k))`:
-
-- `μMK` is the joint distribution of (message, key) pairs.
-- `bind` says "sample from this distribution."
-- `λ (m, k) => pure (encrypt m k)` says "then apply encryption deterministically."
-- Result: `μC` is the ciphertexts distribution.
 
