@@ -38,7 +38,7 @@ It defines how to compose operations within the monadic context.
 This signature is revealing: `bind` takes
 
 +  a probability distribution `p : PMF α`,
-+  a *Kleisli arrow* function `α → PMF β` that maps each value in `α` to a distribution over `β`,
++  a "Kleisli arrow" which maps each `a : α` to a distribution on `β`,
 
 and returns a new distribution over `β`, which represents the total probability of the combined, sequential process.
 
@@ -47,9 +47,9 @@ over `β`, indexed by `α`.
 
 !!! info "Monads and effects"
 
-    The composition that manifests in `bind`--combining a value with a Kleisli arrow to
-    produce a distribution--is precisely how monads are able to handle *side effects*
-    in *computational contexts*--in this case, the context is probability and the
+    The composition that `bind` manifests--combining a value with a Kleisli arrow to
+    produce a distribution--is precisely how monads are able to handle *side effects
+    in computational contexts*--in this case, the context is probability and the
     side effects are correlations or dependencies among random processes, that is,
     the effects that values of random variables, or "events," can have on the
     probabilities of other events.
