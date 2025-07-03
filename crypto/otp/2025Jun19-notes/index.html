@@ -8,28 +8,24 @@
       
       
       
-        <link rel="canonical" href="https://formalmethods.io/crypto/otp/talk/2025Jun19-notes/">
+        <link rel="canonical" href="https://formalmethods.io/crypto/otp/2025Jun19-notes/">
       
       
-        <link rel="prev" href="../../../../mkdocs/content-tabs/">
       
       
-        <link rel="next" href="../interleaved_demo_presentation/">
-      
-      
-      <link rel="icon" href="../../../../img/formal_methods_favicon.svg">
+      <link rel="icon" href="../../../img/formal_methods_favicon.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
       
-        <title>2025 Juneteenth - Formal Methods</title>
+        <title>Basic Probability in Lean4: a primer for paranoids and pedants - Formal Methods</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,7 +44,7 @@
       
     
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lean4-a-primer-for-paranoids-and-pedants" class="md-skip">
+        <a href="#basic-probability-in-lean4-a-primer-for-paranoids-and-pedants" class="md-skip">
           Skip to content
         </a>
       
@@ -90,9 +86,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="Formal Methods" class="md-header__button md-logo" aria-label="Formal Methods" data-md-component="logo">
+    <a href="../../.." title="Formal Methods" class="md-header__button md-logo" aria-label="Formal Methods" data-md-component="logo">
       
-  <img src="../../../../img/formal_methods_icon.svg" alt="logo">
+  <img src="../../../img/formal_methods_icon.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -109,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2025 Juneteenth
+              Basic Probability in Lean4: a primer for paranoids and pedants
             
           </span>
         </div>
@@ -210,9 +206,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Formal Methods" class="md-nav__button md-logo" aria-label="Formal Methods" data-md-component="logo">
+    <a href="../../.." title="Formal Methods" class="md-nav__button md-logo" aria-label="Formal Methods" data-md-component="logo">
       
-  <img src="../../../../img/formal_methods_icon.svg" alt="logo">
+  <img src="../../../img/formal_methods_icon.svg" alt="logo">
 
     </a>
     Formal Methods
@@ -227,7 +223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -284,7 +280,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../otp-basics/" class="md-nav__link">
+      <a href="../otp-basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -306,7 +302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../perfect-secrecy/" class="md-nav__link">
+      <a href="../perfect-secrecy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -328,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../lean-project-setup/" class="md-nav__link">
+      <a href="../lean-project-setup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -350,7 +346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../otp-basic-types/" class="md-nav__link">
+      <a href="../otp-basic-types/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -408,7 +404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../basic-probability-in-lean/" class="md-nav__link">
+      <a href="../basic-probability-in-lean/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -466,7 +462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../WhyExtendedNNReals/" class="md-nav__link">
+      <a href="../WhyExtendedNNReals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -504,7 +500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../a-first-proof/" class="md-nav__link">
+      <a href="../a-first-proof/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -562,7 +558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bind_and_pure/" class="md-nav__link">
+      <a href="../bind_and_pure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -620,7 +616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cats_and_monads/" class="md-nav__link">
+      <a href="../cats_and_monads/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -658,7 +654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../law-of-total-prob/" class="md-nav__link">
+      <a href="../law-of-total-prob/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -680,7 +676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../perfect-secrecy-in-lean/" class="md-nav__link">
+      <a href="../perfect-secrecy-in-lean/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -706,19 +702,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -733,7 +727,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Miscellany
@@ -783,7 +777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../mkdocs/" class="md-nav__link">
+      <a href="../../../mkdocs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -805,7 +799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../mkdocs/admonitions/" class="md-nav__link">
+      <a href="../../../mkdocs/admonitions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -827,7 +821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../mkdocs/diagrams/" class="md-nav__link">
+      <a href="../../../mkdocs/diagrams/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -849,7 +843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../mkdocs/code-blocks/" class="md-nav__link">
+      <a href="../../../mkdocs/code-blocks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -871,7 +865,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../mkdocs/content-tabs/" class="md-nav__link">
+      <a href="../../../mkdocs/content-tabs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -898,19 +892,17 @@
                 
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -925,7 +917,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Presentation Notes
@@ -936,31 +928,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    2025 Juneteenth
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../talk/2025Jun19-notes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -970,359 +941,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-a-concrete-first-proof" class="md-nav__link">
-    <span class="md-ellipsis">
-      Part 1: A Concrete First Proof
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 1: A Concrete First Proof">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#deconstructing-simp" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deconstructing simp
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-1-unfolding-the-definition-of-k" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 1: Unfolding the Definition of μK
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 1: Unfolding the Definition of μK">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#why-this-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why this works
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-equivalent-proof-term" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Equivalent Proof Term
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-unfolding-definition-of-uniform-pmf" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 2: Unfolding Definition of Uniform PMF
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 2: Unfolding Definition of Uniform PMF">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#why-this-works_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why this works
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-equivalent-proof-term_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Equivalent Proof Term
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-computing-the-cardinality-and-final-simplification" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 3: Computing the Cardinality and Final Simplification
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3: Computing the Cardinality and Final Simplification">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#why-this-works_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why this works
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-equivalent-proof-term_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Equivalent Proof Term
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#summary-agda-perspective" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary &amp; Agda Perspective
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-deconstructing-a-compositional-proof-with-bind-and-pure" class="md-nav__link">
-    <span class="md-ellipsis">
-      Part 2: Deconstructing a Compositional Proof with bind and pure
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 2: Deconstructing a Compositional Proof with bind and pure">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#recall-construction-of-c" class="md-nav__link">
-    <span class="md-ellipsis">
-      Recall construction of μC
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-0-setup-for-the-proof" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 0: Setup for the Proof
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-proof-step-by-step" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Proof Step-by-Step
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="The Proof Step-by-Step">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-unfold-bind" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 1: Unfold bind
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-1-unfold-pure" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 1: Unfold pure
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-aligning-the-summations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 2: Aligning the Summations
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-finishing-with-eq_comm" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 3: Finishing with eq_comm
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-3-proving-a-cryptographic-property-one-time-pad" class="md-nav__link">
-    <span class="md-ellipsis">
-      Part 3: Proving a Cryptographic Property (One-Time Pad)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 3: Proving a Cryptographic Property (One-Time Pad)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-0-setup-for-the-proof_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 0: Setup for the Proof
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#a-detour-into-equivalences" class="md-nav__link">
-    <span class="md-ellipsis">
-      A Detour into Equivalences (≃)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="A Detour into Equivalences (≃)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#what-is-an-equiv" class="md-nav__link">
-    <span class="md-ellipsis">
-      What is an Equiv?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-to-construct-an-equiv-intro" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to Construct an Equiv (Intro)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-to-use-an-equiv-elim" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to Use an Equiv (Elim)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#next" class="md-nav__link">
-    <span class="md-ellipsis">
-      Next
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#computable-vs-noncomputable-definitions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Computable vs. Noncomputable Definitions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Computable vs. Noncomputable Definitions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#def-xorequiv-constructive" class="md-nav__link">
-    <span class="md-ellipsis">
-      def xorEquiv (Constructive)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#noncomputable-def-encrypt_equiv-classical" class="md-nav__link">
-    <span class="md-ellipsis">
-      noncomputable def encrypt_equiv (Classical)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#explaining-the-otp_perfect_secrecy_lemma-proof" class="md-nav__link">
-    <span class="md-ellipsis">
-      Explaining the otp_perfect_secrecy_lemma Proof
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1335,7 +953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../interleaved_demo_presentation/" class="md-nav__link">
+      <a href="../talk/interleaved_demo_presentation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1357,7 +975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../slides/" class="md-nav__link">
+      <a href="../talk/slides/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1430,7 +1048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../contributors/" class="md-nav__link">
+      <a href="../../../contributors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1452,7 +1070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../license/" class="md-nav__link">
+      <a href="../../../license/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1849,7 +1467,7 @@
 
 
 
-<h1 id="lean4-a-primer-for-paranoids-and-pedants">Lean4: a primer for paranoids and pedants<a class="headerlink" href="#lean4-a-primer-for-paranoids-and-pedants" title="Permanent link">#</a></h1>
+<h1 id="basic-probability-in-lean4-a-primer-for-paranoids-and-pedants">Basic Probability in Lean4: a primer for paranoids and pedants<a class="headerlink" href="#basic-probability-in-lean4-a-primer-for-paranoids-and-pedants" title="Permanent link">#</a></h1>
 <p>We will demonstrate not only <em>how</em> to prove properties in Lean but also <em>why</em> the
 methods work, connecting the seemingly magical world of tactics to the solid ground
 of <strong>proof objects</strong>, with which we are more familiar from Agda.</p>
@@ -2463,44 +2081,6 @@ choice</strong> (<code>Classical.choice</code>).</p>
         <footer class="md-footer">
   
     
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../../../../mkdocs/content-tabs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Content tabs">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Content tabs
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../interleaved_demo_presentation/" class="md-footer__link md-footer__link--next" aria-label="Next: Old Overview/Demo">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Old Overview/Demo
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -2539,10 +2119,10 @@ choice</strong> (<code>Classical.choice</code>).</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.tooltips", "navigation.footer"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.tooltips", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
