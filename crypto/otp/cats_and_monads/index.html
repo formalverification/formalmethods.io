@@ -1408,16 +1408,16 @@
 <p>This signature is revealing: <code>bind</code> takes</p>
 <ul>
 <li>a probability distribution <code>p : PMF α</code>,</li>
-<li>a <em>Kleisli arrow</em> function <code>α → PMF β</code> that maps each value in <code>α</code> to a distribution over <code>β</code>,</li>
+<li>a "Kleisli arrow" which maps each <code>a : α</code> to a distribution on <code>β</code>,</li>
 </ul>
 <p>and returns a new distribution over <code>β</code>, which represents the total probability of the combined, sequential process.</p>
 <p>In our context, a Kleisli arrow is a family of probability distributions
 over <code>β</code>, indexed by <code>α</code>.</p>
 <div class="admonition info">
 <p class="admonition-title">Monads and effects</p>
-<p>The composition that manifests in <code>bind</code>--combining a value with a Kleisli arrow to
-produce a distribution--is precisely how monads are able to handle <em>side effects</em>
-in <em>computational contexts</em>--in this case, the context is probability and the
+<p>The composition that <code>bind</code> manifests--combining a value with a Kleisli arrow to
+produce a distribution--is precisely how monads are able to handle <em>side effects
+in computational contexts</em>--in this case, the context is probability and the
 side effects are correlations or dependencies among random processes, that is,
 the effects that values of random variables, or "events," can have on the
 probabilities of other events.</p>
