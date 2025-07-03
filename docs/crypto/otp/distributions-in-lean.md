@@ -1,49 +1,41 @@
-# Probability in L∃∀N
+# Distributions in Lean
 
-## 🎲 Definition of Probability
+??? info "Recall: Definition of Probability 🎲" 
 
-+  Ω denotes an **outcome space**
+    +  Ω denotes an **outcome space**
 
-+  ω ∈ Ω denotes an **outcome** (e.g., of an experiment, trial, etc.)
+    +  ω ∈ Ω denotes an **outcome** (e.g., of an experiment, trial, etc.)
 
-+  An **event** 𝐸 is a set of outcomes: 𝐸 ⊆ Ω
+    +  An **event** 𝐸 is a set of outcomes: 𝐸 ⊆ Ω
 
-+  A **probability mass function** (pmf), or **probability measure**, on an outcome space is
-   a function ℙ : Ω → ℝ such that, for all events 𝐸₀, 𝐸₁, …
-    + ℙ ∅ = 0 and ℙ Ω = 1
-    + 0 ≤ ℙ 𝐸ᵢ ≤ 1
-    + 𝐸ᵢ ⊆ 𝐸ⱼ → ℙ 𝐸ᵢ ≤ ℙ 𝐸ⱼ (monotone)
-    + ℙ(⋃ 𝐸ᵢ) ≤ ∑ ℙ 𝐸ᵢ (subadditive)
-
-!!! note "Mathlib's definition"
-
-    It's slightly more direct: it's a function `f : α → NNReal`
-    (non-negative reals) along with a proof `h : tsum f = 1` (the sum of `f a` over all
-    `a : α` is 1). The other properties above (like monotonicity, probability of empty
-    set being 0, etc.) can be derived from this.
+    +  A **probability mass function** (pmf), or **probability measure**, on an outcome space is
+       a function ℙ : Ω → ℝ such that, for all events 𝐸₀, 𝐸₁, …
+        + ℙ ∅ = 0 and ℙ Ω = 1
+        + 0 ≤ ℙ 𝐸ᵢ ≤ 1
+        + 𝐸ᵢ ⊆ 𝐸ⱼ → ℙ 𝐸ᵢ ≤ ℙ 𝐸ⱼ (monotone)
+        + ℙ(⋃ 𝐸ᵢ) ≤ ∑ ℙ 𝐸ᵢ (subadditive)
 
 ---
 
+## What is a PMF?
 
-## Distributions
+In Lean/Mathlib, a *probability mass function* over a type `α` is denoted `PMF α`.
 
-### What is a PMF?
+!!! info "Mathlib's Probability Mass Function type"
 
-In Lean/Mathlib, a `PMF α` (Probability Mass Function) is defined as follows:
+    ```lean
+    /-- A probability mass function, or discrete probability measure is
+      a function `α → ℝ≥0∞` such that the values have (infinite) sum `1`. -/
 
-```lean
-/-- A probability mass function, or discrete probability measures is
-  a function `α → ℝ≥0∞` such that the values have (infinite) sum `1`. -/
+    def PMF.{u} (α : Type u) : Type u :=
+      { f : α → ℝ≥0∞ // HasSum f 1 }
+    ```
 
-def PMF.{u} (α : Type u) : Type u :=
-  { f : α → ℝ≥0∞ // HasSum f 1 }
-```
+    So a PMF is a **pair**
 
-So a PMF is a **pair**
+    1. A function assigning probabilities to outcomes.
 
-1. A function assigning probabilities to outcomes.
-
-2. A proof that these probabilities form a valid distribution.
+    2. A proof that these probabilities form a valid distribution.
 
 !!! info "Syntax: `{ _ // _ }`"
 
@@ -54,7 +46,7 @@ So a PMF is a **pair**
 ---
 
 
-### Crypto Distributions
+## Distributions over messages and keys
 
 +  `μM : PMF (Plaintext n)`
 
