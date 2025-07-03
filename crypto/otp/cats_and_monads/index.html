@@ -752,9 +752,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#application" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      Application
     </span>
   </a>
   
@@ -1349,9 +1349,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#application" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      Application
     </span>
   </a>
   
@@ -1508,35 +1508,40 @@ satisfies the functor laws.</p>
 <p><code>fmap f p = bind p (λ x ⇒ pure (f x))</code></p>
 <p>This composition has a clear probabilistic meaning:</p>
 <ol>
-<li><strong><code>bind p ...</code></strong>: Sample a value <code>x</code> from the distribution <code>p</code>.</li>
-<li><strong><code>... (λ x =&gt; ...)</code></strong>: Take that sampled value <code>x</code>.</li>
-<li><strong><code>pure (f x)</code></strong>: Apply the function <code>f</code> to <code>x</code> and create a new, deterministic distribution that always returns the result <code>f x</code>.</li>
+<li><strong><code>bind p ...</code></strong>: sample a value <code>x</code> from the distribution <code>p</code>.</li>
+<li><strong><code>... λ x =&gt; pure (f x)</code></strong>: take the sampled value <code>x</code>, apply the function <code>f</code>,
+    and produce a deterministic distribution that always returns the result <code>f x</code>.</li>
 </ol>
 <p>The overall effect is a new probability distribution over the type <code>β</code>, which is precisely what mapping a function over <code>p</code> should produce.</p>
 <h3 id="the-functor-laws">The Functor Laws<a class="headerlink" href="#the-functor-laws" title="Permanent link">#</a></h3>
-<p>This definition of <code>map</code> also satisfies the two functor laws, which follow directly from the monad laws:</p>
+<p>This definition of <code>fmap</code> also satisfies the two functor laws, which follow directly from the monad laws:</p>
 <ol>
 <li>
-<p><strong>Identity</strong>: <code>map id = id</code></p>
+<p><strong>Identity</strong>: <code>fmap id = id</code></p>
 <ul>
 <li>Mapping the identity function over a distribution doesn't change it.</li>
 </ul>
 </li>
 <li>
-<p><strong>Composition</strong>: <code>map (g ∘ f) = (map g) ∘ (map f)</code></p>
+<p><strong>Composition</strong>: <code>fmap (g ∘ f) = (fmap g) ∘ (fmap f)</code></p>
 <ul>
 <li>Mapping the composition of two functions is the same as mapping the first function and then mapping the second.</li>
 </ul>
 </li>
+<li>
+<p>So, while <code>bind</code> is about sequencing probabilistic computations, <code>fmap</code> is about applying a deterministic transformation to the <em>outcome</em> of a probabilistic computation.</p>
+</li>
+<li>
+<p>The fact that every monad (like <code>PMF</code>) is also a functor is a fundamental concept in category theory that provides this useful <code>fmap</code> operation for "free".</p>
+</li>
 </ol>
-<p>So, while <code>bind</code> is about sequencing probabilistic computations, <code>map</code> is about applying a deterministic transformation to the <em>outcome</em> of a probabilistic computation. The fact that every monad (like <code>PMF</code>) is also a functor is a fundamental concept in category theory that provides this useful <code>map</code> operation for "free".</p>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
-<p>In <code>μC = bind μMK (λ (m, k) =&gt; pure (encrypt m k))</code>:</p>
+<h2 id="application">Application<a class="headerlink" href="#application" title="Permanent link">#</a></h2>
+<p>Recall how we defined the ciphertext distribution,</p>
+<p><code>μC = bind μMK (λ (m, k) =&gt; pure (encrypt m k))</code>.</p>
 <ul>
 <li><code>μMK</code> is the joint distribution of (message, key) pairs.</li>
-<li><code>bind</code> says "sample from this distribution."</li>
-<li><code>λ (m, k) =&gt; pure (encrypt m k)</code> says "then apply encryption deterministically."</li>
-<li>Result: <code>μC</code> is the ciphertexts distribution.</li>
+<li><code>bind μMK</code> says "sample from this distribution."</li>
+<li><code>λ (m, k) =&gt; pure (encrypt m k)</code> says "apply encryption deterministically."</li>
 </ul>
 <!-- internal links -->
 <!-- external links -->
